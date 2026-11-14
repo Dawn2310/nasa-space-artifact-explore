@@ -1,9 +1,9 @@
 {
-  "_note": "DRAFT story text by ui-story, for Lead to merge into the catalog (Artifact.intro, Artifact.suggestedQuestions). Same text as the .md files in this folder. Written before content/facts.json existed: no dates or numbers except Opportunity's last-contact date from CLAUDE.md mandatory truth #1. Research must check the 'Claims to check' notes in the .md files. Card artifacts have empty suggestedQuestions on purpose: the UI shows suggested questions only for mode 'chat'.",
+  "_note": "Story text by ui-story, UPDATED against content/facts.json; for Lead to merge into the catalog (Artifact.intro, Artifact.suggestedQuestions). Same text as the .md files in this folder, which cite the backing fact ids. Changes since the first merge: surveyor-3's third suggested question (the old one was only answerable from facts after its memoryCutoff 1967-05-04) and sojourner's intro (adds 'a small rover', backed by soj-001/soj-005). Card artifacts have empty suggestedQuestions on purpose: the UI shows suggested questions only for mode 'chat'.",
   "artifacts": {
     "surveyor-3": {
       "intro": "Station, this is the Surveyor 3 character, calling from the Moon. I am a quiet machine with an old logbook. Ask me a question and I will read you what it says.",
-      "suggestedQuestions": ["What was your job on the Moon?", "How did your landing go?", "What happened to you after your work was done?"]
+      "suggestedQuestions": ["What was your job on the Moon?", "How did your landing go?", "What did you learn about the Moon's soil?"]
     },
     "apollo-11-eagle-descent-stage": {
       "intro": "I am the character for the Eagle descent stage, the lower part of the Apollo 11 lander. I am the part that stayed on the Moon. Close to me sits a laser reflector, which is a different artifact with its own story.",
@@ -18,7 +18,7 @@
       "suggestedQuestions": []
     },
     "sojourner": {
-      "intro": "I am the Sojourner character. I came to Mars with the Mars Pathfinder mission. Open my fact cards to see what I did here.",
+      "intro": "I am the Sojourner character, a small rover. I came to Mars with the Mars Pathfinder mission. Open my fact cards to see what I did here.",
       "suggestedQuestions": []
     },
     "spirit": {

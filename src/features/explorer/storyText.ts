@@ -55,7 +55,12 @@ export const AI_CHARACTER_NOTE =
 
 export const CARD_ONLY_NOTE = 'Story card only. This craft has no chat.';
 
-/** Written farewells for chat characters (see prompts/personas/<id>.md). No facts inside. */
+/**
+ * Written farewells for chat characters (see prompts/personas/<id>.md).
+ * Factual claims checked against content/facts.json (pending review):
+ * - opportunity "Other machines carry on the work that I started": opp-050, opp-032.
+ * - surveyor-3 "I was built to help others make the trip after me": sv3-002, sv3-003, sv3-035.
+ */
 const FAREWELLS: Partial<Record<ArtifactId, string>> = {
   opportunity:
     'Operator, my part of the story is saved now. Thank you for staying up to listen. Other machines carry on the work that I started, and you can follow them. Keep asking good questions. Opportunity character, signing off.',
