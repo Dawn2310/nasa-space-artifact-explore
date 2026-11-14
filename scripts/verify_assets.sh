@@ -2,9 +2,11 @@
 # Check bundled assets against the checksums recorded in content/assets.json (no network).
 set -euo pipefail
 cd "$(dirname "$0")/.."
-python3 - <<'PY'
+# On Windows `python3` can be a Microsoft Store stub that does not run; fall back to `python`.
+PYTHON=python3; "$PYTHON" -c "" >/dev/null 2>&1 || PYTHON=python
+"$PYTHON" - <<'PY'
 import json,hashlib,sys
-d=json.load(open("content/assets.json")); bad=0
+d=json.load(open("content/assets.json",encoding="utf-8")); bad=0
 for a in d["assets"]:
     h=hashlib.sha256(open("public/assets/"+a["localPath"],"rb").read()).hexdigest()
     ok=h==a["sha256"]; bad+=not ok

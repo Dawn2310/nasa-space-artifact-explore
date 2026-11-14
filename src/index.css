@@ -1,0 +1,110 @@
+/* Khung toàn cục của Lead. Style riêng của từng feature nằm trong thư mục feature đó. */
+
+:root {
+  --bg: #05070d;
+  --panel: rgba(13, 19, 33, 0.88);
+  --line: rgba(140, 170, 220, 0.28);
+  --text: #e8eefc;
+  --muted: #9fb0cf;
+  --accent: #ffc857;
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* World phủ toàn màn hình; Explorer là lớp UI nổi phía trên. */
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.app__world {
+  position: absolute;
+  inset: 0;
+}
+
+.app__explorer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* lớp con tự bật lại pointer-events cho phần có nội dung */
+}
+
+.app__explorer > * {
+  pointer-events: auto;
+}
+
+button {
+  font: inherit;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- placeholder (bị thay khi world3d / ui-story bàn giao) ---- */
+.world-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.world-placeholder__tag {
+  color: var(--muted);
+}
+
+.world-placeholder__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.explorer-placeholder__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.explorer-placeholder__card {
+  margin: 1rem;
+  max-width: 26rem;
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}

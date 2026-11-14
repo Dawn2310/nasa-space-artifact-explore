@@ -5,13 +5,13 @@ Deadline nộp: Chủ nhật 15/11/2026 23:59 (giờ Việt Nam). Ngừng thêm 
 ## Đợt 0 — Lead tự làm (mục tiêu: 1–2 giờ)
 
 - [x] Tài nguyên 3D chính thức đã nằm trong public/assets/ (9 GLB, 6 texture, có sha256).
-- [ ] Chạy `bash scripts/verify_assets.sh` để xác nhận file nguyên vẹn.
+- [x] Chạy `bash scripts/verify_assets.sh` để xác nhận file nguyên vẹn. (16/16 OK)
 
-- [ ] Scaffold: Vite + React + TS, cài three, @react-three/fiber, @react-three/drei.
-- [ ] Thư mục: src/features/world, src/features/explorer, src/shared, api, server, prompts, content, eval, qa, public/assets.
-- [ ] `src/shared/mock.ts`: mock catalog (3 hiện vật: opportunity, surveyor-3, pioneer-10) + mock ChatResponse đúng contracts.
-- [ ] `src/App.tsx`: giữ ViewState, truyền SceneCallbacks cho world và state/catalog/chat adapter cho explorer.
-- [ ] `npm run dev` chạy, `npm run build` pass. Commit.
+- [x] Scaffold: Vite + React + TS, cài three, @react-three/fiber, @react-three/drei.
+- [x] Thư mục: src/features/world, src/features/explorer, src/shared, api, server, prompts, content, eval, qa, public/assets.
+- [x] `src/shared/mock.ts`: mock catalog (3 hiện vật: opportunity, surveyor-3, pioneer-10) + mock ChatResponse đúng contracts.
+- [x] `src/App.tsx`: giữ ViewState, truyền SceneCallbacks cho world và state/catalog/chat adapter cho explorer.
+- [x] `npm run dev` chạy, `npm run build` pass. Commit.
 
 ## Đợt 1 — chạy SONG SONG ba agent
 
@@ -71,4 +71,21 @@ Cách chạy:
 Chưa kiểm tra:
 Phụ thuộc còn thiếu:
 Bước tiếp theo:
+```
+
+```
+Task / Owner: Đợt 0 — scaffold / Lead (2026-11-14)
+File đã tạo, sửa: package.json, package-lock.json, .gitignore, tsconfig*.json, vite.config.ts,
+  index.html, src/main.tsx, src/App.tsx, src/index.css, src/vite-env.d.ts,
+  src/shared/app-types.ts (Catalog, ChatAdapter, WorldProps, ExplorerProps + helper),
+  src/shared/mock.ts (mockCatalog 3 hiện vật + mockChatAdapter),
+  src/features/world/index.tsx và src/features/explorer/index.tsx (PLACEHOLDER, agent thay),
+  scripts/verify_assets.sh (dùng `python` khi `python3` là stub trên Windows).
+Cách chạy: npm install; npm run dev (http://localhost:5173); npm run build.
+Đã kiểm tra: verify_assets 16/16 OK; npm run build pass (tsc -b + vite build);
+  dev server trả 200 cho /, /src/App.tsx và /assets/models/mer-opportunity.glb (36668 byte).
+Chưa kiểm tra: chưa mở trên trình duyệt thật (chưa bấm thử luồng solar → surface → artifact → back).
+Phụ thuộc còn thiếu: mọi nội dung thật (content/catalog.json, facts.json, sources.json);
+  mock.ts dùng tọa độ xấp xỉ và fact có tiền tố [MOCK], không được chép sang nội dung thật.
+Bước tiếp theo: Đợt 1 — nasa-research, world3d, ui-story chạy song song.
 ```
