@@ -1,0 +1,25 @@
+{
+  "_note": "Khung khởi tạo cho agent nasa-research. Mọi trường null/[] là VIỆC PHẢI LÀM, không được bịa. intro và suggestedQuestions do ui-story viết, research kiểm số liệu.",
+  "chatPriority": ["opportunity", "surveyor-3", "viking-1"],
+  "chatStretch": ["pioneer-10"],
+  "artifacts": [
+    { "id": "surveyor-3", "name": "Surveyor 3", "body": "moon", "mode": "chat", "displayYears": "1967–", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/surveyor-3/" },
+    { "id": "apollo-11-eagle-descent-stage", "name": "Apollo 11 Eagle descent stage", "body": "moon", "mode": "card", "displayYears": "1969–", "memoryCutoff": null, "resourceUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" },
+    { "id": "apollo-15-lrv", "name": "Apollo 15 Lunar Roving Vehicle", "body": "moon", "mode": "card", "displayYears": "1971–", "memoryCutoff": null, "resourceUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" },
+    { "id": "apollo-12-alsep", "name": "Apollo 12 ALSEP", "body": "moon", "mode": "card", "displayYears": "1969–1977", "memoryCutoff": null, "resourceUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C" },
+    { "id": "sojourner", "name": "Sojourner (Mars Pathfinder)", "body": "mars", "mode": "card", "displayYears": "1997", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/mars-pathfinder/" },
+    { "id": "spirit", "name": "Spirit (MER-A)", "body": "mars", "mode": "card", "displayYears": "2004–2010", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/" },
+    { "id": "opportunity", "name": "Opportunity (MER-B)", "body": "mars", "mode": "chat", "displayYears": "2004–2018 (mission declared complete 2019)", "memoryCutoff": "2018-06-10", "resourceUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/" },
+    { "id": "viking-1", "name": "Viking 1 lander", "body": "mars", "mode": "chat", "displayYears": "1976–1982", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/viking-1/" },
+    { "id": "viking-2", "name": "Viking 2 lander", "body": "mars", "mode": "card", "displayYears": "1976–1980", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/viking-1/" },
+    { "id": "phoenix", "name": "Phoenix lander", "body": "mars", "mode": "card", "displayYears": "2008", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/insight/" },
+    { "id": "insight", "name": "InSight lander", "body": "mars", "mode": "card", "displayYears": "2018–2022", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/insight/" },
+    { "id": "ingenuity", "name": "Ingenuity helicopter", "body": "mars", "mode": "card", "displayYears": "2021–2024", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" },
+    { "id": "dawn", "name": "Dawn (orbiting Ceres)", "body": "deep-space", "mode": "card", "displayYears": "2007–2018", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/dawn/" },
+    { "id": "near-shoemaker", "name": "NEAR Shoemaker (on Eros)", "body": "deep-space", "mode": "card", "displayYears": "1996–2001", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/near-shoemaker/" },
+    { "id": "pioneer-10", "name": "Pioneer 10", "body": "deep-space", "mode": "card", "displayYears": "1972–2003", "memoryCutoff": "2003-01-23", "resourceUrl": "https://science.nasa.gov/mission/pioneer-10/" },
+    { "id": "pioneer-11", "name": "Pioneer 11", "body": "deep-space", "mode": "card", "displayYears": "1973–1995", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/pioneer-10/" },
+    { "id": "kepler", "name": "Kepler space telescope", "body": "deep-space", "mode": "card", "displayYears": "2009–2018", "memoryCutoff": null, "resourceUrl": "https://science.nasa.gov/mission/kepler/" }
+  ],
+  "_verification": "memoryCutoff và displayYears ở trên là GIẢ THUYẾT KHỞI TẠO từ kiến thức chung — research phải xác nhận từng giá trị với nguồn NASA trước khi dùng, kể cả hai giá trị đã điền sẵn của opportunity và pioneer-10."
+}
