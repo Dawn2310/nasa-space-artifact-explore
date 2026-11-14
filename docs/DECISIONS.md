@@ -21,3 +21,7 @@
 | 17 | 2026-11-14 | Nhãn trong cảnh dùng lớp tự viết (`labels.tsx`), không dùng `<Html>` của drei | `<Html>` ném lỗi removeChild với React 19 + StrictMode |
 | 18 | 2026-11-14 | Giữ hai danh sách điều hướng; danh sách của world3d (dưới trái) là chính, danh sách trong khung briefing của ui-story thu gọn mặc định | Danh sách world3d highlight và quay globe; danh sách kia mở ra che vùng phải của cảnh |
 | 19 | 2026-11-14 | Lời chào cuối nằm trong `src/features/explorer/storyText.ts`, chưa thêm trường vào `Artifact` | Tránh đổi hợp đồng giữa chừng |
+| 20 | 2026-11-14 | Server chat mặc định chỉ dùng fact `approved`; thêm công tắc env `ALLOW_PENDING_FACTS=true` cho demo/eval cục bộ | Giữ quyết định 7 làm mặc định, nhưng app phải demo được khi chưa ai duyệt 255 fact |
+| 21 | 2026-11-14 | `npm run dev` phục vụ POST /api/chat bằng middleware Vite gọi `server/chat.ts › handleChat`; `api/chat.ts` là wrapper Vercel mỏng | Không cần `vercel dev` để chạy cục bộ; một pipeline duy nhất |
+| 22 | 2026-11-14 | Prompt hệ thống và persona máy đọc nằm trong `server/prompt.ts`, `server/personas.ts`; JSON nội dung import tĩnh | Function deploy không phải đọc file bằng fs, không cần `includeFiles` |
+| 23 | 2026-11-14 | Lọc memoryCutoff: loại fact có `date` > cutoff, giữ fact đúng ngày cutoff | Câu "how did your mission end" dựa vào fact đúng ngày mất liên lạc |

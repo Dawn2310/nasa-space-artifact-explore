@@ -23,8 +23,8 @@ Mốc ghép 1 (mục tiêu 13:00 thứ Bảy): solar → mars → Opportunity �
 
 ## Đợt 2 — sau khi có facts của Opportunity
 
-- [ ] grounded-chat: /api/chat, kiểm chứng, chế độ mock, eval cho Opportunity.
-- [ ] Lead: nối chat adapter thật, nối catalog thật vào world + explorer.
+- [x] grounded-chat: /api/chat, kiểm chứng, chế độ mock, eval cho Opportunity. (cả 3 nhân vật; CHỈ chạy mock, provider thật chưa thử)
+- [x] Lead: nối chat adapter thật, nối catalog thật vào world + explorer. (chưa deploy thử Vercel)
 
 Mốc ghép 2 (mục tiêu 20:00 thứ Bảy): đường đi Opportunity chạy với API (mock LLM), deploy thử lên Vercel.
 
@@ -167,4 +167,39 @@ File đã tạo, sửa: src/shared/catalog.ts (gộp content/*.json + catalog-st
 Đã kiểm tra: npm run build pass; verify_assets 16/16.
 Chưa kiểm tra: chưa mở trình duyệt với 17 hiện vật thật; chat vẫn là adapter giả trong trình duyệt.
 Bước tiếp theo: nối /api/chat khi grounded-chat bàn giao.
+```
+
+```
+Task / Owner: Đợt 2 — grounded chat / grounded-chat (2026-11-14)
+File đã tạo, sửa: server/chat.ts (handleChat), server/llm.ts, server/mock-llm.ts, server/personas.ts,
+  server/prompt.ts, server/text.ts, api/chat.ts, eval/questions.json (86 câu), eval/fixtures.json,
+  eval/run.ts, eval/results.md, .env.example.
+Cách chạy: node eval/run.ts (chạy cả hai chế độ, ghi eval/results.md); npm run dev với .env có ALLOW_PENDING_FACTS=true.
+Số eval — MOCK (đo đường ống + bộ khớp từ khóa, KHÔNG phải LLM thật; agent chỉnh từ đồng nghĩa sau khi thấy câu hỏi):
+  ALLOW_PENDING_FACTS=true: grounded đúng 41/42, mọi fact dẫn đúng 39/42, từ chối đúng 41/44, evidence hợp lệ 86/86.
+  Strict mặc định (chỉ approved): 86/86 câu bị từ chối vì 143/143 fact của ba nhân vật còn pending.
+  4 câu sai để nguyên: sv3-q07, sv3-q23, vk1-q18, vk1-q23 (xem eval/results.md).
+Đã kiểm tra: tsc sạch, build pass, 23/23 kiểm tra pipeline (đầu vào, lọc cutoff, bộ kiểm chứng, thiếu khóa → unavailable);
+  curl vào middleware dev; bundle client không chứa LLM_API_KEY.
+Chưa kiểm tra: BA PROVIDER THẬT chưa gọi lần nào (không có khóa; model mặc định gpt-5-mini, gemini-2.5-flash chưa
+  xác minh); timeout 20s / lỗi mạng thật; api/chat.ts trên Vercel (rủi ro: import đuôi .ts và `with { type: 'json' }`
+  chưa chắc builder Vercel nhận — nếu không thì phải bundle bằng esbuild); chống prompt-injection với LLM thật.
+Phụ thuộc còn thiếu: người duyệt facts; khóa LLM.
+Nội dung cần người duyệt xem: opp-041, opp-042 mang date 2019-02-13 nên bị cutoff loại dù là việc trong nhiệm vụ;
+  opp-050 (Perseverance vượt kỷ lục 11/10/2026) cần kiểm; vk1-046 bị cutoff loại; mock trả lời lẫn ngôi "I" / "it".
+```
+
+```
+Task / Owner: Mốc ghép 2 / Lead (2026-11-14)
+File đã tạo, sửa: src/App.tsx (dùng apiChatAdapter), vercel.json (maxDuration 30s cho api/chat.ts),
+  eval/fixtures.json (thêm fixture cho câu gợi ý mới của Surveyor 3), .env cục bộ (không commit:
+  LLM_PROVIDER=mock, ALLOW_PENDING_FACTS=true), ui-story cập nhật persona bằng fact id thật.
+Đã kiểm tra: npm run build pass; node eval/run.ts cho đúng số ở trên; cả 9 câu gợi ý của 3 nhân vật trả về
+  "grounded" qua handleChat (mock, pending); curl POST /api/chat qua dev server: câu có đáp án → grounded có nguồn,
+  câu ngoài kho và sau cutoff → insufficient-evidence.
+Chưa kiểm tra: CHƯA bấm thử UI trên trình duyệt với API (chỉ thử bằng curl); CHƯA deploy Vercel.
+Lưu ý trung thực: khi ALLOW_PENDING_FACTS=true, ChatResponse không báo "fact chưa duyệt"; UI chỉ hiện nhãn
+  "Awaiting review" trên thẻ fact trong Sources. Trên Vercel nếu không đặt biến này thì chat từ chối mọi câu
+  cho tới khi fact được duyệt.
+Bước tiếp theo: qa; người thật duyệt facts, tạo repo + Vercel, bấm thử trên trình duyệt.
 ```

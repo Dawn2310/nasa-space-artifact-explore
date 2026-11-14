@@ -1,0 +1,74 @@
+{
+ "_note": "MOCK fixtures for LLM_PROVIDER=mock. Exact text of the suggested questions in prompts/personas/*.md mapped to fact ids from content/facts.json. The mock reads those facts out; nothing here is answer text. A fixture is ignored when one of its facts did not pass fact selection (review status, memoryCutoff).",
+ "fixtures": [
+  {
+   "artifactId": "opportunity",
+   "question": "What was your job on Mars?",
+   "factIds": [
+    "opp-025"
+   ]
+  },
+  {
+   "artifactId": "opportunity",
+   "question": "What did you find on Mars?",
+   "factIds": [
+    "opp-039",
+    "opp-040"
+   ]
+  },
+  {
+   "artifactId": "opportunity",
+   "question": "What happened when you went quiet?",
+   "factIds": [
+    "opp-043",
+    "opp-044"
+   ]
+  },
+  {
+   "artifactId": "surveyor-3",
+   "question": "What was your job on the Moon?",
+   "factIds": [
+    "sv3-004",
+    "sv3-002"
+   ]
+  },
+  {
+   "artifactId": "surveyor-3",
+   "question": "How did your landing go?",
+   "factIds": [
+    "sv3-012",
+    "sv3-013"
+   ]
+  },
+  {
+   "artifactId": "surveyor-3",
+   "question": "What did you learn about the Moon's soil?",
+   "factIds": [
+    "sv3-034",
+    "sv3-035"
+   ]
+  },
+  {
+   "artifactId": "viking-1",
+   "question": "What was your job on Mars?",
+   "factIds": [
+    "vk1-006"
+   ]
+  },
+  {
+   "artifactId": "viking-1",
+   "question": "What did you find on Mars?",
+   "factIds": [
+    "vk1-036",
+    "vk1-038"
+   ]
+  },
+  {
+   "artifactId": "viking-1",
+   "question": "How did your mission end?",
+   "factIds": [
+    "vk1-045"
+   ]
+  }
+ ]
+}

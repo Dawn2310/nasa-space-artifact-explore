@@ -6,14 +6,14 @@ import type { ArtifactId, SceneCallbacks, ViewState } from './shared/contracts';
 import { findArtifact, returnTargetFor } from './shared/app-types';
 import type { Catalog, ChatAdapter } from './shared/app-types';
 import { realCatalog } from './shared/catalog';
-import { createMockChatAdapter } from './shared/mock';
+import { apiChatAdapter } from './shared/chat-adapter';
 import World from './features/world';
 import Explorer from './features/explorer';
 
-// Catalog thật từ content/*.json. Chat: TẠM dùng adapter giả trong trình duyệt (nhãn "mocked")
-// cho tới khi /api/chat của grounded-chat được nối (src/shared/chat-adapter.ts).
+// Catalog thật từ content/*.json. Chat gọi POST /api/chat: Vercel function khi deploy,
+// middleware trong vite.config.ts khi `npm run dev`. LLM_PROVIDER=mock thì server tự gắn mocked=true.
 const catalog: Catalog = realCatalog;
-const chat: ChatAdapter = createMockChatAdapter(realCatalog.facts);
+const chat: ChatAdapter = apiChatAdapter;
 
 export default function App() {
   const [view, setView] = useState<ViewState>({ level: 'solar' });
