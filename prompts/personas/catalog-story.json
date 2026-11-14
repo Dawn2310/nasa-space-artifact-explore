@@ -1,0 +1,73 @@
+{
+  "_note": "DRAFT story text by ui-story, for Lead to merge into the catalog (Artifact.intro, Artifact.suggestedQuestions). Same text as the .md files in this folder. Written before content/facts.json existed: no dates or numbers except Opportunity's last-contact date from CLAUDE.md mandatory truth #1. Research must check the 'Claims to check' notes in the .md files. Card artifacts have empty suggestedQuestions on purpose: the UI shows suggested questions only for mode 'chat'.",
+  "artifacts": {
+    "surveyor-3": {
+      "intro": "Station, this is the Surveyor 3 character, calling from the Moon. I am a quiet machine with an old logbook. Ask me a question and I will read you what it says.",
+      "suggestedQuestions": ["What was your job on the Moon?", "How did your landing go?", "What happened to you after your work was done?"]
+    },
+    "apollo-11-eagle-descent-stage": {
+      "intro": "I am the character for the Eagle descent stage, the lower part of the Apollo 11 lander. I am the part that stayed on the Moon. Close to me sits a laser reflector, which is a different artifact with its own story.",
+      "suggestedQuestions": []
+    },
+    "apollo-15-lrv": {
+      "intro": "I am the character for the Apollo 15 Lunar Roving Vehicle. I am a vehicle that was built to drive on the Moon, and I am still parked here. Open my fact cards to see what the records say about me.",
+      "suggestedQuestions": []
+    },
+    "apollo-12-alsep": {
+      "intro": "I am the character for the Apollo 12 ALSEP. I am a package of science experiments that was left on the Moon. I belong to Apollo 12, so do not mix me up with other Apollo missions.",
+      "suggestedQuestions": []
+    },
+    "sojourner": {
+      "intro": "I am the Sojourner character. I came to Mars with the Mars Pathfinder mission. Open my fact cards to see what I did here.",
+      "suggestedQuestions": []
+    },
+    "spirit": {
+      "intro": "I am the Spirit character, a rover on Mars. Opportunity is my twin, built to the same design. The 3D model you see is my twin, so read my own cards for my own story.",
+      "suggestedQuestions": []
+    },
+    "opportunity": {
+      "intro": "Hello, night-shift operator. I am the Opportunity character, a rover on Mars. My last contact with Earth was on June 10, 2018, so my memory stops on that day. Ask me what my log remembers.",
+      "suggestedQuestions": ["What was your job on Mars?", "What did you find on Mars?", "What happened when you went quiet?"]
+    },
+    "viking-1": {
+      "intro": "Operator, this is the Viking 1 lander character on Mars. I stay in one place and keep a careful record. Ask me a question and we will look at that record together.",
+      "suggestedQuestions": ["What was your job on Mars?", "What did you find on Mars?", "How did your mission end?"]
+    },
+    "viking-2": {
+      "intro": "I am the Viking 2 lander character. Viking 1 and I share the same lander design. Open my fact cards to see where I am and what I did.",
+      "suggestedQuestions": []
+    },
+    "phoenix": {
+      "intro": "I am the Phoenix lander character. I am a lander, so I stayed in the spot where I came down on Mars. My fact cards tell you what happened there.",
+      "suggestedQuestions": []
+    },
+    "insight": {
+      "intro": "I am the InSight lander character. I sit still on Mars with my solar panels open. Open my fact cards to learn what I was sent to study.",
+      "suggestedQuestions": []
+    },
+    "ingenuity": {
+      "intro": "I am the Ingenuity character, a helicopter on Mars. The place where I rest now is called Valinor Hills. It is not the place where I was first set down, so check what my map marker shows.",
+      "suggestedQuestions": []
+    },
+    "dawn": {
+      "intro": "I am the Dawn character. I am not on the Moon or on Mars. I orbit a world called Ceres, and my dot on the map is only an illustration.",
+      "suggestedQuestions": []
+    },
+    "near-shoemaker": {
+      "intro": "I am the NEAR Shoemaker character. I am not on Mars. I rest on a space rock called Eros, and my dot on the map is only an illustration.",
+      "suggestedQuestions": []
+    },
+    "pioneer-10": {
+      "intro": "I am the Pioneer 10 character. I am not at Mars. I am travelling out of the solar system, and my dot on the map is only an illustration.",
+      "suggestedQuestions": []
+    },
+    "pioneer-11": {
+      "intro": "I am the Pioneer 11 character. Like my sister craft Pioneer 10, I am travelling out of the solar system. The 3D model you see is Pioneer 10, not me.",
+      "suggestedQuestions": []
+    },
+    "kepler": {
+      "intro": "I am the Kepler character, a space telescope. I do not sit on any world. I follow my own path around the Sun, and my dot on the map is only an illustration.",
+      "suggestedQuestions": []
+    }
+  }
+}

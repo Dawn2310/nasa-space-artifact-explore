@@ -1,0 +1,632 @@
+/* Explorer overlay (agent ui-story). Uses the colour variables from src/index.css.
+   The root is click-through; only the bar and the panels take pointer events,
+   so the 3D scene underneath stays interactive everywhere else. */
+
+.xp.xp {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  --xp-solid: rgba(9, 14, 26, 0.96);
+  --xp-soft: rgba(140, 170, 220, 0.12);
+  --xp-warn: #ffb4a2;
+  --xp-ai: #a7d8ff;
+}
+
+.xp-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- top bar ---------- */
+
+.xp-bar {
+  pointer-events: auto;
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  padding: 0.5rem 1rem;
+  background: var(--xp-solid);
+  border-bottom: 1px solid var(--line);
+}
+
+.xp-bar__brand {
+  min-width: 0;
+}
+
+.xp-bar__title {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.xp-bar__legal {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.xp-bar__crumbs {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.xp-bar__crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.xp-bar__crumbs li + li::before {
+  content: '→';
+  margin-right: 0.5rem;
+  color: var(--muted);
+}
+
+.xp-bar__crumbs li[aria-current='page'] {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.xp-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+/* ---------- stage: the area under the bar, click-through ---------- */
+
+.xp-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ---------- buttons, links, tags ---------- */
+
+.xp-btn {
+  min-height: 44px;
+  min-width: 44px;
+  text-align: center;
+}
+
+.xp-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.xp-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.xp-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1b1403;
+  font-weight: 600;
+}
+
+.xp-btn--small {
+  align-self: flex-start;
+}
+
+.xp-btn--chip {
+  text-align: left;
+  border-radius: 22px;
+  background: var(--xp-soft);
+}
+
+.xp-btn--tab {
+  flex: 1 1 0;
+  padding: 0.5rem 0.5rem;
+  background: transparent;
+}
+
+.xp-btn--tab[aria-pressed='true'] {
+  background: var(--xp-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.xp-btn--row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  background: var(--xp-soft);
+}
+
+.xp-row__name {
+  font-weight: 600;
+}
+
+.xp-row__meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.xp-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border-radius: 6px;
+}
+
+.xp-link--inline {
+  min-height: 0;
+  padding: 0.35rem 0;
+}
+
+.xp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.xp-tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  white-space: normal;
+}
+
+.xp-tag--ai {
+  color: var(--xp-ai);
+  border-color: var(--xp-ai);
+}
+
+.xp-tag--warn {
+  color: var(--xp-warn);
+  border-color: var(--xp-warn);
+}
+
+.xp-tag--accent {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- text helpers ---------- */
+
+.xp-text,
+.xp-note,
+.xp-muted {
+  margin: 0;
+}
+
+.xp-note,
+.xp-muted {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.xp-h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.xp-callout {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-left: 4px solid var(--accent);
+  background: var(--xp-soft);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ---------- guidance (solar / surface) ---------- */
+
+.xp-guide {
+  pointer-events: auto;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: min(340px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.xp-guide__eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.xp-guide__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.xp-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- artifact panel ---------- */
+
+.xp-panel {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  background: var(--xp-solid);
+  border-left: 1px solid var(--line);
+}
+
+.xp-panel__head {
+  flex: none;
+  padding: 0.9rem 1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.xp-panel__title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.xp-panel__title:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.xp-panel__years {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.xp-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.xp-panel__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ---------- card ---------- */
+
+.xp-card,
+.xp-chat,
+.xp-journal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.xp-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.xp-intro,
+.xp-farewell {
+  padding: 0.8rem;
+  border: 1px solid var(--xp-ai);
+  border-radius: 12px;
+  background: var(--xp-soft);
+}
+
+.xp-intro__text {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.xp-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xp-location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.xp-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.xp-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.xp-fact__text {
+  margin: 0;
+}
+
+.xp-details > summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.xp-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.xp-details > summary::before {
+  content: '+';
+  display: inline-block;
+  width: 1.2rem;
+  font-weight: 700;
+}
+
+.xp-details[open] > summary::before {
+  content: '−';
+}
+
+.xp-details > summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.xp-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xp-source {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border-left: 3px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+.xp-source__title {
+  font-weight: 600;
+}
+
+.xp-source__meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.xp-source--missing {
+  color: var(--xp-warn);
+  font-size: 0.9rem;
+}
+
+.xp-postcard {
+  margin: 0;
+}
+
+.xp-postcard img {
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.xp-postcard figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ---------- chat ---------- */
+
+.xp-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xp-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 94%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+.xp-msg--assistant {
+  align-self: flex-start;
+  background: var(--xp-soft);
+  border-bottom-left-radius: 4px;
+}
+
+.xp-msg--user {
+  align-self: flex-end;
+  background: rgba(255, 200, 87, 0.14);
+  border-color: rgba(255, 200, 87, 0.5);
+  border-bottom-right-radius: 4px;
+}
+
+.xp-msg__text {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.xp-status {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.xp-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid var(--xp-warn);
+  border-radius: 12px;
+}
+
+.xp-suggest {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.xp-suggest__label {
+  margin: 0;
+}
+
+.xp-ask {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.xp-ask__label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.xp-ask__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.xp-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.xp-input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- narrow screens: bottom sheet ---------- */
+
+@media (max-width: 899px) {
+  .xp-bar {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .xp-bar__title {
+    font-size: 1rem;
+  }
+
+  .xp-guide {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: 60%;
+  }
+
+  .xp-panel {
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    height: 55dvh;
+    max-height: 100%;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .xp-panel__head {
+    padding: 0.6rem 0.75rem 0.5rem;
+  }
+
+  .xp-panel__title {
+    font-size: 1.15rem;
+  }
+
+  .xp-tabs {
+    margin-top: 0.5rem;
+  }
+
+  .xp-panel__body {
+    padding: 0.75rem;
+  }
+}

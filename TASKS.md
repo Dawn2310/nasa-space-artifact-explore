@@ -16,8 +16,8 @@ Deadline nộp: Chủ nhật 15/11/2026 23:59 (giờ Việt Nam). Ngừng thêm 
 ## Đợt 1 — chạy SONG SONG ba agent
 
 - [ ] nasa-research: opportunity → surveyor-3 → viking-1 (chat), rồi 14 thẻ.
-- [ ] world3d: solar → mars → marker → viewer bằng mock.
-- [ ] ui-story: shell, card, chat panel bằng mock adapter; persona 3 nhân vật.
+- [x] world3d: solar → mars → marker → viewer bằng mock.
+- [x] ui-story: shell, card, chat panel bằng mock adapter; persona 3 nhân vật. (phần "emotional moments" còn TODO, chờ facts.json)
 
 Mốc ghép 1 (mục tiêu 13:00 thứ Bảy): solar → mars → Opportunity → thẻ → chat MOCK → back.
 
@@ -88,4 +88,44 @@ Chưa kiểm tra: chưa mở trên trình duyệt thật (chưa bấm thử lu�
 Phụ thuộc còn thiếu: mọi nội dung thật (content/catalog.json, facts.json, sources.json);
   mock.ts dùng tọa độ xấp xỉ và fact có tiền tố [MOCK], không được chép sang nội dung thật.
 Bước tiếp theo: Đợt 1 — nasa-research, world3d, ui-story chạy song song.
+```
+
+```
+Task / Owner: Đợt 1 — cảnh 3D ba tầng / world3d (2026-11-14)
+File đã tạo, sửa: src/features/world/ — index.tsx, SolarScene.tsx, SurfaceScene.tsx, ArtifactScene.tsx,
+  CameraRig.tsx, geo.ts, geo.check.mjs, labels.tsx, parts.tsx, layout.ts, world.css.
+Cách chạy: npm run dev; node src/features/world/geo.check.mjs (assert tọa độ).
+Đã kiểm tra (agent báo, Chrome headless + WebGL phần mềm, dev server, MOCK catalog): luồng solar → Mars →
+  Opportunity → Back → Pioneer 10 → Moon → Surveyor 3 ở 1440x900; hover/click marker, click globe không
+  điều hướng; GLB Opportunity + Pioneer 10 tải được (Draco decoder nội bộ, không CDN); chặn *.glb và tắt
+  WebGL ra đúng fallback; màn 390x800. Lead chạy lại: geo.check qua, npm run build pass.
+Chưa kiểm tra: GPU thật, cảm ứng thật, 7 GLB còn lại, 15 hiện vật còn lại, nhánh có ảnh, bản build
+  production trong trình duyệt, thời lượng chuyển cảnh (chưa đo).
+Phụ thuộc còn thiếu: public/assets/textures/moon.jpg (globe Mặt Trăng đang xám phẳng); catalog thật.
+  Surveyor 3 và Apollo 12 ALSEP gần trùng tọa độ: chuột chỉ chọn được marker gần camera, danh sách chọn được cả hai.
+Bước tiếp theo: nối catalog thật, bấm thử đủ 17 hiện vật.
+```
+
+```
+Task / Owner: Đợt 1 — UI explorer + persona / ui-story (2026-11-14)
+File đã tạo, sửa: src/features/explorer/ — index.tsx, ArtifactCard.tsx, FactCard.tsx, ChatPanel.tsx,
+  MemoryJournal.tsx, Guidance.tsx, session.ts, storyText.ts, explorer.css;
+  prompts/personas/ — opportunity.md, surveyor-3.md, viking-1.md, card-intros.md, catalog-story.json.
+Cách chạy: npm run dev; Mars → Opportunity để thử chat mock; Pioneer 10 để thử thẻ không chat.
+Đã kiểm tra: tsc sạch trong thư mục explorer; npm run build pass (Lead chạy sau khi world3d sửa layout.ts).
+Chưa kiểm tra: CHƯA ai bấm thử UI trên trình duyệt (bố cục 440px / bottom sheet, bàn phím, focus);
+  nhánh unavailable / lỗi mạng / Retry (mock không tạo ra); ảnh và bưu thiếp; catalog 17 hiện vật.
+Phụ thuộc còn thiếu: facts.json để điền "Emotional moments" (TODO) và memoryCutoff của surveyor-3, viking-1;
+  research duyệt "Claims to check" trong card-intros.md; hai câu lời chào cuối cần fact chống lưng hoặc cắt
+  (Surveyor 3 "built to help others make the trip after me", Opportunity "Other machines carry on the work").
+Bước tiếp theo: Lead gộp catalog-story.json vào catalog thật; grounded-chat lấy câu từ chối từ persona.
+```
+
+```
+Task / Owner: Mốc ghép 1 (MOCK) / Lead (2026-11-14)
+File đã tạo, sửa: src/features/explorer/Guidance.tsx (danh sách thu gọn mặc định), src/shared/chat-adapter.ts
+  (adapter gọi /api/chat, CHƯA nối vào App), TASKS.md, docs/DECISIONS.md.
+Đã kiểm tra: npm run build pass; geo.check qua.
+Chưa kiểm tra: Lead chưa tự mở trình duyệt; toàn bộ vẫn là dữ liệu MOCK, chat MOCK.
+Bước tiếp theo: chờ nasa-research, rồi Đợt 2 (catalog thật + /api/chat).
 ```
