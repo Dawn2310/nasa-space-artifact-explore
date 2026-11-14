@@ -156,32 +156,36 @@ export const mockCatalog: Catalog = {
 const MOCK_DELAY_MS = 600;
 
 /**
- * Chat adapter giả: không gọi mạng. Trả một fact của đúng hiện vật có từ khóa
- * trùng câu hỏi (status "grounded"), ngược lại trả "insufficient-evidence".
- * Luôn đặt mocked=true để UI hiện nhãn.
+ * Chat adapter giả, chạy trong trình duyệt, không gọi mạng. Trả một fact của đúng hiện vật có từ
+ * khóa trùng câu hỏi (status "grounded"), ngược lại trả "insufficient-evidence".
+ * Luôn đặt mocked=true để UI hiện nhãn. Không lọc memoryCutoff, không kiểm chứng: chỉ để thử UI.
  */
-export const mockChatAdapter: ChatAdapter = async (request: ChatRequest): Promise<ChatResponse> => {
-  await new Promise((resolve) => setTimeout(resolve, MOCK_DELAY_MS));
+export function createMockChatAdapter(source: Fact[]): ChatAdapter {
+  return async (request: ChatRequest): Promise<ChatResponse> => {
+    await new Promise((resolve) => setTimeout(resolve, MOCK_DELAY_MS));
 
-  const words = request.message
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter((w) => w.length > 3);
-  const own = facts.filter((f) => f.artifactId === request.artifactId);
-  const hit = own.find((f) => words.some((w) => f.text.toLowerCase().includes(w)));
+    const words = request.message
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length > 3);
+    const own = source.filter((f) => f.artifactId === request.artifactId);
+    const hit = own.find((f) => words.some((w) => f.text.toLowerCase().includes(w)));
 
-  if (!hit) {
+    if (!hit) {
+      return {
+        answer: '[MOCK] I do not have a memory about that yet. Try asking me about my mission.',
+        evidence: [],
+        status: 'insufficient-evidence',
+        mocked: true,
+      };
+    }
     return {
-      answer: '[MOCK] I do not have a memory about that yet. Try asking me about my mission.',
-      evidence: [],
-      status: 'insufficient-evidence',
+      answer: hit.text,
+      evidence: [{ factId: hit.id, sourceIds: hit.sourceIds }],
+      status: 'grounded',
       mocked: true,
     };
-  }
-  return {
-    answer: hit.text,
-    evidence: [{ factId: hit.id, sourceIds: hit.sourceIds }],
-    status: 'grounded',
-    mocked: true,
   };
-};
+}
+
+export const mockChatAdapter: ChatAdapter = createMockChatAdapter(facts);

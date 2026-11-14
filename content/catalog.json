@@ -1,0 +1,688 @@
+{
+  "_note": "Completed by nasa-research from catalog.seed.json. intro and suggestedQuestions are left empty for ui-story. All facts are reviewStatus pending until a person approves them.",
+  "artifacts": [
+    {
+      "id": "surveyor-3",
+      "name": "Surveyor 3",
+      "body": "moon",
+      "mode": "chat",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": -3.0162,
+          "longitudeDeg": 336.582,
+          "convention": "source gives 3.0162 S, 336.582 E (east-positive, 0-360), \"as determined from Lunar Reconnaissance Orbiter images\"; reference frame not named on the page",
+          "sourceIds": [
+            "sv3-nssdc-profile"
+          ],
+          "label": "Oceanus Procellarum (landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1967",
+      "memoryCutoff": "1967-05-04",
+      "factIds": [
+        "sv3-001",
+        "sv3-002",
+        "sv3-003",
+        "sv3-004",
+        "sv3-005",
+        "sv3-006",
+        "sv3-007",
+        "sv3-008",
+        "sv3-009",
+        "sv3-010",
+        "sv3-011",
+        "sv3-012",
+        "sv3-013",
+        "sv3-014",
+        "sv3-015",
+        "sv3-016",
+        "sv3-017",
+        "sv3-018",
+        "sv3-019",
+        "sv3-020",
+        "sv3-021",
+        "sv3-022",
+        "sv3-023",
+        "sv3-024",
+        "sv3-025",
+        "sv3-026",
+        "sv3-027",
+        "sv3-028",
+        "sv3-029",
+        "sv3-030",
+        "sv3-031",
+        "sv3-032",
+        "sv3-033",
+        "sv3-034",
+        "sv3-035",
+        "sv3-036",
+        "sv3-037",
+        "sv3-038",
+        "sv3-039",
+        "sv3-040",
+        "sv3-041",
+        "sv3-042",
+        "sv3-043",
+        "sv3-044",
+        "sv3-045"
+      ],
+      "imageAssetId": "img-surveyor-3-1",
+      "modelAssetId": null
+    },
+    {
+      "id": "apollo-11-eagle-descent-stage",
+      "name": "Apollo 11 Eagle descent stage",
+      "body": "moon",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 0.67416,
+          "longitudeDeg": 23.47314,
+          "convention": "planetocentric Mean Earth/Polar Axis Lunar Reference System (DE421), degrees N latitude, degrees E longitude; determined from Lunar Reconnaissance Orbiter images",
+          "sourceIds": [
+            "a11-nssdc-sites",
+            "a11-nssdc-profile"
+          ],
+          "label": "Tranquility Base, Mare Tranquillitatis: Apollo 11 Lunar Module (Eagle descent stage)"
+        },
+        {
+          "kind": "deployment",
+          "latitudeDeg": 0.67345,
+          "longitudeDeg": 23.47307,
+          "convention": "planetocentric Mean Earth/Polar Axis Lunar Reference System (DE421), degrees N latitude, degrees E longitude; determined from Lunar Reconnaissance Orbiter images",
+          "sourceIds": [
+            "a11-nssdc-sites"
+          ],
+          "label": "Apollo 11 LRRR laser reflector (a separate object near Eagle, not the descent stage)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1969–",
+      "memoryCutoff": null,
+      "factIds": [
+        "a11-001",
+        "a11-002",
+        "a11-003",
+        "a11-004",
+        "a11-005",
+        "a11-006",
+        "a11-007",
+        "a11-008"
+      ],
+      "imageAssetId": "img-apollo-11-eagle-descent-stage-1",
+      "modelAssetId": "model-apollo-lm"
+    },
+    {
+      "id": "apollo-15-lrv",
+      "name": "Apollo 15 Lunar Roving Vehicle",
+      "body": "moon",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 26.13239,
+          "longitudeDeg": 3.6333,
+          "convention": "planetocentric Mean Earth/Polar Axis Lunar Reference System (DE421), degrees N latitude, degrees E longitude; determined from Lunar Reconnaissance Orbiter images",
+          "sourceIds": [
+            "lrv-nssdc-sites",
+            "lrv-nssdc-profile"
+          ],
+          "label": "Hadley-Apennine: Apollo 15 Lunar Module landing site (the exact parking spot of the rover was not found in the sources)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1971–",
+      "memoryCutoff": null,
+      "factIds": [
+        "lrv-001",
+        "lrv-002",
+        "lrv-003",
+        "lrv-004",
+        "lrv-005",
+        "lrv-006",
+        "lrv-007",
+        "lrv-008"
+      ],
+      "imageAssetId": "img-apollo-15-lrv-1",
+      "modelAssetId": null
+    },
+    {
+      "id": "apollo-12-alsep",
+      "name": "Apollo 12 ALSEP",
+      "body": "moon",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "deployment",
+          "latitudeDeg": -3.0098,
+          "longitudeDeg": -23.4249,
+          "convention": "planetocentric Mean Earth/Polar Axis Lunar Reference System (DE421), degrees N latitude, degrees E longitude (negative = south / west); determined from Lunar Reconnaissance Orbiter images",
+          "sourceIds": [
+            "als-nssdc-sites"
+          ],
+          "label": "Oceanus Procellarum: Apollo 12 ALSEP deployment site"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1969–1977",
+      "memoryCutoff": "1977-09-30",
+      "factIds": [
+        "als-001",
+        "als-002",
+        "als-003",
+        "als-004",
+        "als-005",
+        "als-006",
+        "als-007",
+        "als-008"
+      ],
+      "imageAssetId": "img-apollo-12-alsep-1",
+      "modelAssetId": null
+    },
+    {
+      "id": "sojourner",
+      "name": "Sojourner (Mars Pathfinder)",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 19.33,
+          "longitudeDeg": -33.55,
+          "convention": "source gives 19.33 N, 33.55 W (west longitude; stored here as negative east longitude). The page does not say whether the latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "soj-nssdc-rover"
+          ],
+          "label": "Ares Vallis: Mars Pathfinder landing site (Sagan Memorial Station); Sojourner stayed close to the lander"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1997",
+      "memoryCutoff": "1997-09-27",
+      "factIds": [
+        "soj-001",
+        "soj-002",
+        "soj-003",
+        "soj-004",
+        "soj-005",
+        "soj-006",
+        "soj-007",
+        "soj-008"
+      ],
+      "imageAssetId": "img-sojourner-1",
+      "modelAssetId": null
+    },
+    {
+      "id": "spirit",
+      "name": "Spirit (MER-A)",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": -14.572,
+          "longitudeDeg": 175.478,
+          "convention": "source gives 14.572 S, 175.478 E (east-positive). The Spirit page does not name the reference system (the sister NSSDCA Opportunity page uses IAU 2000 body-centered coordinates).",
+          "sourceIds": [
+            "spi-nssdc-profile"
+          ],
+          "label": "Gusev Crater: Columbia Memorial Station (landing site, not the final resting place near Home Plate)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "2004–2010 (mission declared complete 2011)",
+      "memoryCutoff": "2010-03-22",
+      "factIds": [
+        "spi-001",
+        "spi-002",
+        "spi-003",
+        "spi-004",
+        "spi-005",
+        "spi-006",
+        "spi-007",
+        "spi-008"
+      ],
+      "imageAssetId": "img-spirit-1",
+      "modelAssetId": "model-mer-opportunity"
+    },
+    {
+      "id": "opportunity",
+      "name": "Opportunity (MER-B)",
+      "body": "mars",
+      "mode": "chat",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": -1.946,
+          "longitudeDeg": 354.473,
+          "convention": "IAU 2000 body-centered coordinates; source gives 1.946° S, 354.473° E (east-positive, 0-360)",
+          "sourceIds": [
+            "opp-nssdc-profile"
+          ],
+          "label": "Eagle crater, Meridiani Planum (landing site, not the final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "2004–2018 (mission declared complete 2019)",
+      "memoryCutoff": "2018-06-10",
+      "factIds": [
+        "opp-001",
+        "opp-002",
+        "opp-003",
+        "opp-004",
+        "opp-005",
+        "opp-006",
+        "opp-007",
+        "opp-008",
+        "opp-009",
+        "opp-010",
+        "opp-011",
+        "opp-012",
+        "opp-013",
+        "opp-014",
+        "opp-015",
+        "opp-016",
+        "opp-017",
+        "opp-018",
+        "opp-019",
+        "opp-020",
+        "opp-021",
+        "opp-022",
+        "opp-023",
+        "opp-024",
+        "opp-025",
+        "opp-026",
+        "opp-027",
+        "opp-028",
+        "opp-029",
+        "opp-030",
+        "opp-031",
+        "opp-032",
+        "opp-033",
+        "opp-034",
+        "opp-035",
+        "opp-036",
+        "opp-037",
+        "opp-038",
+        "opp-039",
+        "opp-040",
+        "opp-041",
+        "opp-042",
+        "opp-043",
+        "opp-044",
+        "opp-045",
+        "opp-046",
+        "opp-047",
+        "opp-048",
+        "opp-049",
+        "opp-050"
+      ],
+      "imageAssetId": "img-opportunity-1",
+      "modelAssetId": "model-mer-opportunity"
+    },
+    {
+      "id": "viking-1",
+      "name": "Viking 1 lander",
+      "body": "mars",
+      "mode": "chat",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 22.27,
+          "longitudeDeg": 312.05,
+          "convention": "planetocentric; source gives 22.27 deg N latitude, 312.05 deg E longitude (east-positive, 0-360)",
+          "sourceIds": [
+            "vk1-nssdc-profile",
+            "vk1-sci-project"
+          ],
+          "label": "Chryse Planitia (landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1976–1982",
+      "memoryCutoff": "1982-11-11",
+      "factIds": [
+        "vk1-001",
+        "vk1-002",
+        "vk1-003",
+        "vk1-004",
+        "vk1-005",
+        "vk1-006",
+        "vk1-007",
+        "vk1-008",
+        "vk1-009",
+        "vk1-010",
+        "vk1-011",
+        "vk1-012",
+        "vk1-013",
+        "vk1-014",
+        "vk1-015",
+        "vk1-016",
+        "vk1-017",
+        "vk1-018",
+        "vk1-019",
+        "vk1-020",
+        "vk1-021",
+        "vk1-022",
+        "vk1-023",
+        "vk1-024",
+        "vk1-025",
+        "vk1-026",
+        "vk1-027",
+        "vk1-028",
+        "vk1-029",
+        "vk1-030",
+        "vk1-031",
+        "vk1-032",
+        "vk1-033",
+        "vk1-034",
+        "vk1-035",
+        "vk1-036",
+        "vk1-037",
+        "vk1-038",
+        "vk1-039",
+        "vk1-040",
+        "vk1-041",
+        "vk1-042",
+        "vk1-043",
+        "vk1-044",
+        "vk1-045",
+        "vk1-046",
+        "vk1-047",
+        "vk1-048"
+      ],
+      "imageAssetId": "img-viking-1-1",
+      "modelAssetId": "model-viking-lander"
+    },
+    {
+      "id": "viking-2",
+      "name": "Viking 2 lander",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 47.64,
+          "longitudeDeg": 134.29,
+          "convention": "planetocentric; source gives 47.64° N, 134.29° E (east-positive)",
+          "sourceIds": [
+            "vk2-sci-project"
+          ],
+          "label": "Utopia Planitia (landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "1976–1980",
+      "memoryCutoff": "1980-04-11",
+      "factIds": [
+        "vk2-001",
+        "vk2-002",
+        "vk2-003",
+        "vk2-004",
+        "vk2-005",
+        "vk2-006",
+        "vk2-007",
+        "vk2-008"
+      ],
+      "imageAssetId": "img-viking-2-1",
+      "modelAssetId": "model-viking-lander"
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix lander",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 68.22,
+          "longitudeDeg": 234.25,
+          "convention": "source gives 68.22 degrees north latitude, 234.25 degrees east longitude (east-positive, 0-360). The page does not say whether the latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "phx-sci-caption"
+          ],
+          "label": "Vastitas Borealis arctic plain (landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "2008",
+      "memoryCutoff": "2008-11-02",
+      "factIds": [
+        "phx-001",
+        "phx-002",
+        "phx-003",
+        "phx-004",
+        "phx-005",
+        "phx-006",
+        "phx-007",
+        "phx-008"
+      ],
+      "imageAssetId": "img-phoenix-1",
+      "modelAssetId": null
+    },
+    {
+      "id": "insight",
+      "name": "InSight lander",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 4.5,
+          "longitudeDeg": 135.9,
+          "convention": "source gives \"about 4.5 degrees north latitude and 135.9 degrees east longitude\" (east-positive, approximate). The page does not say whether the latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "ins-sci"
+          ],
+          "label": "Western Elysium Planitia (approximate landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "2018–2022",
+      "memoryCutoff": "2022-12-15",
+      "factIds": [
+        "ins-001",
+        "ins-002",
+        "ins-003",
+        "ins-004",
+        "ins-005",
+        "ins-006",
+        "ins-007",
+        "ins-008"
+      ],
+      "imageAssetId": "img-insight-1",
+      "modelAssetId": "model-insight"
+    },
+    {
+      "id": "ingenuity",
+      "name": "Ingenuity helicopter",
+      "body": "mars",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "deployment",
+          "latitudeDeg": 18.44486301,
+          "longitudeDeg": 77.45101915,
+          "convention": "Lat / Lon fields of the NASA M20 helicopter waypoints GeoJSON (east-positive longitude). The file does not state whether latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "ing-waypoints"
+          ],
+          "label": "Wright Brothers Field, Jezero Crater: where Ingenuity was deployed and first flew (Flight 0 waypoint, Sol 43)"
+        },
+        {
+          "kind": "final-resting",
+          "latitudeDeg": 18.49726866,
+          "longitudeDeg": 77.32253449,
+          "convention": "Lat / Lon fields of the NASA M20 helicopter waypoints GeoJSON (east-positive longitude). The file does not state whether latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "ing-waypoints",
+            "ing-pia26237"
+          ],
+          "label": "Valinor Hills (Airfield Chi): final resting place after Flight 72"
+        }
+      ],
+      "markerLocationIndex": 1,
+      "displayYears": "2021–2024",
+      "memoryCutoff": "2024-01-25",
+      "factIds": [
+        "ing-001",
+        "ing-002",
+        "ing-003",
+        "ing-004",
+        "ing-005",
+        "ing-006",
+        "ing-007",
+        "ing-008"
+      ],
+      "imageAssetId": "img-ingenuity-2",
+      "modelAssetId": "model-ingenuity"
+    },
+    {
+      "id": "dawn",
+      "name": "Dawn (orbiting Ceres)",
+      "body": "deep-space",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [],
+      "markerLocationIndex": null,
+      "displayYears": "2007–2018",
+      "memoryCutoff": "2018-10-31",
+      "factIds": [
+        "dwn-001",
+        "dwn-002",
+        "dwn-003",
+        "dwn-004",
+        "dwn-005",
+        "dwn-006",
+        "dwn-007",
+        "dwn-008"
+      ],
+      "imageAssetId": "img-dawn-1",
+      "modelAssetId": "model-dawn"
+    },
+    {
+      "id": "near-shoemaker",
+      "name": "NEAR Shoemaker (on Eros)",
+      "body": "deep-space",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [],
+      "markerLocationIndex": null,
+      "displayYears": "1996–2001",
+      "memoryCutoff": "2001-02-28",
+      "factIds": [
+        "nea-001",
+        "nea-002",
+        "nea-003",
+        "nea-004",
+        "nea-005",
+        "nea-006",
+        "nea-007",
+        "nea-008"
+      ],
+      "imageAssetId": "img-near-shoemaker-1",
+      "modelAssetId": "model-near"
+    },
+    {
+      "id": "pioneer-10",
+      "name": "Pioneer 10",
+      "body": "deep-space",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [],
+      "markerLocationIndex": null,
+      "displayYears": "1972–2003",
+      "memoryCutoff": "2003-01-23",
+      "factIds": [
+        "p10-001",
+        "p10-002",
+        "p10-003",
+        "p10-004",
+        "p10-005",
+        "p10-006",
+        "p10-007",
+        "p10-008"
+      ],
+      "imageAssetId": "img-pioneer-10-1",
+      "modelAssetId": "model-pioneer-10"
+    },
+    {
+      "id": "pioneer-11",
+      "name": "Pioneer 11",
+      "body": "deep-space",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [],
+      "markerLocationIndex": null,
+      "displayYears": "1973–1995",
+      "memoryCutoff": "1995-11-24",
+      "factIds": [
+        "p11-001",
+        "p11-002",
+        "p11-003",
+        "p11-004",
+        "p11-005",
+        "p11-006",
+        "p11-007",
+        "p11-008"
+      ],
+      "imageAssetId": "img-pioneer-11-1",
+      "modelAssetId": "model-pioneer-10"
+    },
+    {
+      "id": "kepler",
+      "name": "Kepler space telescope",
+      "body": "deep-space",
+      "mode": "card",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [],
+      "markerLocationIndex": null,
+      "displayYears": "2009–2018",
+      "memoryCutoff": "2018-10-30",
+      "factIds": [
+        "kep-001",
+        "kep-002",
+        "kep-003",
+        "kep-004",
+        "kep-005",
+        "kep-006",
+        "kep-007",
+        "kep-008"
+      ],
+      "imageAssetId": "img-kepler-1",
+      "modelAssetId": "model-kepler"
+    }
+  ]
+}

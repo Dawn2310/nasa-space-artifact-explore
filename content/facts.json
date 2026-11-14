@@ -1,0 +1,3674 @@
+[
+  {
+    "id": "opp-001",
+    "artifactId": "opportunity",
+    "text": "Opportunity is also called Mars Exploration Rover B, or MER-B.",
+    "sourceIds": [
+      "opp-nssdc-desc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-002",
+    "artifactId": "opportunity",
+    "text": "Opportunity was one of two twin rovers that NASA launched to Mars in mid-2003. Its twin was named Spirit.",
+    "sourceIds": [
+      "opp-nssdc-desc",
+      "opp-sci-what"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-003",
+    "artifactId": "opportunity",
+    "text": "Opportunity was launched on 8 July 2003 at 03:18:15 UT, which was July 7 at 11:18:15 p.m. EDT in Florida.",
+    "sourceIds": [
+      "opp-nssdc-profile"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2003-07-08",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-004",
+    "artifactId": "opportunity",
+    "text": "Opportunity launched from Cape Canaveral, Florida, on a Delta II 7925H rocket.",
+    "sourceIds": [
+      "opp-nssdc-profile",
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2003-07-08",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-005",
+    "artifactId": "opportunity",
+    "text": "Opportunity traveled for six months to reach Mars.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-006",
+    "artifactId": "opportunity",
+    "text": "Opportunity landed on Mars at 04:54 UT on 25 January 2004. In California time (PST) that was 21:05 on Jan. 24, 2004, which is why NASA often lists the landing date as Jan. 24, 2004.",
+    "sourceIds": [
+      "opp-nssdc-profile",
+      "opp-sci-depth",
+      "opp-sci-dates"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-007",
+    "artifactId": "opportunity",
+    "text": "Opportunity landed just 20 days after its twin rover Spirit, on the other side of Mars.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-008",
+    "artifactId": "opportunity",
+    "text": "A parachute, retrorockets and airbags slowed and cushioned Opportunity's landing. The craft hit the ground at roughly 50 km/hr and bounced and rolled along the surface.",
+    "sourceIds": [
+      "opp-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-009",
+    "artifactId": "opportunity",
+    "text": "Enclosed in its airbags, Opportunity's lander bounced at least 26 times before coming to rest.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-010",
+    "artifactId": "opportunity",
+    "text": "Opportunity came to rest inside a small crater about 20 m in diameter, known as Eagle crater.",
+    "sourceIds": [
+      "opp-nssdc-profile",
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-011",
+    "artifactId": "opportunity",
+    "text": "NSSDCA gives Opportunity's landing position as 1.946° S and 354.473° E, in IAU 2000 body-centered coordinates.",
+    "sourceIds": [
+      "opp-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-012",
+    "artifactId": "opportunity",
+    "text": "Opportunity landed in a region of Mars called Meridiani Planum (NSSDCA also uses the name Terra Meridiani).",
+    "sourceIds": [
+      "opp-sci-depth",
+      "opp-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-013",
+    "artifactId": "opportunity",
+    "text": "Opportunity's landing area became known as the Challenger Memorial Station, in tribute to the Space Shuttle crew lost in 1986.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-014",
+    "artifactId": "opportunity",
+    "text": "Opportunity was about the size of a golf cart.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-015",
+    "artifactId": "opportunity",
+    "text": "The Opportunity rover had a mass of 185 kg (408 pounds), about seven times heavier than the earlier Sojourner rover.",
+    "sourceIds": [
+      "opp-nssdc-desc",
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-016",
+    "artifactId": "opportunity",
+    "text": "Opportunity had six wheels on a rocker-bogie suspension system, and each wheel had its own motor.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-017",
+    "artifactId": "opportunity",
+    "text": "Opportunity's top speed was about 3.75 cm per second.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-018",
+    "artifactId": "opportunity",
+    "text": "Opportunity got its power from solar arrays that could generate up to 140 W under full Sun conditions. The energy was stored in two rechargeable batteries.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-019",
+    "artifactId": "opportunity",
+    "text": "Opportunity's panoramic camera (Pancam) and navigation cameras sat on top of a mast about 1.4 meters above the base of the wheels.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-020",
+    "artifactId": "opportunity",
+    "text": "Opportunity had a long hinged arm with four tools on the end: the Alpha Particle X-Ray Spectrometer (APXS), the Mossbauer Spectrometer (MB), the Microscopic Imager (MI) and the Rock Abrasion Tool (RAT).",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-021",
+    "artifactId": "opportunity",
+    "text": "Opportunity's group of science instruments (Pancam, Mini-TES, APXS, MB, MI and RAT) is known as the Athena science package.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-022",
+    "artifactId": "opportunity",
+    "text": "Opportunity's computer and batteries were kept at a safe temperature inside a warm electronics box, using gold paint, aerogel insulation, heaters, thermostats and radiators.",
+    "sourceIds": [
+      "opp-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-023",
+    "artifactId": "opportunity",
+    "text": "A cable shield on Opportunity's Rock Abrasion Tool was made from aluminum recovered from the World Trade Center towers, as a memorial to the victims of the attacks of Sept. 11, 2001.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "instruments",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-024",
+    "artifactId": "opportunity",
+    "text": "Opportunity was designed to last just 90 Martian days and to travel 1,100 yards (1,000 meters).",
+    "sourceIds": [
+      "opp-sci-depth",
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-025",
+    "artifactId": "opportunity",
+    "text": "The main science goal of Opportunity and Spirit was to search for rocks and soils that hold clues to past water activity on Mars.",
+    "sourceIds": [
+      "opp-sci-depth",
+      "opp-nssdc-desc"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-026",
+    "artifactId": "opportunity",
+    "text": "On March 22, 2004, Opportunity climbed out of Eagle crater and headed for Endurance Crater, about 820 yards (750 meters) away.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2004-03-22",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-027",
+    "artifactId": "opportunity",
+    "text": "In January 2005 Opportunity discovered a basketball-sized rock near its discarded heat shield. Named \"Heat Shield Rock\", it turned out to be an iron-nickel meteorite.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2005-01-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-028",
+    "artifactId": "opportunity",
+    "text": "Opportunity set a one-day Mars driving record on March 20, 2005, when it traveled 721 feet (220 meters).",
+    "sourceIds": [
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2005-03-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-029",
+    "artifactId": "opportunity",
+    "text": "In 2005 Opportunity got stuck with several of its wheels buried in sand. Controllers moved it a few inches at a time and freed it in June 2005 after six weeks.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "2005-06-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-030",
+    "artifactId": "opportunity",
+    "text": "After a 21-month trip, Opportunity arrived at Victoria crater in September 2006. Victoria crater is a half-mile (800 meters) in diameter.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2006-09-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-031",
+    "artifactId": "opportunity",
+    "text": "In 2007 severe dust storms hit Mars. By July 18, 2007, Opportunity's solar panels were reporting power at only 128 watt hours, and all its science activities were suspended.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "2007-07-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-032",
+    "artifactId": "opportunity",
+    "text": "On May 20, 2010, Opportunity broke the record set by the Viking 1 Lander for the longest continuous operation on the surface of Mars: 6 years and 116 days.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2010-05-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-033",
+    "artifactId": "opportunity",
+    "text": "Opportunity arrived at Endeavour crater on Aug. 9, 2011, after a journey of nearly three years and about 13 miles (21 kilometers). Endeavour crater is about 13 miles (22 kilometers) in diameter.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2011-08-09",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-034",
+    "artifactId": "opportunity",
+    "text": "On May 16, 2013, NASA announced that Opportunity had passed the record for the farthest distance traveled by any NASA vehicle on another world: 22.21 miles (35.744 kilometers), set by the Apollo 17 Lunar Roving Vehicle in December 1972.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2013-05-16",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-035",
+    "artifactId": "opportunity",
+    "text": "On July 28, 2014, NASA announced that Opportunity's odometer showed 25.01 miles (40.25 kilometers), passing the distance record of the Soviet Lunokhod 2 lunar rover.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2014-07-28",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-036",
+    "artifactId": "opportunity",
+    "text": "On March 25, 2015, NASA announced that Opportunity had traveled 26.219 miles (42.195 kilometers), becoming \"the first human enterprise to exceed marathon distance of travel on another world.\"",
+    "sourceIds": [
+      "opp-sci-depth",
+      "opp-sci-dates"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2015-03-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-037",
+    "artifactId": "opportunity",
+    "text": "On March 10, 2016, Opportunity drove at a tilt of 32 degrees, the record for the steepest slope driven by any rover on Mars.",
+    "sourceIds": [
+      "opp-sci-depth",
+      "opp-sci-dates"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2016-03-10",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-038",
+    "artifactId": "opportunity",
+    "text": "Opportunity reached a gully named Perseverance Valley by the first week of May 2017, and in mid-July 2017 it began driving down into the gully.",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2017-07-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-039",
+    "artifactId": "opportunity",
+    "text": "Opportunity found hematite, a mineral that forms in water, at its landing site.",
+    "sourceIds": [
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-040",
+    "artifactId": "opportunity",
+    "text": "At Endeavour Crater, Opportunity discovered strong indications of the action of ancient water similar to the drinkable water of a pond or lake on Earth.",
+    "sourceIds": [
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-041",
+    "artifactId": "opportunity",
+    "text": "Opportunity returned more than 217,000 images, including 15 360-degree color panoramas.",
+    "sourceIds": [
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-042",
+    "artifactId": "opportunity",
+    "text": "Opportunity found evidence that Mars may once have been able to sustain microbial life.",
+    "sourceIds": [
+      "opp-sci-what"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-043",
+    "artifactId": "opportunity",
+    "text": "Opportunity stopped communicating with Earth after a severe Mars-wide dust storm blanketed its location in June 2018. The dust storm reduced the energy available to its solar panels.",
+    "sourceIds": [
+      "opp-sci-what",
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "end",
+      "incident"
+    ],
+    "date": "2018-06-10",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-044",
+    "artifactId": "opportunity",
+    "text": "The last communication from Opportunity was received on June 10, 2018.",
+    "sourceIds": [
+      "opp-sci-dates",
+      "opp-nssdc-profile",
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2018-06-10",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-045",
+    "artifactId": "opportunity",
+    "text": "After Opportunity went silent, engineers sent more than a thousand commands to try to restore contact, without success.",
+    "sourceIds": [
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-046",
+    "artifactId": "opportunity",
+    "text": "NASA declared Opportunity's mission complete on Feb. 13, 2019. This is a different date from its last communication, which was on June 10, 2018.",
+    "sourceIds": [
+      "opp-sci-dates",
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-047",
+    "artifactId": "opportunity",
+    "text": "Opportunity's final resting spot on Mars is Perseverance Valley.",
+    "sourceIds": [
+      "opp-sci-what",
+      "opp-nasa-end"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-048",
+    "artifactId": "opportunity",
+    "text": "Opportunity's total driving distance on Mars was 28.06 miles (45.16 kilometers).",
+    "sourceIds": [
+      "opp-sci-depth"
+    ],
+    "tags": [
+      "end",
+      "legacy"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-049",
+    "artifactId": "opportunity",
+    "text": "Opportunity exceeded its planned life expectancy by 60 times and operated for almost 15 years.",
+    "sourceIds": [
+      "opp-sci-what"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2019-02-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "opp-050",
+    "artifactId": "opportunity",
+    "text": "Opportunity's off-world driving distance record stood until NASA's Perseverance Mars rover surpassed it on Oct. 11, 2026.",
+    "sourceIds": [
+      "opp-sci-what"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2026-10-11",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-001",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 was the second spacecraft of NASA's Surveyor series to achieve a soft landing on the Moon.",
+    "sourceIds": [
+      "sv3-nssdc-desc",
+      "sv3-sci-what"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-002",
+    "artifactId": "surveyor-3",
+    "text": "The Surveyor program was a series of seven robotic lunar soft-landing flights. Its main job was to support the coming crewed Apollo landings.",
+    "sourceIds": [
+      "sv3-nssdc-desc"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-003",
+    "artifactId": "surveyor-3",
+    "text": "One goal of the Surveyor program was to develop and validate the technology for landing softly on the Moon.",
+    "sourceIds": [
+      "sv3-nssdc-desc"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-004",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's mission goals included getting television pictures of the lunar surface and using a surface sampler to dig into the surface while the television camera watched.",
+    "sourceIds": [
+      "sv3-nssdc-desc"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-005",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 was launched at 07:05:01 UT on 17 April 1967 on an Atlas-Centaur rocket.",
+    "sourceIds": [
+      "sv3-nssdc-profile",
+      "sv3-sci-what"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1967-04-17",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-006",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 launched from Launch Complex 36B at Cape Canaveral, Florida.",
+    "sourceIds": [
+      "sv3-sci-what",
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1967-04-17",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-007",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 had a mass of 1026 kg at launch and 296 kg at landing.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-008",
+    "artifactId": "surveyor-3",
+    "text": "After launch, the Centaur upper stage first put Surveyor 3 into a 167 km circular parking orbit around Earth, then restarted to send it toward the Moon.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1967-04-17",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-009",
+    "artifactId": "surveyor-3",
+    "text": "A midcourse maneuver 21.9 hours after liftoff aimed Surveyor 3 towards its selected landing point.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1967-04-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-010",
+    "artifactId": "surveyor-3",
+    "text": "On 20 April 1967 at 00:01:06 UT, at 76 km altitude and traveling at 2626 m/s, Surveyor 3 ignited its engines to slow down for landing.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-011",
+    "artifactId": "surveyor-3",
+    "text": "A few seconds before touchdown, Surveyor 3's radars lost lock, apparently because of highly reflective spots at the landing site.",
+    "sourceIds": [
+      "sv3-nssdc-profile",
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "landing",
+      "incident"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-012",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 touched down on the Moon three times, because its vernier engines kept firing during the first two touchdowns and lifted it off the surface again.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing",
+      "incident"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-013",
+    "artifactId": "surveyor-3",
+    "text": "During landing, Surveyor 3 bounced off the lunar surface twice: the first time to a height of 33 feet (10 meters) and the second time to 10 feet (3 meters).",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "landing",
+      "incident"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-014",
+    "artifactId": "surveyor-3",
+    "text": "The distance between Surveyor 3's first and second touchdown sites was about 20 meters, and between the second and third it was 11 meters.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-015",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's engines were shut off 34 seconds after the first touchdown by a command sent from Earth.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing",
+      "incident"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-016",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's first touchdown was at 00:04:17 UT and its final touchdown was at 00:04:53 UT on 20 April 1967.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-017",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 landed at 3.0162 S, 336.582 E on the Moon, as determined from Lunar Reconnaissance Orbiter images.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-018",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 came to rest on a 14 degree slope inside a 200 meter crater in southeast Oceanus Procellarum.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-019",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's landing site is roughly 370 km south of Copernicus crater.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-020",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 slid about 30 cm after its final touchdown.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-021",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 was built on a tripod of thin-walled aluminum tubing with three hinged landing legs that ended in footpads.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-022",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 was about 3 meters tall.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-023",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 had 792 solar cells on top of its mast that generated up to 85 W of power, stored in rechargeable silver-zinc batteries.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-024",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 carried two science instruments: a TV camera and a surface sampler.",
+    "sourceIds": [
+      "sv3-sci-what"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-025",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's surface sampler was a scoop 12 cm long and 5 cm wide, mounted on a 1.5 meter arm.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-026",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 was the first Surveyor to carry a surface-sampling instrument. It could reach up to 5 feet (1.5 meters) from the lander and dig up to 7 inches (18 centimeters) deep.",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-027",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 had two flat mirrors attached to its frame so the camera could see the ground beneath the engines and one of the footpads.",
+    "sourceIds": [
+      "sv3-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-028",
+    "artifactId": "surveyor-3",
+    "text": "It took Surveyor 3 about 20 seconds to transmit a single 200-line picture of the lunar surface.",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-029",
+    "artifactId": "surveyor-3",
+    "text": "Less than an hour after landing, Surveyor 3 began sending TV pictures of the area around it.",
+    "sourceIds": [
+      "sv3-sci-depth",
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-04-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-030",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's television camera returned 6326 pictures.",
+    "sourceIds": [
+      "sv3-nssdc-profile",
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-031",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's surface sampler was first used two days after landing.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-04-22",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-032",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's surface sampler was operated for a total of 18 hours, 22 minutes, digging trenches as deep as 18 cm.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-033",
+    "artifactId": "surveyor-3",
+    "text": "Following commands from Earth, Surveyor 3 dug four trenches and performed four bearing tests and thirteen impact tests.",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-034",
+    "artifactId": "surveyor-3",
+    "text": "From Surveyor 3's experiments, scientists concluded that lunar soil had a consistency similar to wet sand.",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-035",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3's tests showed the lunar surface was solid enough to hold the weight of an Apollo lunar module.",
+    "sourceIds": [
+      "sv3-sci-what",
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-036",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 recorded images of an eclipse of the Sun by the Earth.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-037",
+    "artifactId": "surveyor-3",
+    "text": "Some of Surveyor 3's images had excessive glare. This has been attributed to dust or erosion effects on the camera mirror, caused by the engines running for so long during touchdown.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-038",
+    "artifactId": "surveyor-3",
+    "text": "Surveyor 3 operated through the lunar day until after local sunset on 03 May 1967.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1967-05-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-039",
+    "artifactId": "surveyor-3",
+    "text": "The last data from Surveyor 3 were returned on 04 May 1967 at 00:04 UT. It failed to come back to life after the two week lunar night.",
+    "sourceIds": [
+      "sv3-nssdc-profile",
+      "sv3-sci-dates"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-040",
+    "artifactId": "surveyor-3",
+    "text": "All of Surveyor 3's mission objectives were accomplished.",
+    "sourceIds": [
+      "sv3-nssdc-profile"
+    ],
+    "tags": [
+      "end",
+      "legacy"
+    ],
+    "date": "1967-05-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-041",
+    "artifactId": "surveyor-3",
+    "text": "In November 1969 the Apollo 12 Lunar Module landed within about 180 m of Surveyor 3.",
+    "sourceIds": [
+      "sv3-nssdc-apollo12",
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1969-11-19",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-042",
+    "artifactId": "surveyor-3",
+    "text": "Apollo 12 astronauts Pete Conrad and Alan Bean walked to Surveyor 3 on their second moonwalk, examined it and took photographs.",
+    "sourceIds": [
+      "sv3-nssdc-apollo12"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1969-11-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-043",
+    "artifactId": "surveyor-3",
+    "text": "The Apollo 12 astronauts removed about 10 kg of parts from Surveyor 3, including the TV camera, to be examined back on Earth.",
+    "sourceIds": [
+      "sv3-nssdc-apollo12"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1969-11-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-044",
+    "artifactId": "surveyor-3",
+    "text": "Parts of Surveyor 3 were brought back so scientists could study the effects of nearly two-and-a-half years of exposure on the Moon's surface.",
+    "sourceIds": [
+      "sv3-sci-depth"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1969-11-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sv3-045",
+    "artifactId": "surveyor-3",
+    "text": "The Surveyor 3 camera is now on display in the Smithsonian National Air and Space Museum in Washington, D.C.",
+    "sourceIds": [
+      "sv3-nssdc-apollo12"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1969-11-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-001",
+    "artifactId": "viking-1",
+    "text": "The Viking project sent two spacecraft to Mars, Viking 1 and Viking 2. Each one was made of an orbiter and a lander.",
+    "sourceIds": [
+      "vk1-nssdc-desc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-002",
+    "artifactId": "viking-1",
+    "text": "Viking 1 was launched on 20 August 1975 at 21:22:00 UT.",
+    "sourceIds": [
+      "vk1-nssdc-desc",
+      "vk1-sci-what"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1975-08-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-003",
+    "artifactId": "viking-1",
+    "text": "Viking 1 launched from Launch Complex 41 at Cape Canaveral, Florida, on a Titan IIIE-Centaur rocket.",
+    "sourceIds": [
+      "vk1-sci-what",
+      "vk1-nssdc-desc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1975-08-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-004",
+    "artifactId": "viking-1",
+    "text": "Before launch, the batteries of the first Viking spacecraft were discharged, so NASA replaced it with the second spacecraft, which was then launched as Viking 1.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "launch",
+      "incident"
+    ],
+    "date": "1975-08-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-005",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander was encased in a bioshield at launch to prevent contamination of Mars by organisms from Earth.",
+    "sourceIds": [
+      "vk1-nssdc-desc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-006",
+    "artifactId": "viking-1",
+    "text": "The Viking spacecraft were designed to reach Mars and collect evidence on the possibility of life on Mars.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-007",
+    "artifactId": "viking-1",
+    "text": "Viking 1 cruised for 304 days to reach Mars.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-008",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 spacecraft entered orbit around Mars on 19 June 1976.",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-dates"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1976-06-19",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-009",
+    "artifactId": "viking-1",
+    "text": "Photos from the Viking 1 orbiter showed that the first-choice landing site in the Chryse region was rougher than expected, so scientists picked a different site on the western slopes of Chryse Planitia.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "journey",
+      "landing"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-010",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander separated from its orbiter on 20 July 1976.",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-011",
+    "artifactId": "viking-1",
+    "text": "During its descent, the Viking 1 lander opened a 16 m diameter parachute at 6 km altitude.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-012",
+    "artifactId": "viking-1",
+    "text": "At 1.5 km altitude, the Viking 1 lander ignited its retro-rockets and fired them until landing 40 seconds later at about 2.4 m/s.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-013",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander touched down on Mars at 11:53:06 UT on 20 July 1976.",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-014",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander touched down in western Chryse Planitia at 22.27 deg N latitude and 312.05 deg E longitude (planetocentric).",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-015",
+    "artifactId": "viking-1",
+    "text": "Chryse Planitia, where Viking 1 landed, means \"Golden Plain\".",
+    "sourceIds": [
+      "vk1-sci-results",
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-016",
+    "artifactId": "viking-1",
+    "text": "Viking 1 landed about 17 miles (28 kilometers) from its planned target.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-017",
+    "artifactId": "viking-1",
+    "text": "NASA's Viking 1 made the first truly successful landing on Mars.",
+    "sourceIds": [
+      "vk1-sci-what"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-018",
+    "artifactId": "viking-1",
+    "text": "Viking 1 began sending its first image of the surface of Mars 25 seconds after landing.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "landing",
+      "discovery"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-019",
+    "artifactId": "viking-1",
+    "text": "The first photograph ever taken from the surface of Mars was taken by the Viking 1 lander on July 20, 1976.",
+    "sourceIds": [
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-020",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander had a six-sided aluminum base supported on three legs.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-021",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander was powered by two radioisotope thermal generator (RTG) units containing plutonium 238.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-022",
+    "artifactId": "viking-1",
+    "text": "Each of the Viking 1 lander's two generators provided 30 W of continuous power.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-023",
+    "artifactId": "viking-1",
+    "text": "After separation and landing, the Viking lander had a mass of about 600 kg.",
+    "sourceIds": [
+      "vk1-nssdc-desc"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-024",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander's landing engines had 18 nozzles to spread out the exhaust and limit its effects on the ground.",
+    "sourceIds": [
+      "vk1-nssdc-craft",
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-025",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander's computer had a 6000 word memory for command instructions, and data were stored on a 40 Mbit tape recorder.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-026",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander had two 360-degree cylindrical scan cameras.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-027",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander had a sampler arm with a collector head, a temperature sensor and a magnet on the end.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-028",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander had a meteorology boom holding temperature, wind direction and wind velocity sensors.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-029",
+    "artifactId": "viking-1",
+    "text": "Inside the Viking 1 lander, a compartment held the biology experiment and the gas chromatograph mass spectrometer.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-030",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander's scientific payload had a total mass of approximately 91 kg.",
+    "sourceIds": [
+      "vk1-nssdc-craft"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-031",
+    "artifactId": "viking-1",
+    "text": "After landing, the Viking 1 lander's seismometer failed to uncage, so it could not be used.",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "1976-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-032",
+    "artifactId": "viking-1",
+    "text": "A locking pin on the Viking 1 lander's sampler arm was stuck and took 5 days to shake out.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "1976-07-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-033",
+    "artifactId": "viking-1",
+    "text": "On July 28, 1976, the Viking 1 lander's robot arm scooped up its first soil samples and put them into a biological laboratory.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1976-07-28",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-034",
+    "artifactId": "viking-1",
+    "text": "Viking 1's instruments recorded temperatures from minus 123 degrees Fahrenheit (minus 86 degrees Celsius) before dawn to minus 27 degrees Fahrenheit (minus 33 degrees Celsius) in the afternoon.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-035",
+    "artifactId": "viking-1",
+    "text": "Viking 1's main test for organic compounds in the soil, using the gas chromatograph experiment, gave negative results.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-036",
+    "artifactId": "viking-1",
+    "text": "Viking 1 found no traces of life on Mars.",
+    "sourceIds": [
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-037",
+    "artifactId": "viking-1",
+    "text": "Viking 1's data showed an abundance of sulfur in the Martian soil.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-038",
+    "artifactId": "viking-1",
+    "text": "Viking 1 helped show that Mars is a cold planet with volcanic soil and a thin, dry carbon dioxide atmosphere.",
+    "sourceIds": [
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-039",
+    "artifactId": "viking-1",
+    "text": "The two Viking landers returned 4,500 photos of their two landing sites.",
+    "sourceIds": [
+      "vk1-sci-what"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-040",
+    "artifactId": "viking-1",
+    "text": "The Viking mission was planned to continue for 90 days after landing, but each orbiter and lander operated far beyond its design lifetime.",
+    "sourceIds": [
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-041",
+    "artifactId": "viking-1",
+    "text": "The primary mission for Viking 1 and Viking 2 ended in November 1976, but activities continued in extended missions.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1976-11-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-042",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander kept sending daily, and later weekly, weather reports as part of the Viking Monitor Mission.",
+    "sourceIds": [
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-043",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 orbiter was shut down on Aug. 7, 1980, after it ran out of attitude-control propellant.",
+    "sourceIds": [
+      "vk1-sci-dates",
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1980-08-07",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-044",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander was named the Thomas Mutch Memorial Station in honor of Thomas A. Mutch, the leader of the Viking imaging team.",
+    "sourceIds": [
+      "vk1-nssdc-profile",
+      "vk1-sci-results"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1981-01-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-045",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander operated until Nov. 11, 1982, when a faulty command sent from Earth caused an interruption of communications. Further attempts to regain contact were unsuccessful.",
+    "sourceIds": [
+      "vk1-sci-results",
+      "vk1-sci-dates"
+    ],
+    "tags": [
+      "end",
+      "incident"
+    ],
+    "date": "1982-11-11",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-046",
+    "artifactId": "viking-1",
+    "text": "NASA sources give two dates for the end of the Viking 1 lander: NASA Science says its final transmission was on Nov. 11, 1982, while NSSDCA says it operated until 13 November 1982 when contact was lost.",
+    "sourceIds": [
+      "vk1-sci-project",
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1982-11-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-047",
+    "artifactId": "viking-1",
+    "text": "The Viking 1 lander operated on Chryse Planitia for more than six years.",
+    "sourceIds": [
+      "vk1-sci-project"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1982-11-11",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk1-048",
+    "artifactId": "viking-1",
+    "text": "The total cost of the Viking project was roughly one billion dollars.",
+    "sourceIds": [
+      "vk1-nssdc-profile"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-001",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "The Apollo 11 Lunar Module \"Eagle\" was the first crewed vehicle to land on the Moon. It carried Neil A. Armstrong and Edwin E. \"Buzz\" Aldrin, Jr.",
+    "sourceIds": [
+      "a11-nssdc-profile"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "1969-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-002",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "Eagle landed at 20:17:40 UT on 20 July 1969 in Mare Tranquilitatis (the Sea of Tranquility).",
+    "sourceIds": [
+      "a11-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1969-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-003",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "Eagle's landing site is at 0.67416 degrees N latitude, 23.47314 degrees E longitude, as determined from Lunar Reconnaissance Orbiter images.",
+    "sourceIds": [
+      "a11-nssdc-profile",
+      "a11-nssdc-sites"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1969-07-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-004",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "The Lunar Module was a two-stage vehicle. The descent stage served as a launch platform for the ascent stage and was left behind on the Moon.",
+    "sourceIds": [
+      "a11-nssdc-lm"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-005",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "Eagle's ascent stage lifted off from the Moon at 17:54:01 UT on 21 July 1969, after 21 hours, 36 minutes on the lunar surface. The descent stage stayed behind.",
+    "sourceIds": [
+      "a11-nssdc-profile",
+      "a11-nssdc-lm"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1969-07-21",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-006",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "The Lunar Module descent stage was an octagonal prism 4.2 meters across and 1.7 m thick, with four landing legs.",
+    "sourceIds": [
+      "a11-nssdc-lm"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-007",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "The laser ranging retroreflector (LRRR) left by Apollo 11 is a separate object from the Eagle descent stage. It was considered part of the EASEP experiment package and needs no power.",
+    "sourceIds": [
+      "a11-nssdc-easep"
+    ],
+    "tags": [
+      "instruments",
+      "legacy"
+    ],
+    "date": "1969-07-21",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "a11-008",
+    "artifactId": "apollo-11-eagle-descent-stage",
+    "text": "The Apollo 11 EASEP experiment package was deployed approximately 17 m south of the Lunar Module, and the laser reflector (LRRR) about 5 meters NNW of the EASEP.",
+    "sourceIds": [
+      "a11-nssdc-easep"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": "1969-07-21",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-001",
+    "artifactId": "apollo-15-lrv",
+    "text": "The Lunar Roving Vehicle (LRV) was an electric vehicle designed to drive on the Moon so Apollo astronauts could explore farther from their lander.",
+    "sourceIds": [
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-002",
+    "artifactId": "apollo-15-lrv",
+    "text": "Apollo 15 was the first mission to use a Lunar Roving Vehicle. Astronauts David Scott and Jim Irwin drove it.",
+    "sourceIds": [
+      "lrv-nssdc-profile",
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1971-07-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-003",
+    "artifactId": "apollo-15-lrv",
+    "text": "Apollo 15 landed on 30 July 1971 in the Mare Imbrium region at the foot of the Apennine mountain range.",
+    "sourceIds": [
+      "lrv-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1971-07-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-004",
+    "artifactId": "apollo-15-lrv",
+    "text": "The Apollo 15 rover was unloaded and first driven during the first moonwalk on 31 July 1971.",
+    "sourceIds": [
+      "lrv-nssdc-profile"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1971-07-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-005",
+    "artifactId": "apollo-15-lrv",
+    "text": "On Apollo 15 the LRV was driven a total of 27.8 km in 3 hours, 2 minutes of driving time. Its maximum range from the Lunar Module was 5.0 km.",
+    "sourceIds": [
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1971-08-02",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-006",
+    "artifactId": "apollo-15-lrv",
+    "text": "The Lunar Roving Vehicle had a mass of 210 kg and could carry an additional 490 kg on the lunar surface.",
+    "sourceIds": [
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-007",
+    "artifactId": "apollo-15-lrv",
+    "text": "The Lunar Roving Vehicle was powered by two 36-volt silver-zinc batteries that could not be recharged.",
+    "sourceIds": [
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lrv-008",
+    "artifactId": "apollo-15-lrv",
+    "text": "The Lunar Roving Vehicle was folded up and carried to the Moon in a storage bay of the Lunar Module.",
+    "sourceIds": [
+      "lrv-nssdc-lrvpage"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-001",
+    "artifactId": "apollo-12-alsep",
+    "text": "The NSSDCA record 1969-099C is the Apollo 12 Lunar Module \"Intrepid\" and its Apollo Lunar Surface Experiments Package (ALSEP).",
+    "sourceIds": [
+      "als-nssdc-profile"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-002",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 ALSEP was a set of scientific instruments placed at the landing site by the astronauts, arranged around a central station that supplied power and sent the data to Earth.",
+    "sourceIds": [
+      "als-nssdc-alsep"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-003",
+    "artifactId": "apollo-12-alsep",
+    "text": "Apollo 12 landed on 19 November 1969 in the Oceanus Procellarum area. Astronauts Pete Conrad and Alan Bean deployed the ALSEP during their first Moon walk.",
+    "sourceIds": [
+      "als-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1969-11-19",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-004",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 ALSEP central station was turned on at 14:21 UT on 19 November 1969.",
+    "sourceIds": [
+      "als-nssdc-instr"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1969-11-19",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-005",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 ALSEP had six instruments: a passive seismometer, a suprathermal ion detector, a cold cathode ion gauge, a lunar dust detector, a lunar surface magnetometer and a solar wind spectrometer.",
+    "sourceIds": [
+      "als-nssdc-instr"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-006",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 ALSEP was powered by a SNAP-27 radioisotope thermoelectric generator (RTG) that used plutonium-238 and produced approximately 70 W.",
+    "sourceIds": [
+      "als-nssdc-alsep"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-007",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 Lunar Module ascent stage was deliberately crashed into the Moon about 60 km from the Apollo 12 seismic station, creating the first recorded artificial moonquake.",
+    "sourceIds": [
+      "als-nssdc-profile"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1969-11-20",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "als-008",
+    "artifactId": "apollo-12-alsep",
+    "text": "The Apollo 12 ALSEP was shut down along with the other ALSEP stations on 30 September 1977.",
+    "sourceIds": [
+      "als-nssdc-instr"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1977-09-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-001",
+    "artifactId": "sojourner",
+    "text": "Sojourner was the first-ever robotic rover delivered to the surface of Mars. It rode there on NASA's Mars Pathfinder lander.",
+    "sourceIds": [
+      "soj-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-002",
+    "artifactId": "sojourner",
+    "text": "Mars Pathfinder, carrying Sojourner, launched on 4 December 1996 and landed on Mars on 4 July 1997.",
+    "sourceIds": [
+      "soj-nssdc-lander",
+      "soj-sci"
+    ],
+    "tags": [
+      "launch",
+      "landing"
+    ],
+    "date": "1997-07-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-003",
+    "artifactId": "sojourner",
+    "text": "Mars Pathfinder landed inside airbags. It bounced at least 15 times before coming to rest about 1 km from where it first hit the ground.",
+    "sourceIds": [
+      "soj-nssdc-lander"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1997-07-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-004",
+    "artifactId": "sojourner",
+    "text": "Sojourner rolled down a ramp onto the surface of Mars on 6 July 1997 at about 05:40 UT.",
+    "sourceIds": [
+      "soj-nssdc-rover",
+      "soj-nssdc-lander"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1997-07-06",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-005",
+    "artifactId": "sojourner",
+    "text": "Sojourner was a six-wheeled rover only 280 mm high, 630 mm long and 480 mm wide, with a mass of 10.5 kg.",
+    "sourceIds": [
+      "soj-nssdc-rover"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-006",
+    "artifactId": "sojourner",
+    "text": "Sojourner was named after American civil-rights crusader Sojourner Truth.",
+    "sourceIds": [
+      "soj-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-007",
+    "artifactId": "sojourner",
+    "text": "The Mars Pathfinder landing site is in the Ares Vallis region of Mars, at 19.33 N, 33.55 W.",
+    "sourceIds": [
+      "soj-nssdc-rover"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1997-07-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soj-008",
+    "artifactId": "sojourner",
+    "text": "Sojourner and its lander kept working until 27 September 1997, when communications were lost for unknown reasons.",
+    "sourceIds": [
+      "soj-nssdc-rover",
+      "soj-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1997-09-27",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-001",
+    "artifactId": "spirit",
+    "text": "Spirit, also called Mars Exploration Rover A (MER-A), was the twin of the Opportunity rover.",
+    "sourceIds": [
+      "spi-nssdc-profile",
+      "spi-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-002",
+    "artifactId": "spirit",
+    "text": "Spirit was launched on 10 June 2003 on a Delta II rocket.",
+    "sourceIds": [
+      "spi-nssdc-profile"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2003-06-10",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-003",
+    "artifactId": "spirit",
+    "text": "Spirit landed on Mars at 04:35 UT on 4 January 2004 in Gusev Crater, at 14.572 S, 175.478 E.",
+    "sourceIds": [
+      "spi-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2004-01-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-004",
+    "artifactId": "spirit",
+    "text": "Spirit's landing site became known as Columbia Memorial Station, to honor the seven astronauts killed when the space shuttle Columbia broke apart on Feb. 1, 2003.",
+    "sourceIds": [
+      "spi-sci"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "2004-01-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-005",
+    "artifactId": "spirit",
+    "text": "In 2007 Spirit uncovered a patch of nearly pure silica while dragging its broken right front wheel. This was strong evidence that ancient Mars was much wetter than it is now.",
+    "sourceIds": [
+      "spi-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2007-12-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-006",
+    "artifactId": "spirit",
+    "text": "On May 1, 2009, Spirit became stuck in soft soil beside a low plateau called Home Plate.",
+    "sourceIds": [
+      "spi-sci",
+      "spi-nssdc-profile"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "2009-05-01",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-007",
+    "artifactId": "spirit",
+    "text": "The last transmission from Spirit was on 22 March 2010. Spirit travelled a total of 7.73 km over a period of 6 years, 2 months.",
+    "sourceIds": [
+      "spi-nssdc-profile"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2010-03-22",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spi-008",
+    "artifactId": "spirit",
+    "text": "On May 25, 2011, NASA ended its efforts to contact Spirit and declared its mission complete.",
+    "sourceIds": [
+      "spi-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2011-05-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-001",
+    "artifactId": "viking-2",
+    "text": "Viking 2 was launched on Sept. 9, 1975. Like Viking 1, it was made of an orbiter and a lander.",
+    "sourceIds": [
+      "vk2-sci",
+      "vk2-sci-project"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1975-09-09",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-002",
+    "artifactId": "viking-2",
+    "text": "Viking 2 entered orbit around Mars on Aug. 7, 1976, almost 11 months after launch.",
+    "sourceIds": [
+      "vk2-sci"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1976-08-07",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-003",
+    "artifactId": "viking-2",
+    "text": "The Viking 2 lander touched down on Mars on Sept. 3, 1976, in Utopia Planitia.",
+    "sourceIds": [
+      "vk2-sci",
+      "vk2-sci-project",
+      "vk2-nssdc-profile"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-09-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-004",
+    "artifactId": "viking-2",
+    "text": "NASA gives Viking 2's landing position as 47.64° N, 134.29° E (planetocentric) in Utopia Planitia.",
+    "sourceIds": [
+      "vk2-sci-project"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "1976-09-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-005",
+    "artifactId": "viking-2",
+    "text": "The Viking 2 lander settled down with one leg on a rock, tilted at 8.2 degrees.",
+    "sourceIds": [
+      "vk2-nssdc-profile"
+    ],
+    "tags": [
+      "landing",
+      "incident"
+    ],
+    "date": "1976-09-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-006",
+    "artifactId": "viking-2",
+    "text": "Neither Viking lander found traces of life, but they did find all the elements essential to life on Earth: carbon, nitrogen, hydrogen, oxygen, and phosphorus.",
+    "sourceIds": [
+      "vk2-sci-project"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-007",
+    "artifactId": "viking-2",
+    "text": "The Viking 2 Lander operated on the surface for 1281 Mars days and was turned off on April 11, 1980, when its batteries failed.",
+    "sourceIds": [
+      "vk2-nssdc-profile",
+      "vk2-sci-project"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1980-04-11",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vk2-008",
+    "artifactId": "viking-2",
+    "text": "In July 2001, the Viking 2 lander was renamed the Gerald Soffen Memorial Station after Gerald Soffen, the NASA Project Scientist for Viking.",
+    "sourceIds": [
+      "vk2-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2001-07-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-001",
+    "artifactId": "phoenix",
+    "text": "Phoenix launched on 04 August 2007 on a Delta II rocket from Cape Canaveral.",
+    "sourceIds": [
+      "phx-nssdc",
+      "phx-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2007-08-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-002",
+    "artifactId": "phoenix",
+    "text": "Phoenix landed on Mars on May 25, 2008, on the arctic plains called Vastitas Borealis.",
+    "sourceIds": [
+      "phx-sci",
+      "phx-nssdc"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2008-05-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-003",
+    "artifactId": "phoenix",
+    "text": "Phoenix landed on an arctic plain at 68.22 degrees north latitude, 234.25 degrees east longitude on Mars.",
+    "sourceIds": [
+      "phx-sci-caption"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2008-05-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-004",
+    "artifactId": "phoenix",
+    "text": "Phoenix landed farther north than any previous Mars mission, at a latitude equivalent to that of northern Alaska on Earth.",
+    "sourceIds": [
+      "phx-sci"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "2008-05-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-005",
+    "artifactId": "phoenix",
+    "text": "During Phoenix's descent, the Mars Reconnaissance Orbiter photographed it hanging from its parachute. It was the first time one spacecraft photographed another during a planetary landing.",
+    "sourceIds": [
+      "phx-sci"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "2008-05-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-006",
+    "artifactId": "phoenix",
+    "text": "Phoenix dug into the soil with a robotic arm and verified that there is water-ice just below the surface of Mars.",
+    "sourceIds": [
+      "phx-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2008-07-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-007",
+    "artifactId": "phoenix",
+    "text": "Phoenix discovered traces of the chemical perchlorate in the Martian soil.",
+    "sourceIds": [
+      "phx-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2008-08-05",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "phx-008",
+    "artifactId": "phoenix",
+    "text": "Phoenix made its last transmission on 02 November 2008, as the end of summer left it with too little solar energy.",
+    "sourceIds": [
+      "phx-nssdc",
+      "phx-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2008-11-02",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-001",
+    "artifactId": "insight",
+    "text": "InSight stands for Interior Exploration using Seismic Investigations, Geodesy and Heat Transport. Its job was to study the deep interior of Mars.",
+    "sourceIds": [
+      "ins-nssdc",
+      "ins-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-002",
+    "artifactId": "insight",
+    "text": "InSight launched on 5 May 2018 at 11:05 UT from Vandenberg Air Force Base in California on an Atlas V rocket.",
+    "sourceIds": [
+      "ins-nssdc",
+      "ins-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2018-05-05",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-003",
+    "artifactId": "insight",
+    "text": "InSight landed in the western Elysium Planitia region of Mars on 26 November 2018 at 19:52:59 UT.",
+    "sourceIds": [
+      "ins-nssdc"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2018-11-26",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-004",
+    "artifactId": "insight",
+    "text": "InSight's landing site lies in the western part of Elysium Planitia, centered at about 4.5 degrees north latitude and 135.9 degrees east longitude.",
+    "sourceIds": [
+      "ins-sci"
+    ],
+    "tags": [
+      "landing"
+    ],
+    "date": "2018-11-26",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-005",
+    "artifactId": "insight",
+    "text": "InSight carried a seismometer called SEIS to measure marsquakes, and a heat probe called HP3.",
+    "sourceIds": [
+      "ins-nssdc"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-006",
+    "artifactId": "insight",
+    "text": "InSight's heat probe had a \"mole\" meant to hammer about 5 meters into the ground, but it had problems and finally reached a depth of only about 40 cm.",
+    "sourceIds": [
+      "ins-nssdc"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-007",
+    "artifactId": "insight",
+    "text": "The last transmission from InSight was received on 15 December 2022.",
+    "sourceIds": [
+      "ins-nssdc"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2022-12-15",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ins-008",
+    "artifactId": "insight",
+    "text": "After two failed attempts to communicate with InSight, the mission was declared over on 21 December 2022.",
+    "sourceIds": [
+      "ins-nssdc"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2022-12-21",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-001",
+    "artifactId": "ingenuity",
+    "text": "Ingenuity rode to Mars attached to the belly of NASA's Perseverance rover. They launched on July 30, 2020 and landed in Jezero Crater on Feb. 18, 2021.",
+    "sourceIds": [
+      "ing-sci",
+      "ing-nasa-end"
+    ],
+    "tags": [
+      "launch",
+      "landing"
+    ],
+    "date": "2021-02-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-002",
+    "artifactId": "ingenuity",
+    "text": "On April 19, 2021, Ingenuity made the first powered, controlled flight on another planet. The flight lasted 39.1 seconds.",
+    "sourceIds": [
+      "ing-sci",
+      "ing-nssdc"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2021-04-19",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-003",
+    "artifactId": "ingenuity",
+    "text": "Ingenuity has a mass of about 1.8 kilograms, and its rotors are approximately 1.2 meters tip to tip.",
+    "sourceIds": [
+      "ing-sci",
+      "ing-nssdc"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-004",
+    "artifactId": "ingenuity",
+    "text": "Ingenuity was designed as a technology demonstration to make no more than five test flights in 30 days, but it completed 72 flights across nearly three years.",
+    "sourceIds": [
+      "ing-sci",
+      "ing-nasa-end"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2024-01-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-005",
+    "artifactId": "ingenuity",
+    "text": "Ingenuity flew for the last time on Jan. 18, 2024. Its rotor blades were damaged during landing, so it could no longer fly.",
+    "sourceIds": [
+      "ing-sci",
+      "ing-nasa-end"
+    ],
+    "tags": [
+      "end",
+      "incident"
+    ],
+    "date": "2024-01-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-006",
+    "artifactId": "ingenuity",
+    "text": "NASA announced the end of Ingenuity's mission on Jan. 25, 2024. At that time the helicopter was still upright and in communication with ground controllers.",
+    "sourceIds": [
+      "ing-nasa-end",
+      "ing-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2024-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-007",
+    "artifactId": "ingenuity",
+    "text": "The Ingenuity team nicknamed the spot where its last flight ended \"Valinor Hills\". This final resting place is different from the place where Ingenuity was first deployed and flew.",
+    "sourceIds": [
+      "ing-pia26237",
+      "ing-waypoints"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2024-01-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ing-008",
+    "artifactId": "ingenuity",
+    "text": "In total, Ingenuity logged more than two hours of flight time and operated from 48 different airfields.",
+    "sourceIds": [
+      "ing-nasa-end"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2024-01-25",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-001",
+    "artifactId": "dawn",
+    "text": "Dawn explored two worlds in the main asteroid belt between Mars and Jupiter: the giant asteroid Vesta and the dwarf planet Ceres. It did not go to the surface of Mars.",
+    "sourceIds": [
+      "dwn-sci",
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-002",
+    "artifactId": "dawn",
+    "text": "Dawn launched from Cape Canaveral on 27 September 2007 on a Delta II rocket.",
+    "sourceIds": [
+      "dwn-nssdc",
+      "dwn-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2007-09-27",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-003",
+    "artifactId": "dawn",
+    "text": "On its way to the asteroid belt, Dawn flew past Mars on 18 February 2009, within 542 km of the surface, to get a gravity assist.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2009-02-18",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-004",
+    "artifactId": "dawn",
+    "text": "Dawn reached Vesta on 16 July 2011, went into orbit, and departed on 5 September 2012.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2012-09-05",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-005",
+    "artifactId": "dawn",
+    "text": "Dawn entered orbit around Ceres on 6 March 2015.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "2015-03-06",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-006",
+    "artifactId": "dawn",
+    "text": "Dawn used ion propulsion: three ion thrusters that pushed the spacecraft using xenon gas.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-007",
+    "artifactId": "dawn",
+    "text": "Communications with Dawn ended on 31 October 2018.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2018-10-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "dwn-008",
+    "artifactId": "dawn",
+    "text": "Dawn remains in orbit around Ceres. Its final orbit is expected to be stable for several hundred years.",
+    "sourceIds": [
+      "dwn-nssdc"
+    ],
+    "tags": [
+      "end",
+      "legacy"
+    ],
+    "date": "2018-10-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-001",
+    "artifactId": "near-shoemaker",
+    "text": "NEAR stands for Near Earth Asteroid Rendezvous. The spacecraft launched on Feb. 17, 1996.",
+    "sourceIds": [
+      "nea-sci",
+      "nea-nssdc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1996-02-17",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-002",
+    "artifactId": "near-shoemaker",
+    "text": "NEAR Shoemaker's target was the asteroid 433 Eros. It never went to Mars.",
+    "sourceIds": [
+      "nea-sci",
+      "nea-nssdc"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-003",
+    "artifactId": "near-shoemaker",
+    "text": "On the way to Eros, NEAR flew past the asteroid 253 Mathilde on June 27, 1997.",
+    "sourceIds": [
+      "nea-sci"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1997-06-27",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-004",
+    "artifactId": "near-shoemaker",
+    "text": "On Feb. 14, 2000, NEAR entered orbit around Eros, becoming the first human-made object to orbit an asteroid.",
+    "sourceIds": [
+      "nea-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2000-02-14",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-005",
+    "artifactId": "near-shoemaker",
+    "text": "On March 14, 2000, NASA renamed the spacecraft NEAR Shoemaker in honor of the geologist Eugene M. Shoemaker.",
+    "sourceIds": [
+      "nea-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2000-03-14",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-006",
+    "artifactId": "near-shoemaker",
+    "text": "NEAR Shoemaker touched down on Eros on Feb. 12, 2001, at a gentle 4 miles per hour (6.4 kilometers per hour). It was the first spacecraft to touch down on the surface of an asteroid.",
+    "sourceIds": [
+      "nea-sci",
+      "nea-nssdc"
+    ],
+    "tags": [
+      "landing",
+      "legacy"
+    ],
+    "date": "2001-02-12",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-007",
+    "artifactId": "near-shoemaker",
+    "text": "NEAR Shoemaker survived its touchdown on Eros and kept returning data for about two weeks.",
+    "sourceIds": [
+      "nea-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "2001-02-28",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nea-008",
+    "artifactId": "near-shoemaker",
+    "text": "The last contact with NEAR Shoemaker was on Feb. 28, 2001, after it gave in to the extreme cold on Eros (minus 279 degrees Fahrenheit or minus 173 degrees Celsius).",
+    "sourceIds": [
+      "nea-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2001-02-28",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-001",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 was NASA's first mission to the outer planets. It launched on March 2, 1972 (NSSDCA lists the launch date as 1972-03-03).",
+    "sourceIds": [
+      "p10-sci",
+      "p10-nssdc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1972-03-02",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-002",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 was the first spacecraft to fly through the asteroid belt and the first to fly past Jupiter.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-003",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 made its closest approach to Jupiter on Dec. 4, 1973, at a range of 81,000 miles (130,354 kilometers).",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1973-12-04",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-004",
+    "artifactId": "pioneer-10",
+    "text": "On June 13, 1983, Pioneer 10 crossed the orbit of Neptune, becoming the first human-made object to go beyond the farthest planet.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1983-06-13",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-005",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 carries an aluminum plaque with diagrams of a man and a woman, the solar system, and its location relative to 14 pulsars.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "instruments",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-006",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 was designed for a 21-month mission but lasted more than 30 years.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2003-01-23",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-007",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 sent its last signal on Jan. 23, 2003, from a distance of 7.6 billion miles (12.23 billion kilometers). The signal took 11 hours and 20 minutes to reach Earth.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2003-01-23",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p10-008",
+    "artifactId": "pioneer-10",
+    "text": "Pioneer 10 is heading out of the solar system in the general direction of the red star Aldebaran. It is expected to pass by Aldebaran in about two million years.",
+    "sourceIds": [
+      "p10-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-001",
+    "artifactId": "pioneer-11",
+    "text": "Pioneer 11 is the sister spacecraft of Pioneer 10. It launched on April 6, 1973.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "1973-04-06",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-002",
+    "artifactId": "pioneer-11",
+    "text": "Pioneer 11 flew past Jupiter on Dec. 3, 1974, passing about 26,400 miles (42,500 kilometers) from the planet's cloud tops, three times closer than Pioneer 10.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": "1974-12-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-003",
+    "artifactId": "pioneer-11",
+    "text": "Pioneer 11 returned the first pictures of the polar regions of Jupiter.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1974-12-03",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-004",
+    "artifactId": "pioneer-11",
+    "text": "On Sept. 1, 1979, Pioneer 11 became the first human-made object to fly past Saturn, at a range of about 13,000 miles (20,900 kilometers).",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "1979-09-01",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-005",
+    "artifactId": "pioneer-11",
+    "text": "At Saturn, Pioneer 11 discovered a narrow ring outside the A ring, named the F ring.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "discovery"
+    ],
+    "date": "1979-09-01",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-006",
+    "artifactId": "pioneer-11",
+    "text": "NASA Ames Research Center made last contact with Pioneer 11 on Sept. 30, 1995. Scientists received a few minutes of engineering data one last time on Nov. 24, 1995.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "1995-11-24",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-007",
+    "artifactId": "pioneer-11",
+    "text": "Pioneer 11 is on a path out of the solar system and will pass near the star Lambda Aquila in almost four million years.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "p11-008",
+    "artifactId": "pioneer-11",
+    "text": "Like Pioneer 10, Pioneer 11 carries a small metal plaque showing when and where it came from.",
+    "sourceIds": [
+      "p11-sci"
+    ],
+    "tags": [
+      "instruments",
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-001",
+    "artifactId": "kepler",
+    "text": "The Kepler space telescope was NASA's first planet-hunting mission. It searched for Earth-sized planets orbiting stars outside our solar system.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-002",
+    "artifactId": "kepler",
+    "text": "Kepler launched on March 6, 2009 from Cape Canaveral, Florida (03:50 UT on 07 March 2009).",
+    "sourceIds": [
+      "kep-sci",
+      "kep-nssdc"
+    ],
+    "tags": [
+      "launch"
+    ],
+    "date": "2009-03-07",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-003",
+    "artifactId": "kepler",
+    "text": "Kepler does not orbit a planet. It was placed in an Earth-trailing orbit around the Sun with a period of 372.5 days.",
+    "sourceIds": [
+      "kep-nssdc"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-004",
+    "artifactId": "kepler",
+    "text": "Kepler found planets by watching for transits: tiny dips in a star's brightness when a planet crosses in front of the star.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "instruments"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-005",
+    "artifactId": "kepler",
+    "text": "In May 2013, Kepler lost the second of its four reaction wheels, which ended data collection for its original mission.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "incident"
+    ],
+    "date": "2013-05-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-006",
+    "artifactId": "kepler",
+    "text": "Engineers gave Kepler a second life, called K2, by using the pressure of sunlight to help keep the telescope pointed.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "journey"
+    ],
+    "date": null,
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-007",
+    "artifactId": "kepler",
+    "text": "NASA retired the Kepler spacecraft on Oct. 30, 2018, after it ran out of the fuel needed for science operations.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "end"
+    ],
+    "date": "2018-10-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kep-008",
+    "artifactId": "kepler",
+    "text": "Kepler left a legacy of more than 2,600 planet discoveries from outside our solar system.",
+    "sourceIds": [
+      "kep-sci"
+    ],
+    "tags": [
+      "legacy"
+    ],
+    "date": "2018-10-30",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  }
+]

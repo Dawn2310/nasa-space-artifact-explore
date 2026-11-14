@@ -5,13 +5,15 @@ import { useCallback, useMemo, useState } from 'react';
 import type { ArtifactId, SceneCallbacks, ViewState } from './shared/contracts';
 import { findArtifact, returnTargetFor } from './shared/app-types';
 import type { Catalog, ChatAdapter } from './shared/app-types';
-import { mockCatalog, mockChatAdapter } from './shared/mock';
+import { realCatalog } from './shared/catalog';
+import { createMockChatAdapter } from './shared/mock';
 import World from './features/world';
 import Explorer from './features/explorer';
 
-// Đợt 0–1: mock. Đợt 2 Lead thay bằng catalog thật (content/*.json) và adapter gọi /api/chat.
-const catalog: Catalog = mockCatalog;
-const chat: ChatAdapter = mockChatAdapter;
+// Catalog thật từ content/*.json. Chat: TẠM dùng adapter giả trong trình duyệt (nhãn "mocked")
+// cho tới khi /api/chat của grounded-chat được nối (src/shared/chat-adapter.ts).
+const catalog: Catalog = realCatalog;
+const chat: ChatAdapter = createMockChatAdapter(realCatalog.facts);
 
 export default function App() {
   const [view, setView] = useState<ViewState>({ level: 'solar' });

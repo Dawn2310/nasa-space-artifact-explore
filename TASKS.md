@@ -15,7 +15,7 @@ Deadline nộp: Chủ nhật 15/11/2026 23:59 (giờ Việt Nam). Ngừng thêm 
 
 ## Đợt 1 — chạy SONG SONG ba agent
 
-- [ ] nasa-research: opportunity → surveyor-3 → viking-1 (chat), rồi 14 thẻ.
+- [x] nasa-research: opportunity → surveyor-3 → viking-1 (chat), rồi 14 thẻ. (255 fact, tất cả pending — chờ người duyệt)
 - [x] world3d: solar → mars → marker → viewer bằng mock.
 - [x] ui-story: shell, card, chat panel bằng mock adapter; persona 3 nhân vật. (phần "emotional moments" còn TODO, chờ facts.json)
 
@@ -43,7 +43,7 @@ Mốc ghép 3 (mục tiêu 12:00 Chủ nhật): đủ 17 thẻ, 3 nhân vật ch
 ## Việc của NGƯỜI THẬT (agent không làm thay)
 
 - [ ] Tải texture Mặt Trăng (CGI Moon Kit, svs.gsfc.nasa.gov/4720, file lroc_color_2k.jpg) vào public/assets/textures/moon.jpg và thêm mục vào content/assets.json.
-- [ ] Tải ảnh NASA cho 5 hiện vật không có model (images.nasa.gov), ghi NASA ID.
+- [ ] Tải ảnh NASA cho 5 hiện vật không có model (images.nasa.gov), ghi NASA ID. (agent đã tải 40 ảnh cho cả 17 hiện vật, có NASA ID + sha256 trong assets.json; người thật cần MỞ XEM từng ảnh)
 - [ ] Mở từng trang model trên science.nasa.gov/3d-resources để chép tên người đóng góp vào CREDITS.md.
 - [ ] Duyệt dữ kiện: mở link nguồn, đổi reviewStatus "pending" → "approved" trong content/facts.json. Chia theo body: moon / mars (2 người) / deep-space.
 - [ ] Hạ tầng: repo GitHub công khai, project Vercel, biến môi trường LLM_PROVIDER + LLM_API_KEY.
@@ -128,4 +128,43 @@ File đã tạo, sửa: src/features/explorer/Guidance.tsx (danh sách thu gọn
 Đã kiểm tra: npm run build pass; geo.check qua.
 Chưa kiểm tra: Lead chưa tự mở trình duyệt; toàn bộ vẫn là dữ liệu MOCK, chat MOCK.
 Bước tiếp theo: chờ nasa-research, rồi Đợt 2 (catalog thật + /api/chat).
+```
+
+```
+Task / Owner: Đợt 1 — dữ kiện, nguồn, ảnh / nasa-research (2026-11-14)
+File đã tạo, sửa: content/sources.json (59 nguồn), content/facts.json (255 fact, tất cả reviewStatus pending),
+  content/catalog.json (17 hiện vật), content/assets.json (+40 mục ảnh img-<artifactId>-<n>),
+  public/assets/images/<artifactId>-<n>.jpg (40 ảnh, ~6 MB).
+Số fact: opportunity 50, viking-1 48, surveyor-3 45, 14 thẻ còn lại 8 fact mỗi thẻ.
+Đã kiểm tra (agent báo): mọi fact dựa trên trang đã tải thật bằng curl (NSSDCA, science.nasa.gov, nasa.gov,
+  images-api.nasa.gov, GeoJSON waypoint của mars.nasa.gov); kiểm tra chéo sourceIds / factIds / assetIds;
+  sha256 40 ảnh; sáu sự thật bắt buộc. Lead kiểm thêm: cả 14 tọa độ được geo.ts đọc là kinh độ Đông dương, đúng dấu.
+Chưa kiểm tra / lỗ hổng (NGƯỜI DUYỆT ưu tiên xem):
+  1. Chỉ 3/40 ảnh được mở xem; verifiedAvailability=true nghĩa là tải được, chưa có người kiểm.
+  2. Không có tọa độ nơi dừng cuối của Opportunity (Perseverance Valley), Spirit (Home Plate); catalog chỉ có landing.
+  3. LRV Apollo 15: dùng tọa độ Lunar Module Apollo 15, kind "landing", nhãn nói rõ.
+  4. memoryCutoff Ingenuity 2024-01-25 và Kepler 2018-10-30 là ngày NASA công bố kết thúc, không phải liên lạc cuối.
+  5. "Valinor Hills" ↔ tọa độ Flight 72: agent ghép hai nguồn (chú thích PIA26237 + file waypoint ghi "Airfield Chi").
+  6. Nguồn NASA mâu thuẫn: Viking 1 kết thúc 11/11 hay 13/11/1982; Mutch Station 1981 hay 1982; Viking 2 kết thúc
+     11/04 hay 12/04/1980 và hai bộ tọa độ; Apollo 12 hạ cánh 18 hay 19/11/1969; Phoenix hai bộ tọa độ;
+     ngày phóng Pioneer 10, Kepler lệch do UT.
+  7. Trường date của sự kiện chỉ biết tháng/năm: đặt ngày cuối tháng hoặc 31/12 (quy ước của agent).
+  8. Ảnh không phải ảnh chụp hiện vật thật: dawn-1, dawn-2, near-shoemaker-1, kepler-2 (artist concept),
+     pioneer-11-1 (tranh vẽ), viking-1-3 (mô hình trên Trái Đất); pioneer-10-1 credit TRW. `represents` ghi rõ.
+  9. jpl.nasa.gov trả 403; science.nasa.gov cho Apollo 11/12/15 và Sojourner trả 404 → các thẻ này chỉ dựa NSSDCA.
+Chỉnh so với seed: surveyor-3 "1967", cutoff 1967-05-04; spirit cutoff 2010-03-22; viking-1 1982-11-11;
+  viking-2 1980-04-11; apollo-12-alsep 1977-09-30; sojourner 1997-09-27; phoenix 2008-11-02; insight 2022-12-15;
+  dawn 2018-10-31; near-shoemaker 2001-02-28; pioneer-11 1995-11-24. URL nguồn đúng cho phoenix, viking-2,
+  pioneer-11, opportunity, spirit nằm trong sources.json (seed ghi sai).
+Phụ thuộc còn thiếu: người thật duyệt 255 fact; texture Mặt Trăng.
+Bước tiếp theo: grounded-chat dùng facts.json; Lead gộp intro từ prompts/personas/catalog-story.json (đã làm trong src/shared/catalog.ts).
+```
+
+```
+Task / Owner: Nối catalog thật / Lead (2026-11-14)
+File đã tạo, sửa: src/shared/catalog.ts (gộp content/*.json + catalog-story.json), src/App.tsx (dùng realCatalog),
+  src/shared/mock.ts (createMockChatAdapter), vite.config.ts (middleware dev cho POST /api/chat → server/chat.ts).
+Đã kiểm tra: npm run build pass; verify_assets 16/16.
+Chưa kiểm tra: chưa mở trình duyệt với 17 hiện vật thật; chat vẫn là adapter giả trong trình duyệt.
+Bước tiếp theo: nối /api/chat khi grounded-chat bàn giao.
 ```
