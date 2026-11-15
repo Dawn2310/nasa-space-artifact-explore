@@ -577,3 +577,6 @@ Changed GlobalChat.tsx/global-chat.css to a compact horizontal pill with a conta
 
 Task / Owner: Remove two circled labels / Codex (2026-11-15)
 Removed Quick hop from the one-stop voyage header in Voyage.tsx, retaining UFO Echo. Hid the interaction hint paragraphs in Mars/Moon index.html; nodes remain for existing script references, with rotation and zoom unchanged. npm run build and diff check passed. Deployed 6af94c17ec09b7e3b0c86ef7 to the same Netlify URL; live Mars/Moon HTML confirms hidden hints and deployed entry has no Quick hop label. No browser visual check needed for the text-only removal.
+
+Task / Owner: Remove black hole subtitle / Codex (2026-11-15)
+Removed the NASA visualization subtitle from BlackHoleBackdrop.tsx for both distant black holes; the Distant black hole name remains. Scientific asset credits and metadata are unchanged. npm run build and git diff --check pass. Production deploy 6af94c7a026f8794dc7c43a2 ready on the existing Netlify URL; published world bundle verified to retain the name and omit the subtitle.

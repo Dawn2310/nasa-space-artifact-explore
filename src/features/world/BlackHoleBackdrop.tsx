@@ -35,7 +35,6 @@ function BlackHoleImage({ config, uniforms }: {
     </mesh>}
     <SceneLabel position={[0, -config.size * 0.31, 0]} active={false}>
       <span className="world-label__mission">Distant black hole</span>
-      <span className="world-label__hint">NASA visualization</span>
     </SceneLabel>
   </group>;
 }
