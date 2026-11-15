@@ -12,6 +12,7 @@ An interactive 3D space heritage explorer built for the **NASA Space Apps Challe
 - **NASA-Sourced Stories & Fact Cards:** Historical facts link to primary NASA records, including NASA NSSDCA, NASA Science, and NASA/JPL.
 - **Grounded AI Characters:** Ask the spacecraft questions about their missions. The server checks fact references and numerical claims, and filters dated facts against each character’s final-contact cutoff where one is recorded. Mock mode works without an API key.
 - **Chat From Any Screen:** Open the floating shuttle button during the welcome screen, solar exploration, flights, or mission visits. Choose any of the 17 spacecraft; each conversation stays separate throughout the visit. The selected character follows the mission you open.
+- **Lighter Startup:** The interface loads separately from 3D code; mission switches reuse the same scene, large HDR background loading adapts to the device/network, and hidden tabs stop rendering.
 - **Clear Visual Context:** Models include source credits and reuse notes; scientific assets have recorded checksums. Planet sizes, positions, orbital speeds, UFO flights, and background galaxies are illustrative.
 
 ## 🛠️ Tech Stack
@@ -73,5 +74,6 @@ Production runs on **Netlify**. `netlify.toml` publishes `dist` and bundles the 
 - [content/](content/): artifact catalog, facts, sources, and asset metadata.
 - [docs/DECISIONS.md](docs/DECISIONS.md): implementation decisions and limitations.
 - [TASKS.md](TASKS.md): development handoffs and verification history.
+- [qa/performance.md](qa/performance.md): startup payload comparison, optimizations, and measurement limits.
 
 Echo, the UFO, and first-person dialogue are storytelling devices based on mission records. The project was developed with AI coding and writing assistance; narration uses browser speech synthesis. Scientific asset sources and community model attribution are recorded separately in the credits.

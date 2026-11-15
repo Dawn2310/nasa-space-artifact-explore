@@ -26,11 +26,15 @@ import { MISSION_MOTION, isMovingMission } from './scene-motion';
 import './world.css';
 import { useCharacterActivity } from '../../shared/character-activity';
 import { SHARED_MODEL_NOTES } from '../explorer/storyText';
+import { renderPixelRatio } from '../../shared/render-budget';
 
 function detectWebGL(): boolean {
   try {
     const canvas = document.createElement('canvas');
-    return Boolean(canvas.getContext('webgl2') ?? canvas.getContext('webgl'));
+    const context = canvas.getContext('webgl2') ?? canvas.getContext('webgl');
+    const supported = Boolean(context);
+    context?.getExtension('WEBGL_lose_context')?.loseContext();
+    return supported;
   } catch {
     return false;
   }
@@ -261,6 +265,14 @@ function artifactAssets(catalog: Catalog, artifact: Artifact | undefined) {
 export default function World({ view, catalog, callbacks, tour, flight, onFlightArrival, onFlightCancel }: WorldProps) {
   const { activity } = useCharacterActivity();
   const [webgl, setWebgl] = useState(detectWebGL);
+  const [visible, setVisible] = useState(() => !document.hidden);
+  const [pixelRatio] = useState(() => renderPixelRatio({ width: window.innerWidth, devicePixelRatio: window.devicePixelRatio,
+    deviceMemory: (navigator as Navigator & { deviceMemory?: number }).deviceMemory }));
+  useEffect(() => {
+    const visibility = () => setVisible(!document.hidden);
+    document.addEventListener('visibilitychange', visibility);
+    return () => document.removeEventListener('visibilitychange', visibility);
+  }, []);
   const [orbitsPaused] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [active, setActive] = useState<ActiveTarget | null>(null);
   const [loaded, setLoaded] = useState<{ url: string; status: 'ready' | 'failed' } | null>(null);
@@ -333,7 +345,7 @@ export default function World({ view, catalog, callbacks, tour, flight, onFlight
       {webgl && (
         <CanvasBoundary onFail={onCanvasFail}>
           <div className="world__canvas" aria-hidden="true">
-            <Canvas camera={{ fov: CAMERA_FOV_DEG, near: 0.01, far: 1600, position: [0, 32, 41] }} dpr={[1, 2]}>
+            <Canvas camera={{ fov: CAMERA_FOV_DEG, near: 0.01, far: 1600, position: [0, 32, 41] }} dpr={pixelRatio} frameloop={visible ? 'always' : 'never'}>
               <SpaceBackdrop animate={!orbitsPaused} />
               <CameraRig view={view} focusId={focusId} targets={targets} flightId={activeFlight?.id} />
               <LabelProjector />

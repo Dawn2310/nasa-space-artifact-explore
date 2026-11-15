@@ -2,6 +2,8 @@
 // English, names always on the dots, full-screen machine view, auto-told story with a character voice,
 // chibi-rocket chat, ~10 s journey with a fixed wide camera.
 import * as THREE from 'three';
+import { renderPixelRatio } from '../src/shared/render-budget.ts';
+import { createMissionNavigation } from '../src/shared/mission-navigation.ts';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
@@ -54,7 +56,7 @@ function start() {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFShadowMap;
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setPixelRatio(renderPixelRatio({ width: innerWidth, devicePixelRatio, deviceMemory: navigator.deviceMemory }));
   viewport.append(renderer.domElement);
   const camera = new THREE.PerspectiveCamera(43, 1, 0.02, 160);
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -257,7 +259,8 @@ function start() {
     });
   }
 
-  $('back').addEventListener('click', () => {
+  function closeMission(focusList = true) {
+    if (!active) return;
     const previous = active;
     surface.remove(siteCache.get(previous.id).group);
     replay.close();
@@ -280,8 +283,11 @@ function start() {
     showGlobeHeading();
     showMessage();
     const index = missions.indexOf(previous);
-    $('mission-list').children[index]?.focus({ preventScroll: true });
-  });
+    if (focusList) $('mission-list').children[index]?.focus({ preventScroll: true });
+  }
+  $('back').addEventListener('click', () => closeMission());
+  window.addEventListener('message', createMissionNavigation({ origin: location.origin, parent: window.parent,
+    missions, current: () => active, close: () => closeMission(false), open: openMission }));
   $('replay-restart').addEventListener('click', () => {
     if (!active || !model) return;
     replay.reset();
@@ -315,7 +321,7 @@ function start() {
 
   const step = new THREE.Quaternion();
   const facing = new THREE.Vector3();
-  renderer.setAnimationLoop(now => {
+  function renderFrame(now) {
     if (flight) {
       const t = Math.min(1, Math.max(0, (now - flight.started) / 950));
       const eased = t * t * (3 - 2 * t);
@@ -342,7 +348,11 @@ function start() {
       }
     }
     renderer.render(active ? surface : globe, camera);
-  });
+  }
+  const updateLoop = () => renderer.setAnimationLoop(document.hidden ? null : renderFrame);
+  document.addEventListener('visibilitychange', updateLoop);
+  window.addEventListener('pagehide', () => { renderer.setAnimationLoop(null); document.removeEventListener('visibilitychange', updateLoop); }, { once: true });
+  updateLoop();
 }
 
 function random(seed) {

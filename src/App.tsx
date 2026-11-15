@@ -1,13 +1,12 @@
 // Lead/Integrator: App là NƠI DUY NHẤT giữ ViewState. World (3D) và Explorer (UI)
 // chỉ nhận state + callbacks; không bên nào có hệ điều hướng riêng.
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useMemo, useRef, useState } from 'react';
 import type { ArtifactId, SceneCallbacks, ViewState } from './shared/contracts';
 import { findArtifact, returnTargetFor } from './shared/app-types';
 import type { Catalog, ChatAdapter } from './shared/app-types';
 import { realCatalog } from './shared/catalog';
 import { apiChatAdapter } from './shared/chat-adapter';
-import World from './features/world';
 import Explorer from './features/explorer';
 import GlobalChat from './features/explorer/GlobalChat';
 import { CharacterProvider } from './shared/character-activity';
@@ -15,6 +14,8 @@ import Voyage, { hushEverywhere, VoyageIntro, VoyageLauncher } from './features/
 import type { VoyagePlan, VoyageScene } from './features/voyage/script';
 import type { SolarFlight, VoyageTour } from './shared/app-types';
 import { isMovingMission, missionSceneTarget } from './features/world/scene-motion';
+
+const World = lazy(() => import('./features/world'));
 
 type Arrival = { kind: 'view'; view: ViewState } | { kind: 'voyage'; plan: VoyagePlan; stop: number } | { kind: 'home' };
 function voyageTarget(scene: VoyageScene): string {
@@ -105,7 +106,9 @@ export default function App() {
   return (
     <CharacterProvider><div className="app">
       <div className="app__world">
-        <World view={shownView} catalog={catalog} callbacks={callbacks} tour={tour} flight={transfer?.flight} onFlightArrival={arrive} onFlightCancel={() => setTransfer(null)} />
+        <Suspense fallback={<div className="world-loading" role="status">Preparing your universe…</div>}>
+          <World view={shownView} catalog={catalog} callbacks={callbacks} tour={tour} flight={transfer?.flight} onFlightArrival={arrive} onFlightCancel={() => setTransfer(null)} />
+        </Suspense>
       </div>
       <div className="app__explorer">
         <Explorer view={shownView} catalog={catalog} chat={chat} callbacks={callbacks} tour={tour} />

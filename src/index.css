@@ -42,6 +42,8 @@ body {
   inset: 0;
 }
 
+.world-loading { display:grid; place-items:center; height:100%; background:radial-gradient(ellipse at center,#17263d,#05070d 70%); color:#adc9dd; font-size:14px; }
+
 .app__explorer {
   position: absolute;
   inset: 0;
