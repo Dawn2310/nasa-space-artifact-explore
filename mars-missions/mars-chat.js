@@ -28,6 +28,7 @@ export function createChat({ body = 'mars', place = 'Mars', siteOf = mission => 
   const send = $('chat-send');
   const suggestions = $('chat-suggestions');
   const launcher = $('chat-launcher');
+  if (window.parent !== window && new URLSearchParams(location.search).has('externalChat')) launcher.style.display = 'none';
   const panel = $('chat-panel');
   let artifact = null;
   let history = [];

@@ -210,6 +210,7 @@ function start() {
     $('model-reference').parentElement.hidden = !mission.modelReference && !mission.modelLicense;
     if (mission.model) replay.open(mission);
     chat.open(mission.id, mission);
+    if (window.parent !== window) window.parent.postMessage({ type: 'nasa:mission-selected', artifactId: mission.id }, location.origin);
     // Tell the story straight away: the click that opened this machine allows speech.
     if (!touring) chat.narrate();
     document.querySelector('.stage-title h1').textContent = mission.name;

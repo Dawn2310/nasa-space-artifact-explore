@@ -14,6 +14,7 @@ const PAGES = {
 export default function MarsMissionsFrame({ body, tour, initialMissionId }: { body: 'moon' | 'mars'; tour?: VoyageTour; initialMissionId?: string }) {
   const page = PAGES[body];
   const query = new URLSearchParams();
+  query.set('externalChat', '1');
   if (tour) query.set('tour', '1');
   const mission = tour?.mission ?? initialMissionId;
   if (mission) query.set('mission', mission);

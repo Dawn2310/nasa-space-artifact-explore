@@ -11,6 +11,7 @@ An interactive 3D space heritage explorer built for the **NASA Space Apps Challe
 - **Space Passport:** Collect **17 mission badges** through guided stories and free exploration. Your collection stays in the same browser; no account is needed. Pioneer 11 is available through free exploration.
 - **NASA-Sourced Stories & Fact Cards:** Historical facts link to primary NASA records, including NASA NSSDCA, NASA Science, and NASA/JPL.
 - **Grounded AI Characters:** Ask the spacecraft questions about their missions. The server checks fact references and numerical claims, and filters dated facts against each character’s final-contact cutoff where one is recorded. Mock mode works without an API key.
+- **Chat From Any Screen:** Open the floating shuttle button during the welcome screen, solar exploration, flights, or mission visits. Choose any of the 17 spacecraft; each conversation stays separate throughout the visit. The selected character follows the mission you open.
 - **Clear Visual Context:** Models include source credits and reuse notes; scientific assets have recorded checksums. Planet sizes, positions, orbital speeds, UFO flights, and background galaxies are illustrative.
 
 ## 🛠️ Tech Stack

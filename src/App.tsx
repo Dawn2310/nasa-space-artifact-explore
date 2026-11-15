@@ -9,6 +9,7 @@ import { realCatalog } from './shared/catalog';
 import { apiChatAdapter } from './shared/chat-adapter';
 import World from './features/world';
 import Explorer from './features/explorer';
+import GlobalChat from './features/explorer/GlobalChat';
 import { CharacterProvider } from './shared/character-activity';
 import Voyage, { hushEverywhere, VoyageIntro, VoyageLauncher } from './features/voyage/Voyage';
 import type { VoyagePlan, VoyageScene } from './features/voyage/script';
@@ -118,6 +119,7 @@ export default function App() {
           <VoyageLauncher key={intro} startOpen={intro === 'plan'} onStart={(plan) => { setIntro('closed'); startPlan(plan); }} />
         ))
       )}
+      <GlobalChat catalog={catalog} chat={chat} activeArtifactId={stop?.artifactId ?? (view.level === 'artifact' ? view.artifactId : undefined)} />
     </div></CharacterProvider>
   );
 }

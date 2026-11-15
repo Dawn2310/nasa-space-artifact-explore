@@ -222,6 +222,7 @@ function start() {
     if (mission.modelSource) $('model-source').href = mission.modelSource;
     replay.open(mission);
     chat.open(mission.id, mission);
+    if (window.parent !== window) window.parent.postMessage({ type: 'nasa:mission-selected', artifactId: mission.artifactId ?? mission.id }, location.origin);
     // Tell the story straight away: the click that opened this machine allows speech.
     if (!touring) chat.narrate();
     heading.textContent = mission.stageName ?? mission.name;
