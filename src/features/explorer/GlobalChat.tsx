@@ -91,7 +91,7 @@ export default function GlobalChat({ catalog, chat, activeArtifactId, voyageActi
       </form>
     </section>}
     <button type="button" className="global-chat__launcher" ref={launcher} aria-label={open ? 'Close space chat' : 'Open space chat'} aria-expanded={open} aria-controls="global-space-chat" onClick={() => setOpen(value => !value)}>
-      {open ? <span aria-hidden="true">×</span> : <><ShuttleMascot speaking={false} /><span>Chat</span></>}
+      {open ? <span className="global-chat__close-icon" aria-hidden="true">×</span> : <><ShuttleMascot speaking={false} /><span className="global-chat__label">Chat</span></>}
     </button>
   </div>;
 }
