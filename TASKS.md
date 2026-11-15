@@ -586,3 +586,6 @@ SolarScene.tsx now renders only the eight main planet orbit rings, one line per 
 
 Task / Owner: Slightly slower narration / Codex (2026-11-15)
 Reduced shared SPEECH_SPEED from 1.3 to 1.2 (about 8 percent slower). Echo, guided characters and native storytellers retain their existing pitch and voice choices; fallback reading timing uses the same multiplier. README demo speed updated. npm run build, storyteller.check and targeted diff check pass. Production deploy 6af958d835d6308a5a44379a ready on the existing URL; the live shared voice bundle explicitly verified to use 1.2. Built with the already-deployed compressed assets and updated UFO in the working tree, preserving that separate uncommitted handoff. Another ongoing build replaced local dist after deploy, so live multiplier verification was used instead of comparing that later local build. Only this speed change and its own documentation are staged. No actual voice audition performed.
+
+Task / Owner: Narration at 1.1x / Codex (2026-11-15)
+Changed shared SPEECH_SPEED from 1.2 to 1.1 and updated README. Build and storyteller.check pass. Production deploy 6af959ef07626785e7aea180 ready on the same URL; live client voice multiplier verified to be 1.1. Other pending workspace changes remain preserved and are not staged by this task.

@@ -1,5 +1,5 @@
 // Approximate timing: voices and pauses vary by browser/OS.
-export const SPEECH_SPEED = 1.2;
+export const SPEECH_SPEED = 1.1;
 export const SPEECH_RATE = 0.94 * SPEECH_SPEED;
 export const SPEECH_PITCH = 1.02;
 export const SPEECH_VOLUME = 0.85;

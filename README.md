@@ -40,7 +40,7 @@ npm run dev
 
 Open the local URL printed by Vite. The development server also serves `POST /api/chat`.
 
-**Quick demo:** Choose **Mars** in the flight chooser. InSight is the first discovery, with its own spoken introduction and animated instrument deployment. UFO transfers take three seconds; narration plays at 1.2× its original pace.
+**Quick demo:** Choose **Mars** in the flight chooser. InSight is the first discovery, with its own spoken introduction and animated instrument deployment. UFO transfers take three seconds; narration plays at 1.1× its original pace.
 
 ## 🔑 Connect an AI Provider
 
