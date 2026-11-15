@@ -580,3 +580,6 @@ Removed Quick hop from the one-stop voyage header in Voyage.tsx, retaining UFO E
 
 Task / Owner: Remove black hole subtitle / Codex (2026-11-15)
 Removed the NASA visualization subtitle from BlackHoleBackdrop.tsx for both distant black holes; the Distant black hole name remains. Scientific asset credits and metadata are unchanged. npm run build and git diff --check pass. Production deploy 6af94c7a026f8794dc7c43a2 ready on the existing Netlify URL; published world bundle verified to retain the name and omit the subtitle.
+
+Task / Owner: Show only main planetary orbit lines / Codex (2026-11-15)
+SolarScene.tsx now renders only the eight main planet orbit rings, one line per ring. Removed Dawn/Ceres local ring, Ceres/Dawn, Kepler and Eros solar rings, and the two Pioneer dashed departure guides. Bodies, spacecraft and their animation remain. Built and deployed from an isolated checkout of the committed baseline so a separate pending asset-compression handoff in the shared workspace is preserved and not published implicitly. npm run build, solar-layout.check, scene-motion.check and diff check passed. Production deploy 6af9560aceeedd776fd6afbb is ready on the existing Netlify URL; live entry and world-bundle SHA256 match the tested isolated build. No pixel-level browser QA performed.

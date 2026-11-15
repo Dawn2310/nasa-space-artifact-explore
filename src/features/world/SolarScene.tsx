@@ -17,7 +17,7 @@ import type { SetActive } from './parts';
 import { SOLAR_MOONS } from './solar-system';
 import type { InspectionTargets } from './solar-system';
 import { Inspectable } from './InspectionTarget';
-import { CERES_RADIUS, DAWN_LOCAL_ORBIT, EROS_RADIUS, MISSION_MOTION, SPACECRAFT_RADII, isMovingMission, missionSceneTarget, sampleMissionMotion } from './scene-motion';
+import { CERES_RADIUS, EROS_RADIUS, SPACECRAFT_RADII, isMovingMission, missionSceneTarget, sampleMissionMotion } from './scene-motion';
 import type { MovingMissionId } from './scene-motion';
 import { EARTH, MARS, MOON, SOLAR_PLANETS } from './solar-layout';
 
@@ -63,16 +63,12 @@ function OrbitingBody({ orbit, angle, speed, paused, height = 0, children }: {
  * Đây là bảng duy nhất viết riêng theo ArtifactId; chỉ vẽ ID nào có trong catalog.
  * `where` nhắc lại sự thật bắt buộc trong CLAUDE.md (mục 4).
  */
-function OrbitRing({ radius, highlighted = false, color = '#5e82a1' }: { radius: number; highlighted?: boolean; color?: string }) {
+function OrbitRing({ radius, highlighted = false }: { radius: number; highlighted?: boolean }) {
   const points = useMemo(() => Array.from({ length: 193 }, (_, index) =>
     onOrbit(radius, index / 192 * Math.PI * 2)), [radius]);
   return (
-    <group>
-      <Line points={points} color={highlighted ? '#ffc857' : color} lineWidth={3.2}
-        transparent opacity={highlighted ? 0.09 : 0.035} depthWrite={false} raycast={() => {}} />
-      <Line points={points} color={highlighted ? '#ffd77d' : color} lineWidth={highlighted ? 1.5 : 1}
-        transparent opacity={highlighted ? 0.55 : 0.32} depthWrite={false} raycast={() => {}} />
-    </group>
+    <Line points={points} color={highlighted ? '#ffd77d' : '#5e82a1'} lineWidth={highlighted ? 1.5 : 1}
+      transparent opacity={highlighted ? 0.55 : 0.32} depthWrite={false} raycast={() => {}} />
   );
 }
 
@@ -113,7 +109,6 @@ function MissionObject({ artifact, catalog, paused, active, targets, onInspect, 
             {showLabel && <SceneLabel position={[0, -CERES_RADIUS - 0.25, 0]} active={false}>
               <span>Ceres</span>
             </SceneLabel>}
-            <OrbitRing radius={DAWN_LOCAL_ORBIT} color="#7499a3" />
           </>
         )}
         <group ref={ship}>
@@ -200,14 +195,6 @@ export function SolarScene({ catalog, active, paused, targets, focusId, onInspec
 
       {[{ name: 'earth', orbit: EARTH.orbit }, { name: 'mars', orbit: MARS.orbit }, ...DECOR_PLANETS].map((planet) => (
         <OrbitRing key={planet.name} radius={planet.orbit} highlighted={focusId === planet.name.toLowerCase() || focusParent === planet.name.toLowerCase()} />
-      ))}
-      <OrbitRing radius={MISSION_MOTION.dawn.orbit} color="#699ca3" highlighted={focusId === 'dawn'} />
-      <OrbitRing radius={MISSION_MOTION.kepler.orbit} highlighted={focusId === 'kepler'} />
-      <OrbitRing radius={MISSION_MOTION['near-shoemaker'].orbit} color="#8594ab" highlighted={focusId === 'near-shoemaker'} />
-      {(['pioneer-10', 'pioneer-11'] as const).map((id) => (
-        <Line key={id} points={[onOrbit(48, MISSION_MOTION[id].angle), onOrbit(75, MISSION_MOTION[id].angle)]}
-          color="#86a9bd" lineWidth={1.1} dashed dashSize={0.5} gapSize={0.3}
-          transparent opacity={0.34} depthWrite={false} raycast={() => {}} />
       ))}
 
       {DECOR_PLANETS.map((planet) => (
