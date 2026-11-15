@@ -32,3 +32,7 @@
 .global-chat__form button { width:44px; flex:none; background:#efcb88; color:#17222e; border:0; border-radius:12px; font-size:22px; }
 .global-chat button:disabled { opacity:.5; cursor:default; }
 @media(max-width:640px) { .global-chat { right:12px; bottom:12px; } .global-chat__launcher { width:60px; height:68px; } .global-chat__panel { bottom:80px; height:min(540px,calc(100dvh - 108px)); } }
+.global-chat--voyage { top:80px; bottom:auto; right:22px; }
+.global-chat--voyage .global-chat__launcher { width:58px; height:66px; border-radius:18px; }
+.global-chat--voyage .global-chat__panel { top:76px; bottom:auto; height:min(570px,calc(100dvh - 180px)); }
+@media(max-width:860px) { .global-chat--voyage { top:74px; right:16px; } }

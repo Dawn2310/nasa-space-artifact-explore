@@ -7,8 +7,8 @@ import ShuttleMascot from './ShuttleMascot';
 import { createGlobalChatStore } from './global-chat-store';
 import './global-chat.css';
 
-export default function GlobalChat({ catalog, chat, activeArtifactId }: {
-  catalog: Catalog; chat: ChatAdapter; activeArtifactId?: ArtifactId;
+export default function GlobalChat({ catalog, chat, activeArtifactId, voyageActive = false }: {
+  catalog: Catalog; chat: ChatAdapter; activeArtifactId?: ArtifactId; voyageActive?: boolean;
 }) {
   const [store] = useState(() => createGlobalChatStore(chat));
   const sessions = useSyncExternalStore(store.subscribe, store.getSnapshot);
@@ -53,7 +53,7 @@ export default function GlobalChat({ catalog, chat, activeArtifactId }: {
     void store.ask(selected, question);
   }
 
-  return <div className="global-chat">
+  return <div className={`global-chat${voyageActive ? ' global-chat--voyage' : ''}`}>
     {open && <section className="global-chat__panel" id="global-space-chat" role="dialog" aria-label="Space chat" aria-modal="false">
       <header className="global-chat__head">
         <div><small>SPACE CHAT</small><h2>Talk to an explorer</h2></div>

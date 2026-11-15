@@ -536,7 +536,6 @@ export default function Voyage({ catalog, plan, stopIndex, onGo, onExit, onNextC
         </section>
       )}
 
-      <p className="vy-note">Echo and the UFO are make-believe guides. The machines, dates and facts are real NASA history; the machine voices are AI storytellers, not the real spacecraft.</p>
     </div>
   );
 }

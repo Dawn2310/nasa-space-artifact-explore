@@ -119,7 +119,7 @@ export default function App() {
           <VoyageLauncher key={intro} startOpen={intro === 'plan'} onStart={(plan) => { setIntro('closed'); startPlan(plan); }} />
         ))
       )}
-      <GlobalChat catalog={catalog} chat={chat} activeArtifactId={stop?.artifactId ?? (view.level === 'artifact' ? view.artifactId : undefined)} />
+      <GlobalChat catalog={catalog} chat={chat} voyageActive={voyage !== null} activeArtifactId={stop?.artifactId ?? (view.level === 'artifact' ? view.artifactId : undefined)} />
     </div></CharacterProvider>
   );
 }
