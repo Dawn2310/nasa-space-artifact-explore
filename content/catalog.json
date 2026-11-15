@@ -77,7 +77,7 @@
       "id": "apollo-11-eagle-descent-stage",
       "name": "Apollo 11 Eagle descent stage",
       "body": "moon",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -123,7 +123,7 @@
       "id": "apollo-15-lrv",
       "name": "Apollo 15 Lunar Roving Vehicle",
       "body": "moon",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -159,7 +159,7 @@
       "id": "apollo-12-alsep",
       "name": "Apollo 12 ALSEP",
       "body": "moon",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -191,10 +191,45 @@
       "modelAssetId": null
     },
     {
+      "id": "insight",
+      "name": "InSight lander",
+      "body": "mars",
+      "mode": "chat",
+      "intro": "",
+      "suggestedQuestions": [],
+      "locations": [
+        {
+          "kind": "landing",
+          "latitudeDeg": 4.5,
+          "longitudeDeg": 135.9,
+          "convention": "source gives \"about 4.5 degrees north latitude and 135.9 degrees east longitude\" (east-positive, approximate). The page does not say whether the latitude is planetocentric or planetographic.",
+          "sourceIds": [
+            "ins-sci"
+          ],
+          "label": "Western Elysium Planitia (approximate landing site and final resting place)"
+        }
+      ],
+      "markerLocationIndex": 0,
+      "displayYears": "2018–2022",
+      "memoryCutoff": "2022-12-15",
+      "factIds": [
+        "ins-001",
+        "ins-002",
+        "ins-003",
+        "ins-004",
+        "ins-005",
+        "ins-006",
+        "ins-007",
+        "ins-008"
+      ],
+      "imageAssetId": "img-insight-1",
+      "modelAssetId": "model-insight"
+    },
+    {
       "id": "sojourner",
       "name": "Sojourner (Mars Pathfinder)",
       "body": "mars",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -223,13 +258,13 @@
         "soj-008"
       ],
       "imageAssetId": "img-sojourner-1",
-      "modelAssetId": null
+      "modelAssetId": "model-sojourner-dan"
     },
     {
       "id": "spirit",
       "name": "Spirit (MER-A)",
       "body": "mars",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -417,7 +452,7 @@
       "id": "viking-2",
       "name": "Viking 2 lander",
       "body": "mars",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -452,7 +487,7 @@
       "id": "phoenix",
       "name": "Phoenix lander",
       "body": "mars",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -484,45 +519,10 @@
       "modelAssetId": null
     },
     {
-      "id": "insight",
-      "name": "InSight lander",
-      "body": "mars",
-      "mode": "card",
-      "intro": "",
-      "suggestedQuestions": [],
-      "locations": [
-        {
-          "kind": "landing",
-          "latitudeDeg": 4.5,
-          "longitudeDeg": 135.9,
-          "convention": "source gives \"about 4.5 degrees north latitude and 135.9 degrees east longitude\" (east-positive, approximate). The page does not say whether the latitude is planetocentric or planetographic.",
-          "sourceIds": [
-            "ins-sci"
-          ],
-          "label": "Western Elysium Planitia (approximate landing site and final resting place)"
-        }
-      ],
-      "markerLocationIndex": 0,
-      "displayYears": "2018–2022",
-      "memoryCutoff": "2022-12-15",
-      "factIds": [
-        "ins-001",
-        "ins-002",
-        "ins-003",
-        "ins-004",
-        "ins-005",
-        "ins-006",
-        "ins-007",
-        "ins-008"
-      ],
-      "imageAssetId": "img-insight-1",
-      "modelAssetId": "model-insight"
-    },
-    {
       "id": "ingenuity",
       "name": "Ingenuity helicopter",
       "body": "mars",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [
@@ -568,7 +568,7 @@
       "id": "dawn",
       "name": "Dawn (orbiting Ceres)",
       "body": "deep-space",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [],
@@ -583,7 +583,8 @@
         "dwn-005",
         "dwn-006",
         "dwn-007",
-        "dwn-008"
+        "dwn-008",
+        "dwn-009"
       ],
       "imageAssetId": "img-dawn-1",
       "modelAssetId": "model-dawn"
@@ -592,7 +593,7 @@
       "id": "near-shoemaker",
       "name": "NEAR Shoemaker (on Eros)",
       "body": "deep-space",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [],
@@ -616,7 +617,7 @@
       "id": "pioneer-10",
       "name": "Pioneer 10",
       "body": "deep-space",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [],
@@ -640,7 +641,7 @@
       "id": "pioneer-11",
       "name": "Pioneer 11",
       "body": "deep-space",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [],
@@ -664,7 +665,7 @@
       "id": "kepler",
       "name": "Kepler space telescope",
       "body": "deep-space",
-      "mode": "card",
+      "mode": "chat",
       "intro": "",
       "suggestedQuestions": [],
       "locations": [],

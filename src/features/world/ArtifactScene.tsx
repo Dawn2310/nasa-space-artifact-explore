@@ -1,11 +1,12 @@
 // Tầng 3: viewer model GLB chính thức của NASA. Chỉ tải khi vào tầng này (lazy),
 // không sửa hình dạng model: chỉ đặt vào giữa và co giãn đều cho vừa khung.
 
-import { Component, Suspense, useEffect, useMemo, useRef } from 'react';
+import { Component, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { Box3, Sphere } from 'three';
 import type { Group, Material, Mesh, Object3D, Texture } from 'three';
+import type { CharacterPhase } from '../../shared/character-activity';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // 8/9 model trong public/assets/models BẮT BUỘC cần Draco. Bộ giải mã lấy từ gói `three`
@@ -15,7 +16,7 @@ import dracoWasmUrl from 'three/examples/jsm/libs/draco/gltf/draco_decoder.wasm?
 import { MODEL_RADIUS } from './layout';
 
 let sharedDraco: DRACOLoader | null = null;
-function configureLoader(loader: GLTFLoader) {
+export function configureLoader(loader: GLTFLoader) {
   if (!sharedDraco) {
     sharedDraco = new DRACOLoader();
     sharedDraco.setDecoderPath({ js: dracoWrapperUrl, wasm: dracoWasmUrl });
@@ -54,7 +55,7 @@ function scheduleDisposal(url: string, root: Object3D) {
   );
 }
 
-function cancelDisposal(url: string) {
+export function cancelDisposal(url: string) {
   const timer = pendingDisposals.get(url);
   if (timer !== undefined) {
     clearTimeout(timer);
@@ -64,7 +65,6 @@ function cancelDisposal(url: string) {
 
 function Model({ url, onReady }: { url: string; onReady: () => void }) {
   const gltf = useLoader(GLTFLoader, url, configureLoader);
-  const spin = useRef<Group>(null);
 
   const fit = useMemo(() => {
     const sphere = new Box3().setFromObject(gltf.scene).getBoundingSphere(new Sphere());
@@ -78,12 +78,9 @@ function Model({ url, onReady }: { url: string; onReady: () => void }) {
     return () => scheduleDisposal(url, gltf.scene);
   }, [url, gltf, onReady]);
 
-  useFrame((_, delta) => {
-    if (spin.current) spin.current.rotation.y += delta * 0.15;
-  });
 
   return (
-    <group ref={spin}>
+    <group>
       <group position={fit.offset} scale={fit.scale}>
         <primitive object={gltf.scene} />
       </group>
@@ -120,22 +117,40 @@ interface ArtifactSceneProps {
   modelUrl: string | null;
   onReady: () => void;
   onError: () => void;
+  phase?: CharacterPhase;
 }
 
-export function ArtifactScene({ modelUrl, onReady, onError }: ArtifactSceneProps) {
+export function ArtifactScene({ modelUrl, onReady, onError, phase = 'idle' }: ArtifactSceneProps) {
+  const character = useRef<Group>(null);
+  const elapsed = useRef(0);
+  const [reduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  useFrame((_, delta) => {
+    if (!character.current || reduced) return;
+    elapsed.current += Math.min(delta, 0.05);
+    const t = elapsed.current;
+    const speaking = phase === 'speaking';
+    const thinking = phase === 'thinking';
+    const ease = 1 - Math.exp(-delta * 7);
+    // Whole-object acting only: no changes to NASA geometry or moving parts.
+    const targetY = speaking ? Math.sin(t * 3.2) * 0.055 : thinking ? Math.sin(t * 1.5) * 0.025 : 0;
+    const targetTilt = speaking ? Math.sin(t * 2.4) * 0.035 : thinking ? 0.045 : 0;
+    character.current.position.y += (targetY - character.current.position.y) * ease;
+    character.current.rotation.z += (targetTilt - character.current.rotation.z) * ease;
+    character.current.rotation.y += ((speaking ? Math.sin(t * 1.8) * 0.065 : 0) - character.current.rotation.y) * ease;
+  });
   return (
     <group>
       <ambientLight intensity={1.1} />
       <hemisphereLight args={['#ffffff', '#30364a', 0.9]} />
       <directionalLight position={[3, 4, 5]} intensity={2.2} />
       <directionalLight position={[-4, 2, -3]} intensity={0.9} />
-      {modelUrl && (
+      <group ref={character}>{modelUrl && (
         <ModelBoundary key={modelUrl} url={modelUrl} onError={onError}>
           <Suspense fallback={null}>
             <Model url={modelUrl} onReady={onReady} />
           </Suspense>
         </ModelBoundary>
-      )}
+      )}</group>
     </group>
   );
 }

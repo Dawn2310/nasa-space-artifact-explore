@@ -7,3 +7,8 @@ dist
 *.tsbuildinfo
 *.log
 .DS_Store
+
+# Local reference projects; integrated runtime files live in src/, public/ and mission pages.
+/Nasa_Space_Apps_Challenge-main/
+/Nasa_Space_Apps_Challenge-main-1/
+/Nasa_Space_Apps_Challenge-moon/

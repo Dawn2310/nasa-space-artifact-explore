@@ -10,6 +10,8 @@ export interface ChatMessage {
   status?: ChatResponse['status'];
   evidence?: ChatResponse['evidence'];
   mocked?: boolean;
+  kind?: 'story';
+  storyId?: string;
 }
 
 export interface ChatFailure {
@@ -28,6 +30,7 @@ export interface ChatSession {
   /** Fact ids cited in grounded answers, in the order they were unlocked. */
   unlockedFactIds: string[];
   farewellOpened: boolean;
+  storyCursor: number;
 }
 
 export type Sessions = Partial<Record<ArtifactId, ChatSession>>;
@@ -38,6 +41,7 @@ export const EMPTY_SESSION: ChatSession = {
   failure: null,
   unlockedFactIds: [],
   farewellOpened: false,
+  storyCursor: 0,
 };
 
 export const MAX_MESSAGE_LENGTH = 500; // the server cuts at 500 characters too
@@ -60,5 +64,7 @@ export function patchSession(
   artifactId: ArtifactId,
   patch: (session: ChatSession) => ChatSession,
 ): Sessions {
-  return { ...sessions, [artifactId]: patch(sessions[artifactId] ?? EMPTY_SESSION) };
+  const previous = sessions[artifactId] ?? EMPTY_SESSION;
+  const next = patch(previous);
+  return next === previous ? sessions : { ...sessions, [artifactId]: next };
 }

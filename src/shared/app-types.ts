@@ -25,11 +25,31 @@ export interface Catalog {
 /** Một hàm duy nhất cho chat: mock adapter và adapter gọi /api/chat cùng kiểu này. */
 export type ChatAdapter = (request: ChatRequest) => Promise<ChatResponse>;
 
+/**
+ * Legacy Voyage đang chạy (src/features/voyage): cảnh do chuyến bay điều khiển.
+ * focus: id thiên thể/tàu để camera solar bám theo; mission: id thiết bị mở thẳng trong bản đồ Mars/Moon.
+ */
+export interface VoyageTour {
+  focus?: string;
+  mission?: string;
+}
+
+/** A visible, cancellable transfer in the solar scene, before opening a destination. */
+export interface SolarFlight {
+  id: string;
+  targetId: string;
+  label: string;
+}
+
 /** Props của src/features/world (agent world3d). */
 export interface WorldProps {
   view: ViewState;
   catalog: Catalog;
   callbacks: SceneCallbacks;
+  tour?: VoyageTour;
+  flight?: SolarFlight;
+  onFlightArrival?: (id: string) => void;
+  onFlightCancel?: () => void;
 }
 
 /** Props của src/features/explorer (agent ui-story). */
@@ -38,6 +58,7 @@ export interface ExplorerProps {
   catalog: Catalog;
   chat: ChatAdapter;
   callbacks: SceneCallbacks;
+  tour?: VoyageTour;
 }
 
 // ---- helper tra cứu dùng chung (thuần, không state) ----

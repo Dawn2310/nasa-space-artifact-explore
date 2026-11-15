@@ -1,7 +1,7 @@
 // Eval for the grounded chat. Run: node eval/run.ts   (Node 24, no build step, no dependencies)
 // Calls handleChat() directly (no HTTP). Runs every question twice:
 //   pass A: ALLOW_PENDING_FACTS=true  (pending facts admitted, for demo/eval)
-//   pass B: strict default            (approved facts only)
+//   pass B: default policy            (approved or NASA-sourced facts)
 // LLM_PROVIDER / LLM_API_KEY / LLM_MODEL are taken from the environment (default: mock).
 // With the mock provider the numbers measure the pipeline and the keyword mock, NOT a real model.
 
@@ -255,7 +255,7 @@ async function pipelineChecks(): Promise<Check[]> {
   const statusOf = (r: ChatResult) => (isChatResponse(r.body) ? r.body.status : `error: ${r.body.error}`);
 
   let r = await handleChat({ artifactId: 'kepler', message: 'Hello', history: [] }, env);
-  add('artifact with mode "card" -> HTTP 400', r.status === 400, `HTTP ${r.status}`);
+  add('Kepler now supports storyteller chat -> HTTP 200', r.status === 200 && isChatResponse(r.body), `HTTP ${r.status}`);
   r = await handleChat({ artifactId: 'not-a-thing', message: 'Hello', history: [] }, env);
   add('unknown artifactId -> HTTP 400', r.status === 400, `HTTP ${r.status}`);
   r = await handleChat({ artifactId: 'opportunity', message: '   ', history: [] }, env);
@@ -376,13 +376,13 @@ if (provider === 'mock') {
 out.push('');
 out.push(detailTable(pendingRows));
 out.push('');
-out.push('## Pass B: strict default (approved facts only)');
+out.push('## Pass B: default (approved or NASA-sourced facts; no separate NASA review step)');
 out.push('');
 out.push(summaryTable(strictRows));
 out.push('');
 out.push(`- Replies by status: grounded ${strictStats.grounded}, unavailable ${strictStats.unavailable}, refused ${strictStats.total - strictStats.grounded - strictStats.unavailable}.`);
 if (strictStats.grounded === 0) {
-  out.push('- No fact is approved yet, so strict mode refuses every question. "Correct refusal" is high here only because everything is refused.');
+  out.push('- No grounded answers were produced in this run; inspect evidence, cutoffs and provider availability.');
 }
 out.push('');
 out.push('## Pipeline checks (input limits, verifier fed with bad model replies, provider failures)');
@@ -410,7 +410,7 @@ console.log(summaryTable(pendingRows));
 for (const r of pendingRows) if (!r.pass) console.log(`  FAIL ${r.q.id} "${r.q.question}" -> ${r.response?.status ?? r.httpStatus} ${r.note} | ${r.response?.answer ?? ''}`);
 for (const r of pendingRows) if (!r.evidenceOk) console.log(`  BAD EVIDENCE ${r.q.id}: ${r.evidenceNote}`);
 console.log(`  refusal kind matched: ${rate(pendingStats.kindOk, pendingStats.kindChecked)}; 2-4 sentences: ${rate(pendingStats.sentenceRangeOk, pendingStats.grounded)}; routes: ${JSON.stringify(pendingStats.routes)}`);
-console.log('\nPass B: strict (approved facts only)');
+console.log('\nPass B: default (approved or NASA-sourced facts)');
 console.log(summaryTable(strictRows));
 console.log(`  grounded ${strictStats.grounded}, unavailable ${strictStats.unavailable}, refused ${strictStats.total - strictStats.grounded - strictStats.unavailable}`);
 console.log('\nPipeline checks');

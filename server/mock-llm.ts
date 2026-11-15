@@ -224,7 +224,7 @@ export function rankFacts(message: string, facts: MockFact[], selfNames: string[
 
 const SAFE_VERBS =
   'was|had|landed|launched|traveled|came|got|set|arrived|reached|found|discovered|returned|stopped|touched|slid|' +
-  'carried|operated|recorded|began|cruised|helped|kept|took|could|climbed|drove|broke|made|slid|dug|recorded';
+  'carried|operated|recorded|began|cruised|helped|kept|took|could|climbed|drove|broke|made|slid|dug|recorded|used|entered|explored';
 
 function escapeRegExp(text: string): string {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

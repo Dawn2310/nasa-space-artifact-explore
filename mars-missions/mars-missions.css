@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+:root { color-scheme: dark; font: 400 14px/1.6 Inter, system-ui, sans-serif; background: #100e0e; color: #f8eee5; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(310px, 33vw, 430px); height: 100dvh; overflow: hidden; }
+.stage { position: relative; min-height: 0; overflow: hidden; background: #0e0d12; }
+#viewport, #markers { position: absolute; inset: 0; }
+#mission-media { position: absolute; inset: 128px 16px 74px; margin: 0; display: flex; flex-direction: column; background: #10151b; border: 1px solid #526576; border-radius: 12px; overflow: hidden; }
+#mission-media iframe, #mission-media img { width: 100%; flex: 1; min-height: 0; border: 0; object-fit: contain; }
+#mission-media figcaption { padding: 7px 12px; font-size: 11px; color: #a8c2d2; background: #0a111a; }
+.has-mission-media #viewport { visibility: hidden; }
+.has-mission-media .stage-title { z-index: 1; }
+.has-mission-media h1 { font-size: clamp(26px, 4vw, 42px); }
+.is-tour #mission-media { top: 120px; bottom: 47%; }
+.is-tour #mission-media figcaption { font-size: 10px; padding: 3px 8px; }
+canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+#markers { pointer-events: none; }
+.stage-title { position: absolute; top: 24px; left: 28px; pointer-events: none; text-shadow: 0 2px 12px #160c06; }
+.kicker { color: #ffce8b; font-weight: 700; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(36px, 6vw, 82px); line-height: 1; letter-spacing: -.07em; margin: 4px 0 10px; }
+h2 { font-size: clamp(24px, 3.5vw, 40px); line-height: 1.13; letter-spacing: -.045em; margin-bottom: 10px; }
+h3 { font-size: 15px; margin: 25px 0 12px; }
+#hint, .intro, .site, .location-note { color: #d3bfb1; }
+aside { min-height: 0; overflow-y: auto; padding: clamp(18px, 2.6vw, 36px); border-left: 1px solid #3e2d27; background: #1c1513; }
+.intro { margin: 0 0 22px; }
+#mission-list { display: grid; gap: 8px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.mission { display: grid; grid-template-columns: 10px 1fr; gap: 1px 12px; align-items: center; text-align: left; padding: 10px 13px; background: #291e1a; border: 1px solid #50392e; border-radius: 9px; }
+.mission:hover, #back:hover, #reset:hover { background: #4a3023; }
+.mission::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ffd56e; grid-row: span 2; }
+.mission strong { font-size: 15px; }
+.mission small { color: #d3bfb1; }
+.marker { position: absolute; transform: translate(-50%, -50%); width: 28px; height: 28px; background: transparent; border: 0; pointer-events: auto; }
+.marker::before { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: #ffd56e; box-shadow: 0 0 0 3px #171013, 0 0 14px 3px #ffb647; }
+.marker span { display: block; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: -2px; white-space: nowrap; background: #211610e6; border: 1px solid #50392e; color: #f8eee5; font-size: 12px; font-weight: 700; line-height: 1.3; padding: 2px 8px; border-radius: 5px; }
+.marker:hover, .marker:focus-visible { z-index: 2; }
+.marker--left span { top: 50%; left: auto; right: 100%; margin: 0 2px 0 0; transform: translateY(-50%); }
+.marker--right span { top: 50%; left: 100%; margin: 0 0 0 2px; transform: translateY(-50%); }
+.marker:hover span, .marker:focus-visible span { background: #ffd56e; border-color: #ffd56e; color: #23150e; }
+
+#back, #reset, #replay-restart { background: #1c1411e8; border: 1px solid #9c775f; border-radius: 8px; padding: 7px 11px; }
+.stage-actions { display: flex; gap: 8px; margin-left: auto; }
+.stage-actions button { white-space: nowrap; }
+#replay-restart { background: #ffcd88; border-color: #ffcd88; color: #23150e; font-weight: 700; }
+#replay-restart:hover:not(:disabled) { background: #ffdcae; }
+#replay-restart:disabled { opacity: .55; cursor: default; }
+#back { position: absolute; top: 24px; right: 20px; }
+.stage-footer { position: absolute; bottom: 0; width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; gap: 8px; align-items: center; background: linear-gradient(transparent, #1b120ff0); }
+#message { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: max-content; max-width: 85%; padding: 8px 12px; background: #241813; border-radius: 7px; }
+a { color: #ffce8b; }
+button:focus-visible, a:focus-visible { outline: 2px solid #ffd56e; outline-offset: 3px; }
+.site { font-weight: 600; }
+.location-note { font-size: 12px; margin: 6px 0 17px; }
+#detail-summary { margin-top: 16px; }
+#timeline { list-style: none; margin: 0 0 18px; padding: 0 0 0 13px; border-left: 1px solid #825939; }
+#timeline li { margin-bottom: 11px; }
+#timeline strong { display: block; color: #ffce8b; }
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: minmax(0, 46%) minmax(0, 1fr); }
+  aside { border-left: 0; border-top: 1px solid #3e2d27; }
+  .stage-title { top: 18px; left: 17px; }
+  #back { top: 18px; right: 14px; }
+  .stage-footer { padding: 12px 14px; font-size: 11px; }
+}
+
+#replay-markers { position: absolute; inset: 0; pointer-events: none; }
+.replay-pin {
+  position: absolute; display: grid; place-items: center; transform: translate(-50%, -50%);
+  pointer-events: auto; width: 35px; height: 35px; padding: 0; border-radius: 50%;
+  border: 2px solid #ffcd88; background: #211610; color: #ffcd88;
+  box-shadow: 0 3px 12px #26150780; font-weight: 800;
+}
+.replay-pin[aria-pressed="true"] { background: #ffcd88; color: #23150e; z-index: 1; }
+.replay-controls { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 10px; }
+.replay-controls button, .replay-step {
+  border: 1px solid #77543d; border-radius: 7px; background: #2d2019; color: #f8eee5;
+}
+.replay-controls button { padding: 6px 10px; }
+.replay-controls button:disabled, .replay-step:disabled { opacity: .55; cursor: default; }
+#replay-caption { color: #e4c7b1; font-size: 12px; margin: 0 0 10px; }
+#timeline { padding: 0; border: 0; }
+#timeline li { margin-bottom: 6px; }
+.replay-step { width: 100%; display: flex; text-align: left; align-items: center; gap: 10px; padding: 8px; }
+.replay-step span { color: #f8cc91; font-variant-numeric: tabular-nums; }
+#timeline .replay-step strong { color: inherit; }
+.replay-step[aria-pressed="true"], .replay-step:hover, .replay-controls button:hover:not(:disabled) { background: #523524; }
+.replay-event { padding: 8px 10px 5px 30px; color: #e7d6ca; }
+
+/* ---------- Mission view: the 3D scene takes the whole screen ---------- */
+.is-mission .layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
+.is-mission aside { display: none; }
+.is-mission .stage-title h1 { font-size: clamp(30px, 4.4vw, 58px); margin-bottom: 4px; }
+#stage-name:focus { outline: none; }
+#stage-site { max-width: min(560px, 60vw); margin-bottom: 4px; color: #f3dcc8; font-size: 13px; font-weight: 600; line-height: 1.4; }
+
+/* Milestone subtitles (replaces the old milestone list). */
+.story-bar { position: absolute; left: 20px; bottom: 70px; z-index: 5; display: flex; align-items: flex-start; gap: 10px;
+  width: min(540px, calc(100% - 520px)); min-width: 300px; padding: 9px 12px; border: 1px solid #77543d; border-radius: 12px; background: #1c1411e6; box-shadow: 0 8px 22px #0007; }
+.story-bar .replay-controls { display: flex; gap: 4px; flex: none; margin: 0; }
+.story-bar .replay-controls button { min-width: 30px; padding: 2px 8px; font-size: 13px; line-height: 1.6; }
+.story-bar__text { min-width: 0; }
+#replay-caption { margin: 0; color: #ffce8b; font-size: 12px; font-weight: 700; }
+#replay-event { margin-top: 2px; color: #f8eee5; font-size: 13px; line-height: 1.45; }
+#replay-event:empty { display: none; }
+
+/* First-person narration bubble from the rocket. */
+.narration { position: absolute; right: 104px; bottom: 120px; z-index: 6; display: flex; align-items: flex-start; gap: 8px;
+  width: min(400px, calc(100% - 140px)); padding: 12px 12px 12px 14px; border-radius: 16px 16px 4px 16px; background: #fff7ec; color: #23150e;
+  box-shadow: 0 10px 26px #0008; animation: chat-pop .25s ease-out; }
+.narration p { font-size: 14px; line-height: 1.5; }
+#narration-stop { flex: none; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: #23150e; color: #ffcd88; font-size: 10px; }
+.narration:not([hidden]) ~ .chat-launcher .chat-launcher__bubble { display: none; }
+
+/* Chibi rocket launcher: tap it and the conversation pops out. Decorative mascot, not a NASA model. */
+.chat-launcher { position: absolute; right: 22px; bottom: 76px; z-index: 6; width: 74px; height: 92px; padding: 0; border: 0; background: transparent; filter: drop-shadow(0 6px 10px #0008); }
+.chat-launcher__rocket { display: block; width: 100%; height: 100%; overflow: visible; transform: rotate(-8deg); transform-origin: 50% 80%; animation: rocket-bob 2.6s ease-in-out infinite; }
+.chat-launcher__flame { transform-origin: 50px 92px; transform: scaleY(.5); opacity: .55; }
+.chat-launcher:hover .chat-launcher__flame, .chat-launcher.is-busy .chat-launcher__flame, .chat-launcher.is-speaking .chat-launcher__flame { opacity: 1; animation: rocket-thrust .22s ease-in-out infinite alternate; }
+.chat-launcher:hover .chat-launcher__rocket { transform: rotate(-3deg) translateY(-4px); }
+.chat-launcher.is-busy .chat-launcher__rocket, .chat-launcher.is-speaking .chat-launcher__rocket { animation: rocket-lift 1.1s ease-in-out infinite; }
+.chat-launcher__bubble { position: absolute; right: 70px; top: 6px; padding: 5px 10px; border-radius: 12px 12px 3px 12px; background: #fff7ec; color: #23150e; font-size: 12px; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 10px #0006; animation: bubble-pop .45s ease-out .5s both; }
+.chat-launcher.is-open .chat-launcher__bubble { display: none; }
+.chat-launcher:focus-visible { outline: 2px solid #ffd56e; outline-offset: 4px; border-radius: 18px; }
+@keyframes rocket-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+@keyframes rocket-lift { 0%, 100% { translate: 0 -6px; } 50% { translate: 0 -14px; } }
+@keyframes rocket-thrust { from { transform: scaleY(.75); } to { transform: scaleY(1.15); } }
+@keyframes bubble-pop { from { opacity: 0; transform: scale(.6); transform-origin: right bottom; } to { opacity: 1; transform: none; } }
+@keyframes chat-pop { from { opacity: 0; transform: translateY(14px) scale(.92); } to { opacity: 1; transform: none; } }
+
+/* ---------- Chat: a transmission window between Earth and Mars ---------- */
+.chat {
+  --space: #070a17; --space-2: #0e1530; --signal: #8fd8ff; --signal-soft: #8fd8ff33; --mars: #ffb489; --ink: #e8eefc; --muted: #93a2c3;
+  position: absolute; right: 104px; bottom: 76px; z-index: 7; width: min(380px, calc(100% - 128px)); height: min(500px, calc(100% - 170px)); min-height: 280px;
+  display: flex; flex-direction: column; gap: 8px; padding: 12px 12px 10px; overflow: hidden; isolation: isolate;
+  border: 1px solid #2b3a66; border-radius: 20px; color: var(--ink);
+  background:
+    radial-gradient(1px 1px at 8% 22%, #ffffffb0 50%, transparent 52%),
+    radial-gradient(1px 1px at 27% 64%, #ffffff80 50%, transparent 52%),
+    radial-gradient(1.4px 1.4px at 46% 12%, #ffffffc0 50%, transparent 52%),
+    radial-gradient(1px 1px at 63% 48%, #ffffff70 50%, transparent 52%),
+    radial-gradient(1px 1px at 81% 83%, #ffffff90 50%, transparent 52%),
+    radial-gradient(1.3px 1.3px at 92% 36%, #cfe8ffb0 50%, transparent 52%),
+    radial-gradient(1px 1px at 15% 88%, #ffffff70 50%, transparent 52%),
+    radial-gradient(1px 1px at 55% 92%, #ffe7c780 50%, transparent 52%),
+    radial-gradient(120% 70% at 110% -10%, #4b3a9a55, transparent 60%),
+    radial-gradient(90% 60% at -10% 110%, #b4512f30, transparent 60%),
+    linear-gradient(180deg, var(--space-2), var(--space));
+  box-shadow: 0 18px 44px #000c, inset 0 1px 0 #ffffff14;
+  transform-origin: right bottom; animation: chat-pop .22s ease-out;
+}
+.chat[hidden] { display: none; }
+.chat > * { position: relative; z-index: 1; }
+
+/* Ringed planet drifting in the top corner (pure decoration). */
+.chat-sky { position: absolute !important; inset: 0; z-index: 0 !important; pointer-events: none; overflow: hidden; }
+.chat-sky__planet { position: absolute; top: -38px; right: -34px; width: 118px; height: 118px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #ffc9a6, #c4573a 48%, #4a1a12 78%); box-shadow: inset -14px -10px 26px #0009, 0 0 40px #ff8a5a2e; opacity: .32; }
+.chat-sky__ring { position: absolute; top: 4px; right: -66px; width: 190px; height: 40px; border-radius: 50%; border: 1.5px solid #9fdcff38; transform: rotate(-16deg); }
+
+.chat-head { display: flex; align-items: center; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid #ffffff14; }
+.chat-avatar { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #0b1124; box-shadow: 0 0 0 1px #2b3a66, 0 0 18px #8fd8ff22; }
+.chat-avatar svg { width: 34px; height: 34px; }
+.chat-id { flex: 1; min-width: 0; }
+.chat .chat-id h3 { margin: 0; font: 700 17px/1.15 'Space Grotesk', Inter, sans-serif; letter-spacing: -.01em; text-transform: none; color: var(--ink); }
+.chat-status { display: flex; align-items: center; gap: 6px; margin-top: 2px; color: var(--muted); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-status__dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: #6ee7a8; box-shadow: 0 0 8px #6ee7a8; }
+.chat[data-signal="receiving"] .chat-status__dot { background: var(--signal); box-shadow: 0 0 8px var(--signal); animation: chat-blink 1s ease-in-out infinite; }
+.chat[data-signal="speaking"] .chat-status__dot { background: var(--mars); box-shadow: 0 0 8px var(--mars); animation: chat-blink .7s ease-in-out infinite; }
+.chat-tools { display: flex; gap: 6px; flex: none; }
+#chat-voice, #chat-close { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 1px solid #2b3a66; background: #0b1124cc; color: var(--ink); }
+#chat-voice:hover, #chat-close:hover { border-color: var(--signal); background: #13204a; }
+#chat-voice[hidden] { display: none; }
+#chat-voice[aria-pressed="true"] { color: var(--signal); }
+#chat-voice[aria-pressed="true"] .chat-voice__mute, #chat-voice[aria-pressed="false"] .chat-voice__waves { display: none; }
+#chat-voice[aria-pressed="false"] { color: var(--muted); }
+
+/* Messages read like a mission log, not chat bubbles. */
+#chat-log { position: relative; flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 4px 4px 4px 2px;
+  overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #2b3a66 transparent; }
+.chat-msg { position: relative; max-width: 94%; font-size: 13.5px; line-height: 1.55; }
+.chat-msg__from { display: block; margin-bottom: 3px; font: 600 10.5px/1.2 'Space Grotesk', Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.chat-msg--bot { align-self: flex-start; padding: 2px 0 2px 14px; border-left: 2px solid var(--signal); }
+.chat-msg--bot::before { content: ''; position: absolute; left: -5px; top: 3px; width: 8px; height: 8px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 10px var(--signal); }
+.chat-msg--bot .chat-msg__from { color: var(--signal); }
+.chat-msg--user { align-self: flex-end; padding: 8px 12px; border-radius: 14px 14px 4px 14px; background: linear-gradient(135deg, #3a1f17, #5b2c1d); border: 1px solid #a3553a66; text-align: left; }
+.chat-msg--user .chat-msg__from { color: var(--mars); text-align: right; }
+.chat-msg--typing p { color: var(--muted); }
+.chat-msg--typing p::after { content: ''; display: inline-block; width: 1.2em; text-align: left; animation: chat-dots 1.2s steps(4) infinite; }
+@keyframes chat-dots { 0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; } }
+@keyframes chat-blink { 50% { opacity: .35; } }
+.chat-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 6px; font-size: 11px; color: var(--muted); }
+.chat-source { padding: 1px 8px; border-radius: 999px; border: 1px solid #2b3a66; background: #0b1124; color: #b9dcf4; text-decoration: none; }
+.chat-source:hover { border-color: var(--signal); color: var(--ink); }
+.chat-tag { padding: 1px 8px; border-radius: 999px; background: #5a2d22; color: #ffb4a2; }
+
+/* Question ideas sit like little planets on an orbit line. */
+#chat-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 8px; border-top: 1px dashed #ffffff1a; }
+#chat-suggestions:empty { display: none; }
+.chat-chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px 4px 8px; border-radius: 999px; border: 1px solid #2b3a66; background: #0b1124d9; color: var(--ink); font-size: 12px; }
+.chat-chip::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffd2b4, #c4573a); box-shadow: 0 0 6px #ff8a5a66; }
+.chat-chip:hover:not(:disabled) { border-color: var(--mars); background: #1a1530; }
+.chat-chip:disabled, #chat-send:disabled { opacity: .5; cursor: default; }
+
+#chat-form { display: flex; align-items: center; gap: 6px; padding: 4px 4px 4px 14px; border-radius: 999px; border: 1px solid #2b3a66; background: #050814e6; }
+#chat-form:focus-within { border-color: var(--signal); box-shadow: 0 0 0 3px var(--signal-soft); }
+#chat-input { flex: 1; min-width: 0; padding: 6px 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 13.5px; outline: none; }
+#chat-input::placeholder { color: #6f7ea3; }
+#chat-send { flex: none; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffd9b8, #ff9a6a 55%, #d9603a); color: #2a120a; box-shadow: 0 0 14px #ff8a5a55; }
+#chat-send:hover:not(:disabled) { filter: brightness(1.08); }
+.chat-note { font-size: 10.5px; line-height: 1.35; color: #6f7ea3; text-align: center; }
+
+.stage-links { position: relative; display: flex; align-items: center; gap: 16px; min-width: 0; }
+.more { font-size: 12px; color: #d3bfb1; }
+.more summary { cursor: pointer; color: #ffce8b; white-space: nowrap; }
+.more__body { position: absolute; left: 0; bottom: calc(100% + 10px); z-index: 8; width: min(380px, 80vw); padding: 10px 12px;
+  border: 1px solid #77543d; border-radius: 10px; background: #1c1411f5; box-shadow: 0 10px 26px #0008; }
+.more__body p { margin: 3px 0 0; line-height: 1.45; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-launcher *, .chat-launcher__bubble, .chat { animation: none !important; }
+}
+@media (max-width: 760px) {
+  .chat { position: fixed; inset: 8px; width: auto; height: auto; min-height: 0; box-shadow: 0 0 0 100vmax #000b; }
+  .chat-launcher { right: 12px; bottom: 58px; width: 56px; height: 70px; }
+  .chat-launcher__bubble { right: 52px; font-size: 11px; }
+  #replay-restart, #reset { padding: 5px 9px; }
+}
+@media (max-width: 1100px) {
+  .story-bar { width: auto; right: 104px; min-width: 0; }
+  .narration { bottom: 190px; }
+}
+@media (max-width: 760px) {
+  .story-bar { left: 10px; right: 76px; bottom: 56px; padding: 7px 9px; gap: 7px; }
+  .story-bar .replay-controls { flex-direction: column; }
+  #replay-event { font-size: 12px; }
+  .narration { left: 10px; right: 10px; width: auto; bottom: auto; top: 128px; }
+  .narration p { font-size: 13px; }
+  #stage-site { max-width: 72vw; font-size: 11.5px; }
+  .chat-note { display: none; }
+}
+
+/* ---------- Legacy Voyage (?tour=1): the cockpit around the iframe does the talking ---------- */
+.is-tour .layout { grid-template-columns: minmax(0, 1fr); }
+.is-tour aside, .is-tour #back, .is-tour .chat-launcher, .is-tour .chat, .is-tour .narration,
+.is-tour .story-bar, .is-tour .stage-footer { display: none !important; }
+.is-tour .stage-title { top: 34px; left: 48px; }

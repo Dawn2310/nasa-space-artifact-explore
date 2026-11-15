@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { ThreeEvent } from '@react-three/fiber';
 import { SRGBColorSpace, TextureLoader } from 'three';
-import type { Texture } from 'three';
+import type { ColorSpace, Texture } from 'three';
 import type { ActiveTarget } from './layout';
 
 export type SetActive = Dispatch<SetStateAction<ActiveTarget | null>>;
@@ -13,7 +13,7 @@ export type SetActive = Dispatch<SetStateAction<ActiveTarget | null>>;
  * Tải texture bản đồ; trả null khi đang tải hoặc khi file không có/không đọc được
  * (khi đó quả cầu giữ màu phẳng). Giải phóng texture khi rời cảnh.
  */
-export function usePlanetTexture(url: string | null): Texture | null {
+export function usePlanetTexture(url: string | null, colorSpace: ColorSpace = SRGBColorSpace): Texture | null {
   const [texture, setTexture] = useState<Texture | null>(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function usePlanetTexture(url: string | null): Texture | null {
           result.dispose();
           return;
         }
-        result.colorSpace = SRGBColorSpace;
+        result.colorSpace = colorSpace;
         result.anisotropy = 4;
         loaded = result;
         setTexture(result);
@@ -42,7 +42,7 @@ export function usePlanetTexture(url: string | null): Texture | null {
       loaded?.dispose();
       setTexture(null);
     };
-  }, [url]);
+  }, [url, colorSpace]);
 
   return texture;
 }

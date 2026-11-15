@@ -1,6 +1,8 @@
 // Bố cục dùng chung với agent ui-story và các tư thế camera của ba tầng.
 
 import type { ArtifactId, ViewState } from '../../shared/contracts';
+import { SOLAR_EXTENT } from './solar-layout.ts';
+export { SOLAR_EXTENT } from './solar-layout.ts';
 
 /** Từ bề rộng này trở lên, panel thẻ/chat của UI che ~440px bên phải ở tầng artifact. */
 export const WIDE_BREAKPOINT_PX = 900;
@@ -15,7 +17,6 @@ export const GLOBE_RADIUS = 2;
 /** Model được chuẩn hóa để nằm gọn trong cầu bán kính này. */
 export const MODEL_RADIUS = 1;
 /** Bán kính ngoài cùng của sơ đồ hệ Mặt Trời (chấm Pioneer). */
-export const SOLAR_EXTENT = 22;
 
 export type Level = ViewState['level'];
 
@@ -66,8 +67,12 @@ export function freeArea(level: Level, width: number, height: number) {
 export function poseFor(level: Level, width: number, height: number): CameraPose {
   const aspect = width / Math.max(1, height);
   if (level === 'solar') {
-    const distance = Math.min(62, Math.max(40, SOLAR_EXTENT / (TAN_HALF_FOV * aspect)));
     const elevation = (38 * Math.PI) / 180;
+    const radius = SOLAR_EXTENT * 1.08;
+    // The near side of the tilted disk is closer to the perspective camera.
+    const verticalFit = radius * Math.cos(elevation) + radius * Math.sin(elevation) / TAN_HALF_FOV;
+    const horizontalFit = Math.hypot(radius / (TAN_HALF_FOV * aspect), radius * Math.cos(elevation));
+    const distance = Math.max(70, verticalFit, horizontalFit);
     return { position: [0, distance * Math.sin(elevation), distance * Math.cos(elevation)], distance };
   }
   if (level === 'surface') {
@@ -84,7 +89,7 @@ export function poseFor(level: Level, width: number, height: number): CameraPose
 export const TEXTURE_URLS = {
   earth: '/assets/textures/earth.jpg',
   mars: '/assets/textures/mars.jpg',
-  /** CHƯA có file (xem content/assets.json › stillToDownload). Tải lỗi => globe xám phẳng. */
+  /** NASA LROC 2k map, centered at 0 degrees longitude. */
   moon: '/assets/textures/moon.jpg',
 } as const;
 

@@ -2,13 +2,15 @@
 // Nhận WorldProps từ App; KHÔNG giữ state điều hướng, chỉ gọi callbacks.
 // State cục bộ ở đây chỉ là trạng thái hiển thị (đang trỏ vào đâu, model tải xong chưa).
 
-import { Component, useCallback, useEffect, useState } from 'react';
+import { Component, useCallback, useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
 import type { Artifact, Asset } from '../../shared/contracts';
 import { assetUrl, findArtifact, findAsset } from '../../shared/app-types';
-import type { Catalog, WorldProps } from '../../shared/app-types';
+import type { Catalog, SolarFlight, WorldProps } from '../../shared/app-types';
+import type { Vector3 } from 'three';
+import UfoNavigator from './UfoNavigator';
+import FlightCockpit from './FlightCockpit';
 import { ArtifactScene } from './ArtifactScene';
 import { CameraRig } from './CameraRig';
 import { LabelOverlay, LabelProjector } from './labels';
@@ -16,8 +18,14 @@ import { CAMERA_FOV_DEG, WIDE_BREAKPOINT_PX } from './layout';
 import type { ActiveTarget } from './layout';
 import type { SetActive } from './parts';
 import { SolarScene, hasIllustrativeSpot } from './SolarScene';
-import { SurfaceScene, describeLocation, markerLocation } from './SurfaceScene';
+import { describeLocation, markerLocation } from './SurfaceScene';
+import { SOLAR_BODIES } from './solar-system';
+import type { InspectionTargets } from './solar-system';
+import { SpaceBackdrop } from './SpaceBackdrop';
+import { MISSION_MOTION, isMovingMission } from './scene-motion';
 import './world.css';
+import { useCharacterActivity } from '../../shared/character-activity';
+import { SHARED_MODEL_NOTES } from '../explorer/storyText';
 
 function detectWebGL(): boolean {
   try {
@@ -62,9 +70,10 @@ function isPicture(asset: Asset | undefined): asset is Asset {
 interface NavListProps extends Pick<WorldProps, 'view' | 'catalog' | 'callbacks'> {
   setActive: SetActive;
   alwaysOpen: boolean;
+  onInspect?: (id: string) => void;
 }
 
-function NavList({ view, catalog, callbacks, setActive, alwaysOpen }: NavListProps) {
+function NavList({ view, catalog, callbacks, setActive, alwaysOpen, onInspect }: NavListProps) {
   const [open, setOpen] = useState(() => alwaysOpen || window.innerWidth >= WIDE_BREAKPOINT_PX);
   if (view.level === 'artifact') return null;
 
@@ -119,6 +128,29 @@ function NavList({ view, catalog, callbacks, setActive, alwaysOpen }: NavListPro
       <details open={alwaysOpen || open} onToggle={(event) => setOpen(event.currentTarget.open)}>
         <summary className="world-nav__summary">{title}</summary>
         <ul className="world-nav__list">{items}</ul>
+        {view.level === 'solar' && onInspect && (
+          <details className="world-nav__inspection">
+            <summary className="world-nav__summary">Planets and moons</summary>
+            <ul className="world-nav__list">
+              {SOLAR_BODIES.map((body) => (
+                <li key={body.id}>
+                  <button type="button" className="world-nav__button" onClick={() => onInspect(body.id)}>
+                    <span className="world-nav__name">{body.name}</span>
+                    <span className="world-nav__detail">View in 3D</span>
+                  </button>
+                </li>
+              ))}
+              {catalog.artifacts.filter((item) => item.body === 'deep-space').map((item) => (
+                <li key={item.id}>
+                  <button type="button" className="world-nav__button" onClick={() => onInspect(item.id)}>
+                    <span className="world-nav__name">{item.name}</span>
+                    <span className="world-nav__detail">Hear my story</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
       </details>
     </nav>
   );
@@ -175,12 +207,16 @@ function ArtifactOverlay({ artifact, status, modelAsset, imageAsset }: ArtifactO
             Loading 3D model…
           </div>
         )}
-        {photo('world-photo world-photo--thumb')}
         {modelAsset && (
-          <p className="world-caption">
-            <span className="world-caption__tag">3D model shown:</span> {modelAsset.represents}{' '}
-            <span className="world-credit">Credit: {modelAsset.creatorCredit}</span>
-          </p>
+          <div className="world-caption world-character-credit">
+            {SHARED_MODEL_NOTES[artifact.id] && <p>{SHARED_MODEL_NOTES[artifact.id]}</p>}
+            <details>
+              <summary>Model & credits</summary>
+              <p>{modelAsset.represents} · {artifact.displayYears}</p>
+              <p>{modelAsset.creatorCredit}</p>
+              <a href={modelAsset.sourceUrl} target="_blank" rel="noreferrer">Model source</a>
+            </details>
+          </div>
         )}
       </div>
     );
@@ -222,10 +258,43 @@ function artifactAssets(catalog: Catalog, artifact: Artifact | undefined) {
   return { modelAsset, imageAsset };
 }
 
-export default function World({ view, catalog, callbacks }: WorldProps) {
+export default function World({ view, catalog, callbacks, tour, flight, onFlightArrival, onFlightCancel }: WorldProps) {
+  const { activity } = useCharacterActivity();
   const [webgl, setWebgl] = useState(detectWebGL);
+  const [orbitsPaused] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [active, setActive] = useState<ActiveTarget | null>(null);
   const [loaded, setLoaded] = useState<{ url: string; status: 'ready' | 'failed' } | null>(null);
+  const [ownFocusId, setFocusId] = useState<string | null>(null);
+  const [localFlight, setLocalFlight] = useState<SolarFlight | undefined>(undefined);
+  const flightSequence = useRef(0);
+  const ufoPosition = useRef<Vector3 | null>(null);
+  const flightTelemetry = useRef({ progress: 0, distance: 0 });
+  const activeFlight = flight ?? localFlight;
+  useEffect(() => { flightTelemetry.current = { progress: 0, distance: 0 }; }, [activeFlight?.id]);
+  // Legacy Voyage điều khiển camera solar (tour.focus); ngoài chuyến bay thì người xem tự chọn.
+  const focusId = activeFlight ? null : tour ? (tour.focus ?? null) : ownFocusId;
+  const targets = useRef<InspectionTargets>(new Map()).current;
+  const inspect = (id: string) => {
+    if (activeFlight || tour) return;
+    const craft = catalog.artifacts.find((item) => item.id === id && item.body === 'deep-space');
+    if (craft) callbacks.onSelectArtifact(craft.id);
+    else setLocalFlight({ id: `inspect-${++flightSequence.current}`, targetId: id, label: SOLAR_BODIES.find((body) => body.id === id)?.name ?? id });
+  };
+  const flightArrived = (id: string) => {
+    if (flight?.id === id) onFlightArrival?.(id);
+    else if (localFlight?.id === id) { setFocusId(localFlight.targetId); setLocalFlight(undefined); }
+  };
+  useEffect(() => {
+    if (flight) { setLocalFlight(undefined); setFocusId(null); }
+  }, [flight?.id]);
+  useEffect(() => {
+    if (!flight || webgl) return;
+    const timer = window.setTimeout(() => onFlightArrival?.(flight.id), 350);
+    return () => window.clearTimeout(timer);
+  }, [flight, webgl, onFlightArrival]);
+  const focusBody = SOLAR_BODIES.find((body) => body.id === focusId);
+  const focusCraft = catalog.artifacts.find((item) => item.id === focusId);
+  const children = SOLAR_BODIES.filter((body) => body.parent === focusId);
 
   const key = viewKey(view);
   const artifact = view.level === 'artifact' ? findArtifact(catalog, view.artifactId) : undefined;
@@ -235,6 +304,7 @@ export default function World({ view, catalog, callbacks }: WorldProps) {
   // Đổi tầng: bỏ trạng thái trỏ/focus và trạng thái tải của cảnh cũ.
   useEffect(() => {
     setActive(null);
+    setFocusId(null);
     return () => setLoaded(null);
   }, [key]);
 
@@ -252,34 +322,29 @@ export default function World({ view, catalog, callbacks }: WorldProps) {
   else if (!webgl) status = 'no-webgl';
   else status = loaded?.url === modelUrl ? loaded.status : 'loading';
 
-  const scaleNote =
-    view.level === 'solar' ? 'Not to scale · Blue dots are illustrative positions, not real ones' : 'Not to scale';
+  // surface:mars và surface:moon do bản đồ nhiệm vụ (iframe trong Explorer) đảm nhận: không vẽ canvas/danh sách ở đây.
+  if (view.level === 'surface' || (view.level === 'artifact' && artifact?.body === 'mars')) return <div className="world world--surface" />;
+
+  // Theo yêu cầu người dùng: bỏ dòng ghi chú ở tầng solar; tầng artifact vẫn giữ "Not to scale".
+  const scaleNote = view.level === 'solar' ? null : 'Not to scale';
 
   return (
     <div className={`world world--${view.level}${webgl ? '' : ' world--flat'}`}>
       {webgl && (
         <CanvasBoundary onFail={onCanvasFail}>
           <div className="world__canvas" aria-hidden="true">
-            <Canvas camera={{ fov: CAMERA_FOV_DEG, near: 0.1, far: 900, position: [0, 32, 41] }} dpr={[1, 2]}>
-              <color attach="background" args={['#05070d']} />
-              <Stars radius={220} depth={60} count={2500} factor={5} fade speed={0} />
-              <CameraRig view={view} />
+            <Canvas camera={{ fov: CAMERA_FOV_DEG, near: 0.01, far: 1600, position: [0, 32, 41] }} dpr={[1, 2]}>
+              <SpaceBackdrop animate={!orbitsPaused} />
+              <CameraRig view={view} focusId={focusId} targets={targets} flightId={activeFlight?.id} />
               <LabelProjector />
               {view.level === 'solar' && (
-                <SolarScene catalog={catalog} callbacks={callbacks} active={active} setActive={setActive} />
+                <SolarScene catalog={catalog} active={active} setActive={setActive} paused={orbitsPaused}
+                  targets={targets} focusId={activeFlight?.targetId ?? focusId} onInspect={inspect} />
               )}
-              {view.level === 'surface' && (
-                <SurfaceScene
-                  key={view.body}
-                  body={view.body}
-                  catalog={catalog}
-                  callbacks={callbacks}
-                  active={active}
-                  setActive={setActive}
-                />
-              )}
+              {view.level === 'solar' && <UfoNavigator flight={activeFlight} targets={targets} position={ufoPosition} telemetry={flightTelemetry} onArrival={flightArrived} reduced={orbitsPaused} />}
               {view.level === 'artifact' && (
-                <ArtifactScene modelUrl={status === 'failed' ? null : modelUrl} onReady={onReady} onError={onError} />
+                <ArtifactScene modelUrl={status === 'failed' ? null : modelUrl} onReady={onReady} onError={onError}
+                  phase={activity?.artifactId === view.artifactId ? activity.phase : 'idle'} />
               )}
             </Canvas>
           </div>
@@ -293,13 +358,56 @@ export default function World({ view, catalog, callbacks }: WorldProps) {
         </p>
       )}
 
-      <NavList key={view.level} view={view} catalog={catalog} callbacks={callbacks} setActive={setActive} alwaysOpen={!webgl} />
+      {!tour && !activeFlight && !(view.level === 'solar' && focusId) && (
+        <NavList key={view.level} view={view} catalog={catalog} callbacks={callbacks} setActive={setActive} alwaysOpen={!webgl}
+          onInspect={webgl ? inspect : undefined} />
+      )}
+
+      {!tour && !activeFlight && webgl && view.level === 'solar' && focusId && (
+        <div className="world-focusbar" role="region" aria-label="Selected object">
+          <button type="button" onClick={() => setFocusId(null)}>Back to Solar system</button>
+          <strong>{focusBody?.name ?? focusCraft?.name}</strong>
+          {focusCraft && isMovingMission(focusCraft.id) && <span>{MISSION_MOTION[focusCraft.id].description}</span>}
+          {focusId === 'eros' && <>
+            <span>Asteroid Eros · NEAR Shoemaker landed here in 2001.</span>
+            <a href={focusBody?.source} target="_blank" rel="noreferrer">NASA source</a>
+            <button type="button" onClick={() => callbacks.onSelectArtifact('near-shoemaker')}>Meet NEAR Shoemaker</button>
+          </>}
+          {focusId === 'ceres' && <>
+            <span>Dwarf planet Ceres · Dawn orbits this world.</span>
+            <a href={focusBody?.source} target="_blank" rel="noreferrer">NASA source</a>
+            <button type="button" onClick={() => callbacks.onSelectArtifact('dawn')}>Meet Dawn</button>
+          </>}
+          {focusCraft && isMovingMission(focusCraft.id) && (
+            <a href={MISSION_MOTION[focusCraft.id].source} target="_blank" rel="noreferrer">NASA source</a>
+          )}
+          {(focusId === 'moon' || focusId === 'mars') && (
+            <button type="button" onClick={() => callbacks.onSelectBody(focusId)}>Explore artifacts</button>
+          )}
+          {focusCraft && (
+            <button type="button" onClick={() => callbacks.onSelectArtifact(focusCraft.id)}>Hear my story</button>
+          )}
+          {children.length > 0 && focusId !== 'sun' && (
+            <div className="world-focusbar__moons" aria-label="Selected moons">
+              {children.map((body) => <button key={body.id} type="button" onClick={() => setFocusId(body.id)}>{body.name}</button>)}
+            </div>
+          )}
+          {focusCraft?.id === 'pioneer-11' && <span>Shared model: Pioneer 10</span>}
+        </div>
+      )}
+
+      {activeFlight && <FlightCockpit key={activeFlight.id} label={activeFlight.label} telemetry={flightTelemetry} onCancel={() => flight ? onFlightCancel?.() : setLocalFlight(undefined)} />}
+      {view.level === 'solar' && (
+        <a className="world-sky-credit" href="https://svs.gsfc.nasa.gov/4851/" target="_blank" rel="noreferrer" title="NASA/Gaia HDR sky; optical photo © A. Mellinger. Black hole: NASA/GSFC/J. Schnittman, SVS 13326.">
+          Sky · NASA / GSFC · Photo © A. Mellinger
+        </a>
+      )}
 
       {view.level === 'artifact' && (
         <ArtifactOverlay key={key} artifact={artifact} status={status} modelAsset={modelAsset} imageAsset={imageAsset} />
       )}
 
-      <p className="world-scale-note">{scaleNote}</p>
+      {scaleNote && <p className="world-scale-note">{scaleNote}</p>}
     </div>
   );
 }

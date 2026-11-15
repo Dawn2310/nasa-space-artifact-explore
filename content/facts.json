@@ -3216,6 +3216,21 @@
     "reviewStatus": "pending"
   },
   {
+    "id": "dwn-009",
+    "artifactId": "dawn",
+    "text": "Dawn's images of Occator Crater on Ceres revealed bright reflective material that scientists interpreted as salts left behind after briny water reached the surface.",
+    "sourceIds": [
+      "dwn-jpl-2016-science"
+    ],
+    "tags": [
+      "discovery",
+      "legacy"
+    ],
+    "date": "2016-03-31",
+    "imageAssetId": null,
+    "reviewStatus": "pending"
+  },
+  {
     "id": "nea-001",
     "artifactId": "near-shoemaker",
     "text": "NEAR stands for Near Earth Asteroid Rendezvous. The spacecraft launched on Feb. 17, 1996.",

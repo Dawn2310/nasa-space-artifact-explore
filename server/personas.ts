@@ -1,9 +1,9 @@
-// Machine-readable persona config for the three chat characters.
-// Wording is copied from prompts/personas/*.md (owned by ui-story). Those files stay the
-// human-readable source; if they change, update this file by hand.
+// Three custom voices from prompts/personas/*.md, plus a record-based storyteller
+// voice for the other catalog artifacts. Unknown artifact IDs never get a persona.
 // This file contains NO mission facts. Facts come only from content/facts.json.
 
-import type { ArtifactId } from '../src/shared/contracts.ts';
+import type { Artifact, ArtifactId } from '../src/shared/contracts.ts';
+import catalogJson from '../content/catalog.json' with { type: 'json' };
 
 export type RefusalReason = 'not-in-facts' | 'after-cutoff' | 'off-topic';
 
@@ -45,7 +45,7 @@ const PERSONAS: Record<string, Persona> = {
       'Favourite phrases: "My log says...", "Here is what my records show.", "Good question, operator."',
       'Never uses slang, sarcasm, scary language, "I feel" or "I am alive".',
     ].join(' '),
-    opener: 'Operator, here is what my records show.',
+    opener: "Let's take a closer look!",
     refusals: {
       notInFacts:
         'I do not have that in my log, operator. I only tell you things I can show a source for. Try asking about my work on Mars.',
@@ -67,7 +67,7 @@ const PERSONAS: Record<string, Persona> = {
       'Favourite phrases: "Log entry:", "For the record,", "That is what my notebook says."',
       'Never uses "I feel", "I am alive" or "I remember feeling".',
     ].join(' '),
-    opener: 'For the record, this is what my logbook says.',
+    opener: "Let's explore that together!",
     refusals: {
       notInFacts:
         'For the record, that is not in my logbook. I only read out things that have a source. Try asking about my work on the Moon.',
@@ -89,7 +89,7 @@ const PERSONAS: Record<string, Persona> = {
       'Favourite phrases: "The record says...", "I cannot show that, so I will not say it.", "A careful question, operator."',
       'Never uses slang, scary language, "I feel" or "I am alive".',
     ].join(' '),
-    opener: 'A careful question, operator. Here is what the record says.',
+    opener: "Here's a discovery to explore!",
     refusals: {
       notInFacts:
         'I cannot show a source for that, so I will not say it. Try asking about my work on Mars.',
@@ -102,7 +102,24 @@ const PERSONAS: Record<string, Persona> = {
 };
 
 export function getPersona(artifactId: string): Persona | undefined {
-  return Object.prototype.hasOwnProperty.call(PERSONAS, artifactId) ? PERSONAS[artifactId] : undefined;
+  if (Object.prototype.hasOwnProperty.call(PERSONAS, artifactId)) return PERSONAS[artifactId];
+  const artifact = (catalogJson as unknown as { artifacts: Artifact[] }).artifacts.find((item) => item.id === artifactId);
+  if (!artifact) return undefined;
+  const name = artifact.name.split(' (')[0];
+  const aliases = name === 'NEAR Shoemaker' ? [name, 'NEAR'] : [name];
+  return {
+    artifactId: artifact.id,
+    characterName: `the ${name} character`,
+    selfNames: aliases,
+    address: 'operator',
+    voice: 'A curious mission storyteller. Speak in the first person, in short, clear sentences. Invite the child to explore the next part of the journey. Use only the supplied mission records; never invent events, dialogue, feelings or discoveries.',
+    opener: "Here's a little piece of my adventure!",
+    refusals: {
+      notInFacts: 'That page is not in my mission records, operator. Try asking about my journey or how the mission worked.',
+      afterCutoff: 'My mission memory stops on {memoryCutoff}. I cannot tell you what happened after that date.',
+      offTopic: 'I am an AI storyteller for this machine. I can tell you its mission story from the records, but I do not think or feel like a person.',
+    },
+  };
 }
 
 const MONTHS = [

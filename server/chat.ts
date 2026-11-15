@@ -8,6 +8,7 @@ import catalogJson from '../content/catalog.json' with { type: 'json' };
 import factsJson from '../content/facts.json' with { type: 'json' };
 import sourcesJson from '../content/sources.json' with { type: 'json' };
 import type { Artifact, ChatResponse, Fact, Source } from '../src/shared/contracts.ts';
+import { factIsAccepted } from '../src/shared/fact-policy.ts';
 import { callLlm, isMockProvider } from './llm.ts';
 import type { Env } from './llm.ts';
 import type { MockRoute } from './mock-llm.ts';
@@ -25,8 +26,8 @@ const FACTS = factsJson as unknown as Fact[];
 const SOURCE_IDS = new Set((sourcesJson as unknown as Source[]).map((s) => s.id));
 
 export interface ChatMeta {
-  /** Which facts were allowed: "approved-only" (default) or "approved+pending" (ALLOW_PENDING_FACTS=true). */
-  factMode: 'approved-only' | 'approved+pending';
+  /** NASA-sourced facts are accepted by default under the user's source policy. */
+  factMode: 'approved+nasa' | 'approved+nasa+pending';
   /** Number of facts sent to the model after selection. */
   factsOffered: number;
   /** Why a prepared refusal was returned, if it was. */
@@ -97,7 +98,7 @@ export function allowPendingFacts(env: Env): boolean {
 export function selectFacts(artifact: Artifact, allowPending: boolean): Fact[] {
   return FACTS.filter((fact) => {
     if (fact.artifactId !== artifact.id) return false;
-    if (fact.reviewStatus !== 'approved' && !(allowPending && fact.reviewStatus === 'pending')) return false;
+    if (!factIsAccepted(fact, sourcesJson as unknown as Source[], allowPending)) return false;
     if (artifact.memoryCutoff && fact.date && fact.date > artifact.memoryCutoff) return false;
     if (!Array.isArray(fact.sourceIds) || !fact.sourceIds.some((id) => SOURCE_IDS.has(id))) return false;
     return true;
@@ -185,7 +186,7 @@ export async function handleChat(body: unknown, env: Env, options: ChatOptions =
   const pending = allowPendingFacts(env);
   const facts = selectFacts(valid.artifact, pending);
   const meta: ChatMeta = {
-    factMode: pending ? 'approved+pending' : 'approved-only',
+    factMode: pending ? 'approved+nasa+pending' : 'approved+nasa',
     factsOffered: facts.length,
   };
 

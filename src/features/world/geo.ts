@@ -20,9 +20,8 @@
 export const MARS_TEXTURE_LEFT_EDGE_LON_EAST_DEG = -180;
 
 /**
- * Giả định cho textures/moon.jpg (CHƯA có file). Bản đồ LROC của NASA SVS CGI Moon Kit
- * được mô tả là tâm ở kinh độ 0°; CHƯA kiểm chứng vì chưa có ảnh. Khi globe xám phẳng,
- * giá trị này chỉ quyết định marker nằm ở đâu so với hướng nhìn ban đầu.
+ * textures/moon.jpg: bản đồ LROC từ NASA SVS CGI Moon Kit 4720, tâm ở kinh độ 0°
+ * theo mô tả của NASA. Mép ảnh ở -180°/+180°; giữ cùng phép chiếu equirectangular.
  */
 export const MOON_TEXTURE_LEFT_EDGE_LON_EAST_DEG = -180;
 

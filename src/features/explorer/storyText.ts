@@ -6,8 +6,7 @@
 
 import type { Artifact, ArtifactId, SurfaceLocation } from '../../shared/contracts';
 
-export const APP_TITLE = 'Night Shift: Space Artifact Explorer';
-export const DISCLAIMER = 'Student project. Not affiliated with or endorsed by NASA.';
+export const APP_TITLE = 'NASA Space Artifact Explorer';
 
 export const BODY_NAMES: Record<'moon' | 'mars', string> = {
   moon: 'Moon',
@@ -48,7 +47,7 @@ export const NO_MODEL_NOTE =
   'There is no official NASA 3D model of this craft in our kit, so we do not show one. We never build a pretend model.';
 
 export const DEEP_SPACE_NOTE =
-  'This craft is not on the Moon or Mars. Its dot on the solar system map is illustrative: it does not show a real position or distance.';
+  'This craft is not on the Moon or Mars. Its placement on the solar system map is illustrative: it does not show a real position or distance.';
 
 export const AI_CHARACTER_NOTE =
   'You are talking to an AI character. It is a storyteller for a real machine. It is not the real spacecraft, and it does not think or feel. Its answers are built from the fact cards and their sources.';

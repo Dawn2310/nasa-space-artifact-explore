@@ -470,5 +470,13 @@
     "publisher": "NASA NSSDCA",
     "accessedAt": "2026-11-14",
     "locator": "Section \"Description\""
+  },
+  {
+    "id": "dwn-jpl-2016-science",
+    "title": "Dawn 'Fueled' for Even More Discoveries at Ceres",
+    "url": "https://www.jpl.nasa.gov/blog/2016/3/dawn-fueled-for-even-more-discoveries-at-ceres/",
+    "publisher": "NASA/JPL-Caltech",
+    "accessedAt": "2026-11-14",
+    "locator": "Marc Rayman, March 31, 2016; paragraphs about Occator Crater, underground briny water and reflective salt residue, immediately after the March 16 image caption."
   }
 ]

@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig, loadEnv } from 'vite';
 import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -51,10 +52,32 @@ function devChatApi(mode: string): Plugin {
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), devChatApi(mode)],
+  // One copy of three.js in dev. Without this, modules found late (EXRLoader, RoomEnvironment…)
+  // were pre-bundled against a second copy and the 3D canvas crashed
+  // ("Cannot assign to read only property 'quaternion'").
+  resolve: { dedupe: ['three'] },
+  optimizeDeps: {
+    include: [
+      'three', '@react-three/fiber', '@react-three/drei',
+      'three/addons/controls/OrbitControls.js', 'three/addons/environments/RoomEnvironment.js',
+      'three/addons/loaders/DRACOLoader.js', 'three/addons/loaders/GLTFLoader.js',
+      'three/examples/jsm/environments/RoomEnvironment.js', 'three/examples/jsm/loaders/DRACOLoader.js',
+      'three/examples/jsm/loaders/EXRLoader.js', 'three/examples/jsm/loaders/GLTFLoader.js',
+    ],
+  },
   server: {
     port: 5173,
   },
   build: {
     chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      // Trang thứ hai: bản đồ 6 thiết bị trên Sao Hỏa (mars-missions/, chép từ
+      // Nasa_Space_Apps_Challenge-main). App chính nhúng nó ở tầng surface:mars.
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        marsMissions: fileURLToPath(new URL('./mars-missions/index.html', import.meta.url)),
+        moonMissions: fileURLToPath(new URL('./moon-missions/index.html', import.meta.url)),
+      },
+    },
   },
 }));

@@ -91,6 +91,9 @@ async function callOpenAi(req: LlmRequest, key: string, model: string): Promise<
       { authorization: `Bearer ${key}` },
       {
         model,
+        // GPT-5 / mini / nano reason by default and overran the 20 s timeout on full prompts
+        // (measured 2026-11-14). Minimal effort answers in a few seconds.
+        ...(/^gpt-5(-mini|-nano)?(-\d{4}-\d{2}-\d{2})?$/.test(model) ? { reasoning_effort: 'minimal' } : {}),
         response_format: { type: 'json_object' },
         messages: [
           { role: 'system', content: req.system },

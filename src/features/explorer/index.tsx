@@ -2,20 +2,20 @@
 // App owns ViewState: this file only reads `view` and navigates through `callbacks`.
 // All content comes from `catalog`; chat goes through the `chat` adapter.
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { Artifact, ArtifactId, ChatRequest, ViewState } from '../../shared/contracts';
 import { findArtifact } from '../../shared/app-types';
-import type { Catalog, ExplorerProps } from '../../shared/app-types';
-import ArtifactCard from './ArtifactCard';
-import ChatPanel from './ChatPanel';
+import type { ExplorerProps } from '../../shared/app-types';
+import Storyteller from './Storyteller';
 import Guidance from './Guidance';
-import MemoryJournal from './MemoryJournal';
+import MarsMissionsFrame from './MarsMissionsFrame';
+import PassportButton from '../rewards/PassportButton';
+import { appendNarrative, buildNarrative } from './narrative';
 import { EMPTY_SESSION, MAX_MESSAGE_LENGTH, historyFor, historyForRetry, patchSession } from './session';
-import type { ChatSession, Sessions } from './session';
-import { APP_TITLE, BODY_NAMES, DISCLAIMER } from './storyText';
+import type { Sessions } from './session';
+import { APP_TITLE, BODY_NAMES } from './storyText';
 import './explorer.css';
 
-type Tab = 'chat' | 'card' | 'journal';
 
 function parentName(target: { level: 'solar' } | { level: 'surface'; body: 'moon' | 'mars' }): string {
   return target.level === 'solar' ? 'Solar system' : BODY_NAMES[target.body];
@@ -35,71 +35,12 @@ function backLabel(view: ViewState): string {
   return 'Back to Solar system';
 }
 
-interface ArtifactPanelProps {
-  catalog: Catalog;
-  artifact: Artifact;
-  session: ChatSession;
-  onAsk: (question: string) => void;
-  onRetry: () => void;
-  onOpenFarewell: () => void;
-}
-
-function ArtifactPanel({ catalog, artifact, session, onAsk, onRetry, onOpenFarewell }: ArtifactPanelProps) {
-  const hasChat = artifact.mode === 'chat';
-  const [tab, setTab] = useState<Tab>(hasChat ? 'chat' : 'card');
-  const headingRef = useRef<HTMLHeadingElement>(null);
-
-  // Move keyboard / screen-reader focus to the panel when an artifact opens.
-  useEffect(() => {
-    headingRef.current?.focus();
-  }, []);
-
-  const tabs: { id: Tab; label: string }[] = [
-    { id: 'chat', label: 'Talk' },
-    { id: 'card', label: 'Story card' },
-    { id: 'journal', label: `Journal (${session.unlockedFactIds.length})` },
-  ];
-
-  return (
-    <section className="xp-panel" aria-labelledby="xp-panel-title">
-      <header className="xp-panel__head">
-        <h2 id="xp-panel-title" className="xp-panel__title" tabIndex={-1} ref={headingRef}>
-          {artifact.name}
-        </h2>
-        <p className="xp-panel__years">{artifact.displayYears}</p>
-        {hasChat && (
-          <div className="xp-tabs" role="group" aria-label="Panel sections">
-            {tabs.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className="xp-btn xp-btn--tab"
-                aria-pressed={tab === item.id}
-                onClick={() => setTab(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        )}
-      </header>
-      <div className="xp-panel__body">
-        {hasChat && tab === 'chat' && (
-          <ChatPanel catalog={catalog} artifact={artifact} session={session} onAsk={onAsk} onRetry={onRetry} />
-        )}
-        {(!hasChat || tab === 'card') && <ArtifactCard catalog={catalog} artifact={artifact} />}
-        {hasChat && tab === 'journal' && (
-          <MemoryJournal catalog={catalog} artifact={artifact} session={session} onOpenFarewell={onOpenFarewell} />
-        )}
-      </div>
-    </section>
-  );
-}
-
-export default function Explorer({ view, catalog, chat, callbacks }: ExplorerProps) {
+export default function Explorer({ view, catalog, chat, callbacks, tour }: ExplorerProps) {
   const [sessions, setSessions] = useState<Sessions>({});
+  // Sao Hỏa và Mặt Trăng: bản đồ nhiệm vụ (iframe) tự lo mô hình, hoạt cảnh và chat kể chuyện.
 
   const artifact = view.level === 'artifact' ? findArtifact(catalog, view.artifactId) : undefined;
+  const missionMap = view.level === 'surface' ? view.body : artifact?.body === 'mars' ? 'mars' : null;
   const crumbs = breadcrumb(view, artifact);
 
   const ask = useCallback(
@@ -175,7 +116,6 @@ export default function Explorer({ view, catalog, chat, callbacks }: ExplorerPro
       <header className="xp-bar">
         <div className="xp-bar__brand">
           <h1 className="xp-bar__title">{APP_TITLE}</h1>
-          <p className="xp-bar__legal">{DISCLAIMER}</p>
         </div>
         <nav className="xp-bar__crumbs" aria-label="You are here">
           <ol>
@@ -187,6 +127,7 @@ export default function Explorer({ view, catalog, chat, callbacks }: ExplorerPro
           </ol>
         </nav>
         <div className="xp-bar__actions">
+          <PassportButton />
           {catalog.isMock && <span className="xp-tag xp-tag--warn">Demo data</span>}
           {view.level !== 'solar' && (
             <button type="button" className="xp-btn xp-btn--primary" onClick={callbacks.onBack}>
@@ -198,10 +139,11 @@ export default function Explorer({ view, catalog, chat, callbacks }: ExplorerPro
       </header>
 
       <div className="xp-stage">
-        {view.level !== 'artifact' && <Guidance view={view} catalog={catalog} callbacks={callbacks} />}
+        {missionMap && <MarsMissionsFrame body={missionMap} tour={tour} initialMissionId={artifact?.body === 'mars' ? artifact.id : undefined} />}
+        {view.level === 'solar' && !tour && <Guidance view={view} catalog={catalog} callbacks={callbacks} />}
 
-        {view.level === 'artifact' && artifact && (
-          <ArtifactPanel
+        {view.level === 'artifact' && artifact && !missionMap && (
+          <Storyteller
             key={artifact.id}
             catalog={catalog}
             artifact={artifact}
@@ -210,9 +152,9 @@ export default function Explorer({ view, catalog, chat, callbacks }: ExplorerPro
             onRetry={() => {
               if (session.failure) ask(artifact.id, session.failure.question, historyForRetry(session.messages), true);
             }}
-            onOpenFarewell={() =>
-              setSessions((current) => patchSession(current, artifact.id, (s) => ({ ...s, farewellOpened: true })))
-            }
+            onStory={(expectedCursor) => setSessions((current) => patchSession(current, artifact.id, (value) =>
+              appendNarrative(value, expectedCursor, buildNarrative(artifact, catalog.facts,
+                new Set(catalog.sources.map((source) => source.id))), catalog.facts)))}
           />
         )}
 

@@ -13,15 +13,17 @@ interface ChatPanelProps {
   session: ChatSession;
   onAsk: (question: string) => void;
   onRetry: () => void;
+  compact?: boolean;
 }
 
 interface AnswerProps {
   catalog: Catalog;
   message: ChatMessage;
+  compact?: boolean;
 }
 
 /** One answer from the character, with its labels and an openable list of the facts it used. */
-function Answer({ catalog, message }: AnswerProps) {
+function Answer({ catalog, message, compact }: AnswerProps) {
   const [sourcesOpen, setSourcesOpen] = useState(false);
   const evidence = message.evidence ?? [];
   const citedFacts: Fact[] = [];
@@ -46,7 +48,7 @@ function Answer({ catalog, message }: AnswerProps) {
           The character only answers from its fact cards. Try one of the suggested questions below.
         </p>
       )}
-      {postcardFact && <Postcard catalog={catalog} imageAssetId={postcardFact.imageAssetId} />}
+      {postcardFact && !compact && <Postcard catalog={catalog} imageAssetId={postcardFact.imageAssetId} />}
       {evidence.length > 0 && (
         <>
           <button
@@ -75,7 +77,7 @@ function Answer({ catalog, message }: AnswerProps) {
   );
 }
 
-export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry }: ChatPanelProps) {
+export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry, compact = false }: ChatPanelProps) {
   const [draft, setDraft] = useState('');
   const endRef = useRef<HTMLDivElement>(null);
   const { messages, pending, failure } = session;
@@ -83,8 +85,11 @@ export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry }
 
   // Keep the newest message in view.
   useEffect(() => {
+    // Opening an encounter should begin at the story, not jump past it to the
+    // empty chat. Scroll only after a visitor actually starts a conversation.
+    if (compact && messages.length === 0 && !pending && !failure) return;
     endRef.current?.scrollIntoView({ block: 'nearest' });
-  }, [messages.length, pending, failure]);
+  }, [messages.length, pending, failure, compact]);
 
   function submit(event: FormEvent) {
     event.preventDefault();
@@ -96,21 +101,21 @@ export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry }
 
   return (
     <div className="xp-chat">
-      <p className="xp-note xp-chat__about">{AI_CHARACTER_NOTE}</p>
-      {artifact.memoryCutoff && (
+      {!compact && <p className="xp-note xp-chat__about">{AI_CHARACTER_NOTE}</p>}
+      {!compact && artifact.memoryCutoff && (
         <p className="xp-note">
           Locked memory: this character knows nothing after {formatIsoDate(artifact.memoryCutoff)}.
         </p>
       )}
 
       <ol className="xp-log" role="log" aria-live="polite" aria-label={`Conversation with the ${artifact.name} character`}>
-        <li className="xp-msg xp-msg--assistant">
+        {!compact && <li className="xp-msg xp-msg--assistant">
           <div className="xp-tags">
             <span className="xp-tag xp-tag--ai">AI character</span>
             <span className="xp-tag">Written greeting</span>
           </div>
           <p className="xp-msg__text">{artifact.intro}</p>
-        </li>
+        </li>}
         {messages.map((message, index) =>
           message.role === 'user' ? (
             <li key={index} className="xp-msg xp-msg--user">
@@ -118,7 +123,7 @@ export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry }
               <p className="xp-msg__text">{message.text}</p>
             </li>
           ) : (
-            <Answer key={index} catalog={catalog} message={message} />
+            <Answer key={index} catalog={catalog} message={message} compact={compact} />
           ),
         )}
       </ol>
@@ -150,10 +155,12 @@ export default function ChatPanel({ catalog, artifact, session, onAsk, onRetry }
       )}
       <div ref={endRef} />
 
-      {artifact.suggestedQuestions.length > 0 && (
+      {(artifact.suggestedQuestions.length > 0 || compact) && (
         <div className="xp-suggest" role="group" aria-label="Suggested questions">
           <p className="xp-muted xp-suggest__label">Try asking:</p>
-          {artifact.suggestedQuestions.map((question) => (
+          {(artifact.suggestedQuestions.length ? artifact.suggestedQuestions : artifact.id === 'dawn'
+            ? ['How did your ion thrusters work?', 'When did you reach Ceres?', 'Tell me about Vesta and Ceres.']
+            : ['What was your mission?', 'When did your mission begin?', 'How did your mission end?']).map((question) => (
             <button
               key={question}
               type="button"

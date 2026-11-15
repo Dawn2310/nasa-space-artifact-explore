@@ -3,6 +3,7 @@ import type { Fact } from '../../shared/contracts';
 import { assetUrl, findAsset, findSource } from '../../shared/app-types';
 import type { Catalog } from '../../shared/app-types';
 import { formatIsoDate } from './storyText';
+import { hasNasaEvidence } from '../../shared/fact-policy';
 
 interface SourceListProps {
   catalog: Catalog;
@@ -77,7 +78,7 @@ export default function FactCard({ catalog, fact, sourcesOpen = false }: FactCar
       <p className="xp-fact__text">{fact.text}</p>
       <div className="xp-tags">
         {fact.date && <span className="xp-tag">Date: {formatIsoDate(fact.date)}</span>}
-        {fact.reviewStatus === 'pending' && <span className="xp-tag xp-tag--warn">Awaiting review</span>}
+        {fact.reviewStatus === 'pending' && !hasNasaEvidence(fact, catalog.sources) && <span className="xp-tag xp-tag--warn">Awaiting review</span>}
       </div>
       <Postcard catalog={catalog} imageAssetId={fact.imageAssetId} />
       <details className="xp-details" open={sourcesOpen || undefined}>
