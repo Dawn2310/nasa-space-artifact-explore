@@ -2,6 +2,8 @@
 
 An interactive 3D space heritage explorer built for the **NASA Space Apps Challenge**. Designed for young explorers aged **10–14**, the app brings the stories of **17 NASA space artifacts** across **the Moon, Mars, and Deep Space** to life—showing how yesterday’s machines helped tomorrow’s explorers reach farther.
 
+**[🛸 Open the live demo](https://nasa-space-artifact-explore.netlify.app)**
+
 ## ✨ Key Features
 
 - **Three-Tier 3D Universe:** Fly from a Solar System overview, backed by NASA SVS Gaia/Hipparcos star maps, to lunar and Martian mission maps and close-up artifact inspections.
@@ -15,7 +17,7 @@ An interactive 3D space heritage explorer built for the **NASA Space Apps Challe
 
 - **Frontend:** React 19, TypeScript, Vite, Three.js, React Three Fiber, and Drei.
 - **Narration:** Browser Web Speech API, with stop/replay controls and text fallbacks. Available voices and automatic playback depend on the browser.
-- **Backend:** Vercel serverless endpoint (`api/chat.ts`), citation verification, and adapters for OpenAI, Anthropic, Gemini, and offline mock mode.
+- **Backend:** Netlify Functions (`netlify/functions/chat.mts`) and a Vercel adapter (`api/chat.ts`), sharing citation verification and adapters for OpenAI, Anthropic, Gemini, and offline mock mode.
 - **Data & Assets:** NASA 3D Resources, NASA SVS, NASA NSSDCA, and NASA Science, plus individually credited community models. See [CREDITS.md](CREDITS.md) and the [asset manifest](content/assets.json).
 
 ## 🚀 Run Locally
@@ -62,7 +64,7 @@ node eval/storyteller.check.mjs
 node eval/intro-narration.check.mjs
 ```
 
-The repository includes Vercel configuration for the frontend and chat function. Set server environment variables in Vercel when deploying. Publishing the repository does not deploy a live website.
+Production runs on **Netlify**. `netlify.toml` publishes `dist` and bundles the chat function at `/api/chat`. Configure the server variables above in the Netlify project's environment. The repository also retains the Vercel adapter. This first production deploy was uploaded with the CLI; GitHub auto-deploy is not connected.
 
 ## 📚 Project Notes & Credits
 
