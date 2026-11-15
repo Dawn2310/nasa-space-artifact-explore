@@ -574,3 +574,6 @@ App now lazy-loads the 3D world so welcome UI and floating chat render before Th
 
 Task / Owner: Refine floating Chat launcher / Codex (2026-11-15)
 Changed GlobalChat.tsx/global-chat.css to a compact horizontal pill with a contained 38x46 shuttle on the left and a dedicated 14px semibold Chat label on the right. Overrode the inherited absolute 72x86 shuttle flight positioning that overflowed the launcher and collided with the old label. Added refined border/hover, close-icon styling, smaller mobile/tour sizes and matching panel offsets; keyboard controls and reduced-motion behavior preserved. npm run build and diff check pass. Production deploy 6af9431235af3992e326eab4 ready on the existing URL; live stylesheet confirms the new label and contained shuttle rules. No browser pixel-level visual check this turn.
+
+Task / Owner: Remove two circled labels / Codex (2026-11-15)
+Removed Quick hop from the one-stop voyage header in Voyage.tsx, retaining UFO Echo. Hid the interaction hint paragraphs in Mars/Moon index.html; nodes remain for existing script references, with rotation and zoom unchanged. npm run build and diff check passed. Deployed 6af94c17ec09b7e3b0c86ef7 to the same Netlify URL; live Mars/Moon HTML confirms hidden hints and deployed entry has no Quick hop label. No browser visual check needed for the text-only removal.

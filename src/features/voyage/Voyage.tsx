@@ -428,7 +428,7 @@ export default function Voyage({ catalog, plan, stopIndex, onGo, onExit, onNextC
         <div className="vy-brand">
           <UfoIcon className="vy-brand__ufo" />
           <div>
-            <p className="vy-brand__ship">UFO Echo · {isHop ? 'Quick hop' : 'Legacy Voyage'}</p>
+            <p className="vy-brand__ship">UFO Echo{!isHop && ' · Legacy Voyage'}</p>
             <p className="vy-brand__chapter">{plan.title}</p>
           </div>
         </div>
