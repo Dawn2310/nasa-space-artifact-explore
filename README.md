@@ -1,66 +1,74 @@
-# Bộ kit khởi động — NASA Space Artifact Explorer
+﻿# 🛸 NASA Space Artifact Explorer — *Abandoned, But Not Forgotten*
 
-Bộ này chứa thiết kế, luật chung, hợp đồng dữ liệu, 5 định nghĩa agent cho Claude Code,
-và tài nguyên 3D chính thức của NASA (9 model GLB, 6 texture) đã kiểm checksum.
-Chưa có code ứng dụng: phiên chính của Claude Code (Lead) sẽ dựng.
+An interactive 3D space heritage explorer built for the **NASA Space Apps Challenge**. Designed for young explorers aged **10–14**, the app brings the stories of **17 NASA space artifacts** across **the Moon, Mars, and Deep Space** to life—showing how yesterday’s machines helped tomorrow’s explorers reach farther.
 
-## Trong kit có gì
+## ✨ Key Features
 
-| File | Vai trò |
+- **Three-Tier 3D Universe:** Fly from a Solar System overview, backed by NASA SVS Gaia/Hipparcos star maps, to lunar and Martian mission maps and close-up artifact inspections.
+- **Legacy Voyage:** Board the fictional guide craft **Echo** for three story chapters—The Moon, Mars, and Deep Space—with browser voice narration, first-person spacecraft stories, and collectible Legacy Sparks.
+- **Space Passport:** Collect **17 mission badges** through guided stories and free exploration. Your collection stays in the same browser; no account is needed. Pioneer 11 is available through free exploration.
+- **NASA-Sourced Stories & Fact Cards:** Historical facts link to primary NASA records, including NASA NSSDCA, NASA Science, and NASA/JPL.
+- **Grounded AI Characters:** Ask the spacecraft questions about their missions. The server checks fact references and numerical claims, and filters dated facts against each character’s final-contact cutoff where one is recorded. Mock mode works without an API key.
+- **Clear Visual Context:** Models include source credits and reuse notes; scientific assets have recorded checksums. Planet sizes, positions, orbital speeds, UFO flights, and background galaxies are illustrative.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 19, TypeScript, Vite, Three.js, React Three Fiber, and Drei.
+- **Narration:** Browser Web Speech API, with stop/replay controls and text fallbacks. Available voices and automatic playback depend on the browser.
+- **Backend:** Vercel serverless endpoint (`api/chat.ts`), citation verification, and adapters for OpenAI, Anthropic, Gemini, and offline mock mode.
+- **Data & Assets:** NASA 3D Resources, NASA SVS, NASA NSSDCA, and NASA Science, plus individually credited community models. See [CREDITS.md](CREDITS.md) and the [asset manifest](content/assets.json).
+
+## 🚀 Run Locally
+
+Use **Node.js 24 or later**.
+
+```bash
+git clone https://github.com/Dawn2310/nasa-space-artifact-explore.git
+cd nasa-space-artifact-explore
+npm ci
+```
+
+Copy `.env.example` to `.env`. The default `LLM_PROVIDER=mock` needs no API key.
+
+```bash
+npm run dev
+```
+
+Open the local URL printed by Vite. The development server also serves `POST /api/chat`.
+
+**Quick demo:** Choose **Mars** in the flight chooser. InSight is the first discovery, with its own spoken introduction and animated instrument deployment. UFO transfers take three seconds; narration plays at 1.3× its original pace.
+
+## 🔑 Connect an AI Provider
+
+Set these values in your local `.env`, or in the hosting project’s server environment:
+
+| Variable | Purpose |
 |---|---|
-| `CLAUDE.md` | Luật chung, stack, 6 sự thật khoa học bắt buộc. Claude Code tự đọc. |
-| `.claude/agents/*.md` | 5 subagent: nasa-research, world3d, ui-story, grounded-chat, qa |
-| `src/shared/contracts.ts` | Hợp đồng dữ liệu + API. Chỉ Lead sửa. |
-| `content/catalog.seed.json` | 17 hiện vật, ID, phân loại, link tài nguyên của đề |
-| `docs/DESIGN.md` | Thiết kế sản phẩm: ba tầng, truyện, 17 hiện vật, luồng chat |
-| `public/assets/` | Model và texture nguyên bản từ nasa/NASA-3D-Resources |
-| `content/assets.json` | Nguồn, dung lượng, sha256 từng file; việc còn phải tải |
-| `scripts/` | `verify_assets.sh` kiểm checksum; `fetch_nasa_assets.sh` tải lại từ NASA |
-| `CREDITS.md` | Ghi nguồn, dùng cho trường NASA Data khi nộp |
-| `TASKS.md` | Các đợt việc, mốc ghép, việc của người thật, thứ tự cắt giảm |
-| `docs/DECISIONS.md` | Nhật ký quyết định |
+| `LLM_PROVIDER` | `mock`, `openai`, `anthropic`, or `gemini` |
+| `LLM_API_KEY` | Your chosen provider’s key; leave empty for mock |
+| `LLM_MODEL` | Optional model override |
+| `ALLOW_PENDING_FACTS` | Defaults to `false`; NASA-sourced facts are already eligible without separate manual approval |
 
-## Cách chạy
+Restart the development server after changing the environment. Keys stay on the server; `.env` is excluded from Git. Mock results verify pipeline behavior, not the quality of a live model. Source grounding checks reduce unsupported answers but do not guarantee every generated sentence is correct.
 
-1. Giải nén vào một thư mục trống, rồi:
+## ✅ Build & Checks
 
-   ```bash
-   git init && git add -A && git commit -m "Starter kit"
-   claude
-   ```
+```bash
+npm run build
+node eval/mars-route.check.mjs
+node eval/mars-models.check.mjs
+node eval/rewards.check.mjs
+node eval/storyteller.check.mjs
+node eval/intro-narration.check.mjs
+```
 
-2. Trong Claude Code, gõ `/agents` để xác nhận thấy đủ 5 agent.
+The repository includes Vercel configuration for the frontend and chat function. Set server environment variables in Vercel when deploying. Publishing the repository does not deploy a live website.
 
-3. Dán lệnh khởi động cho phiên chính (Lead):
+## 📚 Project Notes & Credits
 
-   ```text
-   Bạn là Lead/Integrator. Đọc CLAUDE.md, TASKS.md, src/shared/contracts.ts
-   và content/catalog.seed.json. Làm Đợt 0 trong TASKS.md: dựng scaffold,
-   mock, App giữ ViewState. Chạy npm run build để xác nhận, commit, rồi báo
-   lại cho tôi trước khi sang Đợt 1.
-   ```
+- [CREDITS.md](CREDITS.md): scientific sources, model authors, licenses, and visual acknowledgments.
+- [content/](content/): artifact catalog, facts, sources, and asset metadata.
+- [docs/DECISIONS.md](docs/DECISIONS.md): implementation decisions and limitations.
+- [TASKS.md](TASKS.md): development handoffs and verification history.
 
-4. Khi Đợt 0 xong, dán:
-
-   ```text
-   Chạy Đợt 1: giao song song cho ba subagent nasa-research, world3d và
-   ui-story theo đúng phạm vi ghi của từng agent. nasa-research làm
-   opportunity trước. Khi cả ba bàn giao, tích hợp để đạt Mốc ghép 1,
-   chạy thử trên trình duyệt, commit, cập nhật TASKS.md.
-   ```
-
-5. Tiếp tục theo từng đợt trong `TASKS.md`. Sau mỗi mốc ghép, gọi:
-   `Dùng subagent qa kiểm tra bản hiện tại và ghi lỗi vào qa/bugs.md.`
-
-## Lưu ý vận hành
-
-- Giữ MỘT phiên Claude Code làm Lead trên repo này. Nếu muốn chạy song song
-  thật, chỉ mở thêm một cửa sổ cho nasa-research (nó chỉ ghi vào `content/`).
-- Commit sau mỗi mốc ghép để lùi lại được khi một agent làm hỏng.
-- Trong lúc agent chạy, người thật duyệt dữ kiện trong `content/facts.json`
-  ngay khi research bàn giao từng hiện vật. Server chat chỉ dùng facts "approved",
-  nên chưa duyệt thì robot chưa trả lời được.
-- Giá trị `displayYears` và `memoryCutoff` trong catalog.seed.json là khởi tạo,
-  chưa đối chiếu nguồn. Research và người duyệt phải xác nhận.
-- Khi có khóa LLM: đặt `LLM_PROVIDER` và `LLM_API_KEY` trong Vercel
-  (Settings → Environment Variables), không commit vào repo.
+Echo, the UFO, and first-person dialogue are storytelling devices based on mission records. The project was developed with AI coding and writing assistance; narration uses browser speech synthesis. Scientific asset sources and community model attribution are recorded separately in the credits.
